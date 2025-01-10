@@ -14,36 +14,40 @@ const Footer: FC = () => {
         gridTemplateRows: 'auto 91px repeat(3, 50px)',
       }}
     >
-      <p className="text-[24px] col-start-1 row-start-1 self-center">LiRUMAR</p>
-      <p className="text-[14px] opacity-[80%] col-start-2 row-start-1 self-center">
+      <p className="text-[24px] leading-[21px] col-start-1 row-start-1 self-center">
+        LiRUMAR
+      </p>
+      <p className="text-[14px] leading-[12px] opacity-[80%] col-start-2 row-start-1 self-center">
         Страницы
       </p>
-      <p className="text-[14px] opacity-[80%] col-start-3 row-start-1 self-center">
+      <p className="text-[14px] leading-[12px] opacity-[80%] col-start-3 row-start-1 self-center">
         Контакты
       </p>
-      <p className="text-[14px] opacity-[30%] col-start-4 row-start-1 self-center">
+      <p className="text-[14px] leading-[12px] opacity-[30%] col-start-4 row-start-1 self-center">
         Информация
       </p>
 
-      <p className="opacity-[80%] col-start-2 row-start-3 self-center">
+      <p className="opacity-[80%] leading-[14px] col-start-2 row-start-3 self-center">
         Каталог
       </p>
 
       <Link
         href={'tel:+79999999999'}
-        className="opacity-[80%] col-start-3 row-start-3 self-center"
+        className="opacity-[80%] leading-[14px] col-start-3 row-start-3 self-center"
       >
         +7 (999) 999-99-99
       </Link>
-      <p className="opacity-[80%] col-start-2 row-start-4 self-center">Обувь</p>
+      <p className="opacity-[80%] leading-[14px] col-start-2 row-start-4 self-center">
+        Обувь
+      </p>
       <Link
         href={'/privacy'}
-        className="text-[14px] opacity-[30%] col-start-4 row-start-4 self-center"
+        className="text-[14px] leading-[12px] opacity-[30%] col-start-4 row-start-4 self-center"
       >
         Политика конфиденциальности
       </Link>
 
-      <p className="opacity-[80%] col-start-2 row-start-5 self-center">
+      <p className="opacity-[80%] leading-[14px] col-start-2 row-start-5 self-center">
         Аксессуары
       </p>
 
@@ -56,7 +60,7 @@ const Footer: FC = () => {
         </Button>
       </div>
 
-      <p className="text-[14px] opacity-[30%] col-start-4 row-start-5 self-center">
+      <p className="text-[14px] leading-[12px] opacity-[30%] col-start-4 row-start-5 self-center">
         Сайт разработан
       </p>
     </footer>

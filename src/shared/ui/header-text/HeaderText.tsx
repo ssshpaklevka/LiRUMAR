@@ -2,16 +2,22 @@ import type { FC } from 'react';
 import React from 'react';
 import Link from 'next/link';
 
+import { cn } from '../../lib/utils';
+
 type Props = {
   text: string;
+  className?: string;
   href: string;
 };
 
-const HeaderText: FC<Props> = ({ text, href }) => {
+const HeaderText: FC<Props> = ({ text, className, href }) => {
   return (
     <Link
       href={href}
-      className="text-center bg-transparent text-foreground text-[14px] p-0 h-fit hover:opacity-90 hover:bg-transparent w-[115px]"
+      className={cn(
+        'text-center bg-transparent text-foreground text-[14px] p-0 h-fit hover:opacity-90 hover:bg-transparent w-[115px]',
+        className,
+      )}
     >
       {text}
     </Link>

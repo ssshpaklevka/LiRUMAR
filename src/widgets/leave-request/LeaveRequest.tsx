@@ -9,8 +9,8 @@ const LeaveRequest: FC = () => {
   return (
     <Container className="grid grid-cols-2 gap-[160px]">
       <div className="flex flex-col justify-between">
-        <p className="text-[33px] leading-[39px]">
-          <span className="subfont text-[40px] leading-[48px]">
+        <p className="text-[33px] leading-[40px]">
+          <span className="subfont text-[40px] leading-[40px]">
             Оставьте заявку —{' '}
           </span>
           создайте свой уникальный стиль с LiRUMAR

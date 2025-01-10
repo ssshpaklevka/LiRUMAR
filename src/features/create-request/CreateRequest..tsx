@@ -70,25 +70,25 @@ const CreateRequest: FC<Props> = ({ variant }) => {
         </DialogTrigger>
         <DialogContent className="bg-foreground">
           <DialogHeader>
-            <DialogTitle className="text-[33px] text-background text-center mb-[10px]">
+            <DialogTitle className="text-[33px] leading-[33px] font-normal text-background text-center mb-[10px]">
               Оставьте заявку
             </DialogTitle>
-            <DialogDescription className="text-[16px] text-background text-center">
+            <DialogDescription className="text-[16px] leading-[24px] text-background text-center">
               Заполните поля, после чего с вами свяжется менеджер
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-[33px]">
             <Input
               placeholder="Имя"
-              className="border focus-visible:border-2 focus-visible:border-background"
+              className="border py-6 focus-visible:border-2 focus-visible:border-background"
             />
             <Input
               placeholder="Номер телефона"
-              className="border focus-visible:border-2 focus-visible:border-background"
+              className="border py-6  focus-visible:border-2 focus-visible:border-background"
             />
             <Input
               placeholder="Электронная почта"
-              className="border focus-visible:border-2 focus-visible:border-background"
+              className="border py-6  focus-visible:border-2 focus-visible:border-background"
             />
           </div>
           <DialogFooter className="flex items-center justify-center">
@@ -100,7 +100,7 @@ const CreateRequest: FC<Props> = ({ variant }) => {
               Отправить
             </Button>
           </DialogFooter>
-          <p className="text-center text-[12px] text-background opacity-[60%]">
+          <p className="text-center text-[12px] leading-[18px] text-background opacity-[60%]">
             Нажимая кнопку «Отправить» вы соглашаетесь с{' '}
             <Link href={'/privacy'} onClick={handleCloseFirstDialog}>
               пользовательским соглашением, политикой конфиденциальности
@@ -116,10 +116,10 @@ const CreateRequest: FC<Props> = ({ variant }) => {
         >
           <div className="border border-white p-20">
             <DialogHeader>
-              <DialogTitle className="text-white text-[33px] text-center mb-[10px]">
+              <DialogTitle className="text-white leading-[33px] font-normal text-[33px] text-center mb-[10px]">
                 Спасибо за заказ!
               </DialogTitle>
-              <DialogDescription className="text-white text-[16px] text-center">
+              <DialogDescription className="text-white leading-[19.2px] text-[16px] text-center">
                 В скором времени с вами свяжется менеджер
               </DialogDescription>
             </DialogHeader>

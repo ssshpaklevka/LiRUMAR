@@ -12,8 +12,8 @@ const Hero: FC = () => {
       // style={{ backgroundImage: `url('/img/hero/frame.png')` }}
     >
       <div className="max-w-[1200px] px-5 w-full h-[876px] flex justify-center flex-col gap-[63px] relative">
-        <h1 className={cn('text-[61px] leading-[61px] tracking-[-4%]')}>
-          <span className={cn('subfont ')}>LiRUMAR </span>
+        <h1 className={cn('text-[61px] leading-[59px] tracking-[-4%]')}>
+          <span className={cn('subfont leading-[61px]')}>LiRUMAR </span>
           — Искусство
           <br />
           быть неповторимым
@@ -26,7 +26,7 @@ const Hero: FC = () => {
           className="absolute w-auto z-[-1] left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
         />
         <div className="flex justify-between">
-          <p className="max-w-[193px]">
+          <p className="max-w-[193px] leading-[19.2px]">
             Ручная работа из экзотической кожи для тех, кто ценит статус и
             индивидуальность.
           </p>

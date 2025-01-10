@@ -21,7 +21,9 @@ const CategoryItem: FC<Props> = ({ src, title, link, style }) => {
       )}
       style={{ backgroundImage: `url('${src}')` }}
     >
-      <p className={cn('subfont w-full m-[54px] text-[33px]')}>{title}</p>
+      <p className={cn('subfont w-full m-[54px] text-[33px] leading-[38px]')}>
+        {title}
+      </p>
     </Link>
   );
 };

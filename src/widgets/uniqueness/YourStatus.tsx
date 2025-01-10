@@ -6,8 +6,8 @@ const YourStatus: FC = () => {
   return (
     <div className="flex flex-row">
       <div className="flex items-center flex-col pt-[96px] gap-24">
-        <p className="text-[48px] leading-[48px]">
-          <span className="subfont text-[44px]">
+        <p className="text-[48px] leading-[52px]">
+          <span className="subfont text-[44px] leading-[48px]">
             -уникальность, <br />
           </span>
           которая подчеркивает ваш статус
