@@ -62,6 +62,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
         </div>
         <div className="flex flex-row gap-[18px]">
           {currentImageData.slice(1).map((item, index) => (
+            // <div key={index} className="h-[178px]">
             <Image
               key={index}
               src={item.imageUrl}
@@ -71,15 +72,18 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
               onClick={() => handleSmallImageClick(index + 1)}
               style={{ cursor: 'pointer' }}
             />
+            // </div>
           ))}
         </div>
       </div>
-      <Image
-        src={mainImage?.imageUrl || ''}
-        width={560}
-        height={560}
-        alt={mainImage?.heading}
-      />
+      <div className="h-[560px]">
+        <Image
+          src={mainImage?.imageUrl || ''}
+          width={560}
+          height={560}
+          alt={mainImage?.heading}
+        />
+      </div>
     </Container>
   );
 };

@@ -6,15 +6,15 @@ const Privacy: FC = () => {
   return (
     <main className="flex items-center justify-center flex-col pt-[80px]">
       <Container className="flex flex-col  items-center justify-center max-w-[680px]">
-        <h1 className="text-[54px] leading-[48px] pb-[25px]">
+        <h1 className="text-[25px] leading-[22px] sm:text-[49px] sm:leading-[44px] md:text-[54px] md:leading-[48px] pb-[63px] sm:pb-[60px] md:pb-[25px]">
           Политика конфиденциальности
         </h1>
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
-            <h5 className="leading-[20px]">
+            <h5 className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               1. Назначение и область действия документа
             </h5>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               1.1. «Политика конфиденциальности Индивидуального предпринимателя
               Маслова Матвея Павловича» ИНН 711711898283 (далее по тексту ИП
               Маслов М.П.) в отношении обработки персональных данных (далее —
@@ -24,22 +24,24 @@ const Privacy: FC = () => {
               неприкосновенность частной жизни, личную и семейную тайну, защиту
               своей чести и доброго имени.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               1.2. Политика неукоснительно исполняется ИП Масловым М.П.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               1.3. Действие Политики распространяется на все персональные данные
               субъектов, обрабатываемые ИП Масловым М.П. с применением средств
               автоматизации или без применения таких средств.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               1.4. К настоящей Политике имеет доступ любой субъект персональных
               данных.
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <h5 className="leading-[20px]">2. Определения.</h5>
-            <p className="leading-[20px]">
+            <h5 className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
+              2. Определения.
+            </h5>
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               2.1. Персональные данные — любая информация, относящаяся прямо или
               косвенно к определенному или определяемому физическому лицу
               (гражданину). К такой информации относится: ФИО, год, месяц, дата
@@ -48,7 +50,7 @@ const Privacy: FC = () => {
               доходах, сведения о состоянии здоровья, а также другую
               персональную информацию.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               2.2. Обработка персональных данных — любое действие (операция) или
               совокупность действий (операций) с персональными данным,
               совершаемых с использованием средств автоматизации или без
@@ -61,8 +63,10 @@ const Privacy: FC = () => {
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <h5 className="leading-[20px]">3. Субъекты персональных данных.</h5>
-            <p className="leading-[20px]">
+            <h5 className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
+              3. Субъекты персональных данных.
+            </h5>
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               ИП Маслов М.П. обрабатывает персональные данные следующих лиц:
               субъектов, с которыми заключены договоры гражданско-правового
               характера; клиентов ИП Маслова М.П., пользователей сайта
@@ -71,10 +75,10 @@ const Privacy: FC = () => {
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <h5 className="leading-[20px]">
+            <h5 className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4. Принципы и условия обработки персональных данных
             </h5>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4.1. Под безопасностью персональных данных ИП Маслов М.П.
               понимает: защищенность персональных данных от неправомерного или
               случайного доступа к ним третьих лиц, защищенность от уничтожения,
@@ -83,7 +87,7 @@ const Privacy: FC = () => {
               неправомерных действий. ИП Маслов М.П. принимает необходимые
               правовые, организационные и технические меры для их защиты.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4.2. Обработка и обеспечение безопасности персональных данных
               осуществляется в соответствии с требованиями Конституции
               Российской Федерации, Федерального закона № 152-ФЗ «О персональных
@@ -92,7 +96,7 @@ const Privacy: FC = () => {
               Российской Федерации, руководящих и методических документов ФСТЭК
               России и ФСБ России.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4.3. При обработке персональных данных ИП Маслов М.П
               руководствуется следующими принципами: законности и справедливой
               основы; ограничения обработки персональных данных достижением
@@ -104,7 +108,7 @@ const Privacy: FC = () => {
               данных, которые не отвечают целям их обработки; соответствия
               содержания.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4.4. ИП Маслов М.П. обрабатывает персональные данные при наличии
               хотя бы одного из следующих условий: имеется согласие субъекта
               персональных данных на их обработку; обработка персональных данных
@@ -129,7 +133,7 @@ const Privacy: FC = () => {
               персональных данных является прямым согласием субъекта на их
               дальнейшую обработку.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4.5. ИП Маслов М.П. вправе поручить обработку персональных данных
               граждан третьим лицам, только на основании заключаемого с этими
               лицами договора. Лица или организации, осуществляющие обработку
@@ -145,12 +149,12 @@ const Privacy: FC = () => {
               указываются требования к защите обрабатываемых персональных
               данных.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4.6. ИП Маслов М.П. вправе осуществлять передачу персональных
               данных граждан в случаях, установленных законодательством
               Российской Федерации.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4.7. В целях информационного обеспечения, могут создаваться
               общедоступные источники персональных данных работников, в том
               числе справочники и адресные книги. В общедоступные источники
@@ -161,17 +165,17 @@ const Privacy: FC = () => {
               данных по требованию работника, либо по решению суда или иных
               уполномоченных государственных органов.
             </p>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               4.8. ИП Маслов М.П. уничтожает либо обезличивает персональные
               данные по достижении целей обработки или в случае утраты
               необходимости достижения цели обработки.
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <h5 className="leading-[20px]">
+            <h5 className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               5. Права субъекта персональных данных.
             </h5>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               Гражданин, персональные данные которого обрабатываются, имеет
               право получать от ИП Маслова М.П.: подтверждение факта обработки
               персональных данных правовые основания и пояснения цели обработки
@@ -210,8 +214,10 @@ const Privacy: FC = () => {
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <h5 className="leading-[20px]">6. Ответственность.</h5>
-            <p className="leading-[20px]">
+            <h5 className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
+              6. Ответственность.
+            </h5>
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               В случае неисполнения положений настоящей Политики ИП Маслов М.П.
               несет ответственность в соответствии действующим законодательством
               Российской Федерации. На сайте https://rebook.pcmlt.ru/
@@ -220,11 +226,11 @@ const Privacy: FC = () => {
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <h5 className="leading-[20px]">
+            <h5 className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               7. Сведения о реализуемых требованиях по защите персональных
               данных.
             </h5>
-            <p className="leading-[20px]">
+            <p className="text-[14px] leading-[16px] sm:text-[19px] sm:leading-[26px] md:text-[14px] md:leading-[20px]">
               ИП Маслов М.П. при обработке персональных данных принимает
               необходимые правовые, организационные и технические меры для
               защиты персональных данных от неправомерного или случайного

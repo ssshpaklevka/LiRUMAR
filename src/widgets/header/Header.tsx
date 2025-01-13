@@ -6,11 +6,15 @@ import HeaderText from '@/src/shared/ui/header-text/HeaderText';
 
 const Header: FC = () => {
   return (
-    <header className="flex mx-auto justify-between px-5 mt-6 max-w-[1200px]">
-      <HeaderText className="text-left" href="/privacy" text="Каталог" />
+    <header className="flex flex-row-reverse  md:flex-row mx-auto justify-between px-5 mt-6 max-w-[1200px]">
+      <HeaderText
+        className="text-center md:text-left"
+        href="/catalog"
+        text="Каталог"
+      />
       <HeaderText href="/" text="LiRUMAR" />
       {/* <HeaderText text="Оставить заявку" /> */}
-      <CreateRequest variant="text" />
+      <CreateRequest className="hidden md:block" variant="text" />
     </header>
   );
 };

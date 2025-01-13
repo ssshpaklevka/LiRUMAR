@@ -8,12 +8,14 @@ import { cn } from '@/src/shared/lib/utils';
 const Hero: FC = () => {
   return (
     <div
-      className="flex justify-center w-full"
-      // style={{ backgroundImage: `url('/img/hero/frame.png')` }}
+      className="flex justify-center w-full cover relative -mt-[50px] z-[-10]"
+      style={{ backgroundImage: 'url("/img/hero/frame.png")' }}
     >
-      <div className="max-w-[1200px] px-5 w-full h-[876px] flex justify-center flex-col gap-[63px] relative">
-        <h1 className={cn('text-[61px] leading-[59px] tracking-[-4%]')}>
-          <span className={cn('subfont leading-[61px]')}>LiRUMAR </span>
+      <div className="max-w-[1200px] px-5 w-full h-[876px] flex justify-center mt-[81px] flex-col gap-[63px] relative">
+        <h1 className={cn('text-[61px] leading-[59px] tracking-[-3.5px]')}>
+          <span className={cn('subfont leading-[61px] tracking-[-3px]')}>
+            LiRUMAR{' '}
+          </span>
           — Искусство
           <br />
           быть неповторимым

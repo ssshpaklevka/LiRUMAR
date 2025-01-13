@@ -15,9 +15,11 @@ const HandMade: FC = () => {
         height={522}
       />
 
-      <p className="mt-[55px] text-[44px] leading-[40px] tracking-[-2%]">
+      <p className="mt-[55px] text-[44px] leading-[40px] tracking-[0.5px]">
         Ручная работа, экзотическая <br />
-        <span className={cn('subfont text-[50px] leading-[45px]')}>
+        <span
+          className={cn('subfont text-[50px] leading-[45px] tracking-[0.5px]')}
+        >
           премиальная кожа
         </span>
       </p>

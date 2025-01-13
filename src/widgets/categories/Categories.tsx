@@ -7,18 +7,22 @@ import CategoryItem from './CategoryItem';
 
 const Categories: FC = () => {
   return (
-    <Container className="grid grid-cols-2 gap-5">
+    <Container className="grid grid-cols-2 gap-5 ">
       <CategoryItem
         style="left"
         src="/img/categories/shoes.png"
-        link="#"
+        link="/catalog"
+        filterType="Обувь"
         title="Обувь"
+        className="text-[33px] m-[46px] ml-[60px]"
       />
       <CategoryItem
         style="right"
         src="/img/categories/accesories.png"
-        link="#"
+        link="/catalog"
+        filterType="Аксессуары"
         title="Аксессуары"
+        className="text-[44px] mr-[45px]"
       />
     </Container>
   );

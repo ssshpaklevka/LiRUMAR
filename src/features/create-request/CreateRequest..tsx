@@ -14,12 +14,14 @@ import {
   DialogTrigger,
 } from '@/src/shared/ui/dialog';
 import { Input } from '@/src/shared/ui/input';
+import { cn } from '@/src/shared/lib/utils';
 
 interface Props {
-  variant: 'big' | 'text' | 'regular';
+  variant: 'big' | 'text' | 'regular' | 'buy';
+  className?: string;
 }
 
-const CreateRequest: FC<Props> = ({ variant }) => {
+const CreateRequest: FC<Props> = ({ variant, className }) => {
   const [isFirstDialogOpen, setIsFirstDialogOpen] = useState(false);
   const [isSecondDialogOpen, setIsSecondDialogOpen] = useState(false);
 
@@ -40,14 +42,14 @@ const CreateRequest: FC<Props> = ({ variant }) => {
     setIsSecondDialogOpen(false);
   };
   return (
-    <>
+    <div className={className}>
       <Dialog open={isFirstDialogOpen} onOpenChange={setIsFirstDialogOpen}>
         <DialogTrigger asChild>
           {variant === 'big' ? (
             <Button
               onClick={handleOpenFirstDialog}
               size={'xl'}
-              className="w-[260px]"
+              className={cn('w-[260px]', className)}
             >
               Заказать
             </Button>
@@ -62,7 +64,15 @@ const CreateRequest: FC<Props> = ({ variant }) => {
             <Button
               onClick={handleOpenFirstDialog}
               size={'sm'}
-              className="w-[260px]"
+              className={cn('w-[260px]', className)}
+            >
+              Оставить заявку
+            </Button>
+          ) : variant === 'buy' ? (
+            <Button
+              onClick={handleOpenFirstDialog}
+              size={'sm'}
+              className={cn('w-full', className)}
             >
               Оставить заявку
             </Button>
@@ -135,7 +145,7 @@ const CreateRequest: FC<Props> = ({ variant }) => {
           </div>
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
 };
 
