@@ -46,10 +46,10 @@ interface Option {
 interface Props {
   title: string;
   filterType: 'material' | 'color' | 'type'; // Указываем корректные значения
-  onChange?: (selectedValues: string[]) => void;
+  onChange: (selectedValues: string[]) => void;
 }
 
-const Combobox: FC<Props> = ({ title, filterType }) => {
+const Combobox: FC<Props> = ({ title, filterType, onChange }) => {
   const [open, setOpen] = useState(false);
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
   const [options, setOptions] = useState<Option[]>([]);
@@ -74,7 +74,7 @@ const Combobox: FC<Props> = ({ title, filterType }) => {
         ? prev.filter((item) => item.value !== option.value)
         : [...prev, option];
 
-      // onChange(newSelectedValues.map((item) => item.value));
+      onChange(newSelectedValues.map((item) => item.value));
       return newSelectedValues;
     });
   };
