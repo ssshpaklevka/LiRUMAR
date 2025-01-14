@@ -26,7 +26,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
     notFound();
   }
   return (
-    <div className="flex justify-center items-center flex-col gap-[97px]">
+    <div className="flex justify-center items-center flex-col gap-[92px] sm:gap-[120px] md:gap-[97px] 2xl:gap-[146px]">
       <Product product={prod} />
 
       <CarouselProduct />

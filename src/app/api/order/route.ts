@@ -40,19 +40,18 @@ export const POST = async (req: NextRequest): Promise<NextResponse> => {
     } = data;
 
     const formattedMessage = `
-✨ *Новая заявка на заказ* ✨
+🌟🌟🌟 *Новая заявка на заказ* 🌟🌟🌟
 
-👤 *Имя:* ${name || 'Не указано'}
+👤 *Имя клиента:*  ${name || 'Не указано'}
 📞 *Телефон:* ${phone || 'Не указан'}
 📧 *Email:* ${email || 'Не указан'}
 
-🚚 *Наименование товара:* ${nameProd}
-📝*Описание товара:* ${descriptionProd}
-📜*Полное описание товара:* ${allDescriptionProd}
-📍*Стоимость товара:* ${priceProd}
-*Ссылка на товар:* ${link}
-
-🕒 *Дата и время заказа:* ${new Date().toLocaleString()}
+🛒 *Информация о товаре:*
+   ▪️ *Наименование:* ${nameProd || 'Товар не выбран'}
+   ▪️ *Описание:* ${descriptionProd || 'Товар не выбран'}
+   ▪️ *Полное описание:* ${allDescriptionProd || 'Товар не выбран'}
+   ▪️ *Стоимость:* ${priceProd || 'Товар не выбран'}
+   ▪️ *Ссылка на товар:* ${link || 'Товар не выбран'}
 `;
 
     await bot.api.sendMessage(adminChatId, escapeMessage(formattedMessage), {

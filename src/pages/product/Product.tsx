@@ -23,7 +23,7 @@ const Product: FC<Props> = ({ product }) => {
     ? product.full_description.split('\n')
     : [];
   return (
-    <Container className="mt-[95px] grid grid-cols-1 xl:grid-cols-[760px_2fr] gap-5 p-5">
+    <Container className="mt-[95px] grid grid-cols-1 xl:grid-cols-[760px_2fr] 2xl:grid-cols-[1100px_2fr] gap-5 p-5">
       <div className="flex gap-[20px] flex-col sm:flex-row">
         <div className="relative w-full h-auto min-h-[359px] bg-[#2C2C2C] flex justify-center items-center">
           {product && product.url ? (
@@ -37,12 +37,12 @@ const Product: FC<Props> = ({ product }) => {
             <CardPlaceholder />
           )}
         </div>
-        <div className="flex flex-row sm:flex-col justify-between gap-5">
+        <div className="flex flex-row sm:flex-col justify-between gap-5 2xl:gap-[34px]">
           {product.thumbnailUrls && product.thumbnailUrls.length > 0 ? (
             product.thumbnailUrls.map((url, index) => (
               <div
                 key={index}
-                className="relative size-[275px] aspect-square bg-gray-200"
+                className="relative size-[275px] 2xl:size-[446px] aspect-square bg-gray-200"
               >
                 {url ? (
                   <Image
@@ -60,22 +60,22 @@ const Product: FC<Props> = ({ product }) => {
           ) : (
             // Если нет миниатюр, показываем пустые плейсхолдеры
             <>
-              <div className="relative w-[275px]  h-[275px] bg-[#2C2C2C] flex justify-center items-center">
+              <div className="relative w-[275px] h-[275px] 2xl:w-[446px] 2xl:h-[446px] bg-[#2C2C2C] flex justify-center items-center">
                 <CardPlaceholder />
               </div>
-              <div className="relative w-[275px]  h-[275px] bg-[#2C2C2C] flex justify-center items-center">
+              <div className="relative w-[275px]  h-[275px] 2xl:w-[446px] 2xl:h-[446px] bg-[#2C2C2C] flex justify-center items-center">
                 <CardPlaceholder />
               </div>
             </>
           )}
         </div>
       </div>
-      <div className="flex flex-col justify-between gap-5 sm:gap-10 xl:gap-28">
-        <h2 className="text-[25px] leading-[25px] sm:text-[44px] sm:leading-[44px] md:text-[33px] md:leading-[33px] font-normal">
+      <div className="flex flex-col justify-between gap-5 sm:gap-10 xl:gap-28 2xl:gap-[170px]">
+        <h2 className="text-[25px] leading-[25px] sm:text-[44px] sm:leading-[44px] md:text-[33px] md:leading-[33px] 2xl:text-[44px] 2xl:leading-[44px] font-normal">
           {product && product.name}
         </h2>
 
-        <div className="text-[14px] leading-[21px] sm:text-[25px] sm:leading-[37px] md:text-[16px] md:leading-[24px] opacity-[60%]">
+        <div className="text-[14px] leading-[21px] sm:text-[25px] sm:leading-[37px] md:text-[16px] md:leading-[24px] 2xl:text-[25px] 2xl:leading-[37px] opacity-[60%]">
           <div>
             <p>{product.description}</p>
             <br />
@@ -87,18 +87,18 @@ const Product: FC<Props> = ({ product }) => {
           </div>
         </div>
         <div className="flex flex-col gap-[20px]">
-          <p className="text-[25px] leading-[30px] sm:text-[44px] sm:leading-[52px] md:text-[25px] md:leading-[30px]">
+          <p className="text-[25px] leading-[30px] sm:text-[44px] sm:leading-[52px] md:text-[25px] md:leading-[30px] 2xl:text-[44px] 2xl:leading-[53px]">
             {product && formatPrice(product.price)} ₽
           </p>
           <CreateRequest
             product={product}
             variant="buy"
-            className="text-[16px] leading-[19px] h-[51px] sm:text-[25px] sm:leading-[30px] sm:h-[94px] md:text-[16px] md:leading-[19px] md:h-[47px]"
+            className="text-[16px] leading-[19px] h-[51px] sm:text-[25px] sm:leading-[30px] sm:h-[94px] md:text-[16px] md:leading-[19px] md:h-[47px] 2xl:text-[25px] 2xl:leading-[30px] 2xl:h-[75px]"
           />
           <div className="flex justify-between gap-10 md:gap-5">
             <Button
               variant="outline"
-              className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px]  border-[#D9D9D9] w-full justify-center gap-[35px]"
+              className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px] 2xl:text-[19px] 2xl:leading-[23px] 2xl:h-[75px] border-[#D9D9D9] w-full justify-center gap-[35px]"
             >
               WhatsApp
               <Image
@@ -110,7 +110,7 @@ const Product: FC<Props> = ({ product }) => {
             </Button>
             <Button
               variant="outline"
-              className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px]   border-[#D9D9D9] w-full justify-center gap-[35px]"
+              className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px] 2xl:text-[19px] 2xl:leading-[23px] 2xl:h-[75px] border-[#D9D9D9] w-full justify-center gap-[35px]"
             >
               Telegram
               <Image

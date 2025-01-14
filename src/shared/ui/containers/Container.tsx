@@ -11,10 +11,7 @@ interface Props {
 
 const Container: FC<Props> = ({ children, className, style }) => {
   return (
-    <section
-      className={cn('max-w-[1200px] px-5 w-full', className)}
-      style={style}
-    >
+    <section className={cn('px-5 w-full', className)} style={style}>
       {children}
     </section>
   );

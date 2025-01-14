@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 'use client';
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
@@ -26,7 +27,7 @@ import type { Product } from '@/src/entities/product/product.interface';
 interface Props {
   variant: 'big' | 'text' | 'regular' | 'buy';
   className?: string;
-  product: Product;
+  product?: Product;
 }
 
 interface FormData {
@@ -67,19 +68,21 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
 
   // Обработчик отправки формы
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
-    const link = `${process.env.NEXT_PUBLIC_CLIENT_URL}${product.id}`;
-    const nameProd = product.name;
-    const descriptionProd = product.description;
-    const allDescriptionProd = product.full_description;
-    const priceProd = product.price;
-    const payload = {
-      ...data,
-      link,
-      nameProd,
-      descriptionProd,
-      allDescriptionProd,
-      priceProd,
-    };
+    const payload = product
+      ? {
+          ...data,
+          link: `${process.env.NEXT_PUBLIC_CLIENT_URL}${product.id}`,
+          nameProd: product.name,
+          descriptionProd: product.description,
+          allDescriptionProd: product.full_description,
+          priceProd: product.price,
+        }
+      : {
+          ...data,
+        };
+
+    console.log(payload);
+
     try {
       const response = await fetch('/api/order', {
         method: 'POST',
@@ -110,14 +113,14 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
             <Button
               onClick={handleOpenFirstDialog}
               size={'xl'}
-              className={cn('w-[260px]', className)}
+              className={cn('w-full', className)}
             >
               Заказать
             </Button>
           ) : variant === 'text' ? (
             <Button
               onClick={handleOpenFirstDialog}
-              className="bg-transparent text-foreground text-[14px] p-0 h-fit hover:opacity-90 hover:bg-transparent"
+              className="bg-transparent text-foreground text-[14px] 2xl:text-[19px] p-0 h-fit hover:opacity-90 hover:bg-transparent"
             >
               Оставить заявку
             </Button>
@@ -148,13 +151,15 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
               Заполните поля, после чего с вами свяжется менеджер
             </DialogDescription>
           </DialogHeader>
-          {/* Форма */}
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-[33px]"
+          >
             <div className="flex flex-col gap-[33px]">
               <div>
                 <Input
                   placeholder="Имя"
-                  className="border py-6 focus-visible:border-2 focus-visible:border-background"
+                  className="border py-6 text-black focus-visible:border-2 focus-visible:border-background"
                   {...register('name', { required: 'Введите ваше имя' })}
                 />
                 {errors.name && (
@@ -166,7 +171,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
               <div>
                 <Input
                   placeholder="Номер телефона"
-                  className="border py-6 focus-visible:border-2 focus-visible:border-background"
+                  className="border py-6 text-black focus-visible:border-2 focus-visible:border-background"
                   {...register('phone', {
                     required: 'Введите номер телефона',
                     pattern: {
@@ -184,7 +189,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
               <div>
                 <Input
                   placeholder="Электронная почта"
-                  className="border py-6 focus-visible:border-2 focus-visible:border-background"
+                  className="border py-6 text-black focus-visible:border-2 focus-visible:border-background"
                   {...register('email', {
                     required: 'Введите ваш email',
                     pattern: {
@@ -218,7 +223,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
       <Dialog open={isSecondDialogOpen} onOpenChange={setIsSecondDialogOpen}>
         <DialogContent
           className="bg-cover bg-opacity-[6%]"
-          style={{ backgroundImage: 'url("/img/request/frame.png")' }}
+          style={{ backgroundImage: 'url("/img/request/frame.webp")' }}
         >
           <div className="border border-white p-20">
             <DialogHeader>

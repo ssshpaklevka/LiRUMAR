@@ -9,10 +9,10 @@ const AttentionDetail: FC = () => {
       <div className="w-full">
         <Image
           className="w-full"
-          src={'/img/uniqueness/man.png'}
+          src={'/img/uniqueness/man1.png'}
           alt="man"
-          width={617}
-          height={631}
+          width={987}
+          height={1009}
         />
       </div>
       <div className="bg-foreground flex justify-center p-3">
@@ -23,7 +23,7 @@ const AttentionDetail: FC = () => {
             width={82}
             height={96}
           />
-          <p className="text-black text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[44px] md:leading-[44px] max-w-[333px] text-center">
+          <p className="text-black text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[44px] md:leading-[44px] 2xl:text-[79px] 2xl:leading-[55px] max-w-[333px] 2xl:max-w-[532px] text-center">
             безупречное внимание к деталям
           </p>
         </div>

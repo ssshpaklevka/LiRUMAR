@@ -10,13 +10,15 @@ import Uniqueness from '@/src/widgets/uniqueness/Uniqueness';
 
 const Main: FC = () => {
   return (
-    <main className="flex items-center flex-col gap-[200px]">
+    <main className="flex flex-col">
       <Hero />
-      <Categories />
-      <Uniqueness />
-      <PremiumMaterials imageData={ImagePremium} />
-      <MassProduction />
-      <LeaveRequest />
+      <div className="px-5 flex items-center flex-col gap-[200px]">
+        <Categories />
+        <Uniqueness />
+        <PremiumMaterials imageData={ImagePremium} />
+        <MassProduction />
+        <LeaveRequest />
+      </div>
     </main>
   );
 };

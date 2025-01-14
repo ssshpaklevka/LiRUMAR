@@ -6,25 +6,24 @@ import Container from '@/src/shared/ui/containers/Container';
 import CategoryItem from './CategoryItem';
 
 const Categories: FC = () => {
-  // pc: className = 'grid grid-cols-2 gap-5';
   return (
     <Container className="grid grid-cols-1 md:grid-cols-2 gap-5">
       <CategoryItem
         style="left"
-        src="/img/categories/shoes.png"
+        src="/img/categories/shoes.webp"
         link="/catalog"
         filterType="Обувь"
         title="Обувь"
-        className="text-[33px] m-[25px] ml-[40px] md:m-[45px] md:ml-[60px]"
+        className="transition-all duration-300 ease-in-out text-[44px] m-[25px] ml-[40px] md:m-[45px] md:ml-[60px] group-hover:text-[55px] 2xl:text-[59px] 2xl:leading-[52px] 2xl:group-hover:text-[79px]"
         classText="text-left md:text-left"
       />
       <CategoryItem
         style="right"
-        src="/img/categories/accesories.png"
+        src="/img/categories/accesories.webp"
         link="/catalog"
         filterType="Аксессуары"
         title="Аксессуары"
-        className="text-[44px] m-[25px] mr-[40px] md:m-[35px] md:mr-[60px]"
+        className="transition-all duration-300 ease-in-out text-[44px] m-[25px] mr-[40px] md:m-[45px] md:mr-[60px] group-hover:text-[55px] 2xl:text-[59px] 2xl:leading-[52px] 2xl:group-hover:text-[79px]"
         classText="text-left md:text-right"
       />
     </Container>

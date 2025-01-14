@@ -22,7 +22,6 @@ const CategoryItem: FC<Props> = ({
   className,
   classText,
 }) => {
-  // pc: h-[716px] flex items-end bg-cover
   return (
     <Link
       href={{
@@ -30,18 +29,11 @@ const CategoryItem: FC<Props> = ({
         query: { category: filterType },
       }}
       className={cn(
-        // style == 'left' ? 'text-left' : 'text-right',
-        'aspect-square md:h-[716px] md:aspect-auto flex items-end text-left bg-cover bg-bottom md:bg-cover', //надо будет с текстом разобраться
+        'grayscale hover:filter-none transition-all duration-300 ease-in-out group aspect-square md:h-[716px] md:aspect-auto flex items-end text-left bg-cover bg-bottom md:bg-cover', //надо будет с текстом разобраться
       )}
       style={{ backgroundImage: `url('${src}')` }}
     >
-      <p
-        className={cn(
-          'subfont w-full m-[42px] leading-[39px]',
-          className,
-          classText,
-        )}
-      >
+      <p className={cn('subfont w-full  leading-[39px]', className, classText)}>
         {title}
       </p>
     </Link>
