@@ -4,24 +4,26 @@ import React from 'react';
 
 const AttentionDetail: FC = () => {
   return (
-    <div className="flex  justify-between gap-5">
-      <div className="h-[631px]">
+    // pc:
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="w-full">
         <Image
+          className="w-full"
           src={'/img/uniqueness/man.png'}
           alt="man"
           width={617}
           height={631}
         />
       </div>
-      <div className="bg-foreground  px-3 py-4 flex justify-center ">
-        <div className="border border-background flex items-center justify-center flex-col p-[80px] gap-10">
+      <div className="bg-foreground flex justify-center p-3">
+        <div className="aspect-square w-full border border-background flex items-center justify-center flex-col gap-10">
           <Image
             src={'/img/uniqueness/snake.png'}
             alt="man"
             width={82}
             height={96}
           />
-          <p className="text-black text-[44px] leading-[45px] w-[333px] text-center">
+          <p className="text-black text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[44px] md:leading-[44px] max-w-[333px] text-center">
             безупречное внимание к деталям
           </p>
         </div>

@@ -11,6 +11,7 @@ interface Props {
   filterType: string;
   style: 'left' | 'right';
   className: string;
+  classText: string;
 }
 
 const CategoryItem: FC<Props> = ({
@@ -18,9 +19,10 @@ const CategoryItem: FC<Props> = ({
   title,
   link,
   filterType,
-  style,
   className,
+  classText,
 }) => {
+  // pc: h-[716px] flex items-end bg-cover
   return (
     <Link
       href={{
@@ -28,12 +30,18 @@ const CategoryItem: FC<Props> = ({
         query: { category: filterType },
       }}
       className={cn(
-        style == 'left' ? 'text-left' : 'text-right',
-        'h-[716px] flex items-end bg-cover',
+        // style == 'left' ? 'text-left' : 'text-right',
+        'aspect-square md:h-[716px] md:aspect-auto flex items-end text-left bg-cover bg-bottom md:bg-cover', //надо будет с текстом разобраться
       )}
       style={{ backgroundImage: `url('${src}')` }}
     >
-      <p className={cn('subfont w-full m-[42px] leading-[39px]', className)}>
+      <p
+        className={cn(
+          'subfont w-full m-[42px] leading-[39px]',
+          className,
+          classText,
+        )}
+      >
         {title}
       </p>
     </Link>

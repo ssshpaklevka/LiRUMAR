@@ -42,7 +42,7 @@ const Catalog: FC = () => {
         <h1 className="text-[44px] leading-[44px] sm:text-[59px] sm:leading-[59px] md:text-[74px] md:leading-[74px] font-normal">
           Каталог
         </h1>
-        <div className="flex items-center gap-[58px] sm:gap-[63px] md:gap-[60px]">
+        <div className="flex items-center justify-between ">
           <Combobox
             title="Ассортимент"
             filterType="type"

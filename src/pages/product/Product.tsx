@@ -91,6 +91,7 @@ const Product: FC<Props> = ({ product }) => {
             {product && formatPrice(product.price)} ₽
           </p>
           <CreateRequest
+            product={product}
             variant="buy"
             className="text-[16px] leading-[19px] h-[51px] sm:text-[25px] sm:leading-[30px] sm:h-[94px] md:text-[16px] md:leading-[19px] md:h-[47px]"
           />

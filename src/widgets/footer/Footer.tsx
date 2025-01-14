@@ -30,11 +30,14 @@ const Footer: FC = () => {
         href={'tel:+79999999999'}
         className="opacity-[80%] sm:text-[22px] sm:leading-[22px] md:text-[16px] md:leading-[14px] md:col-start-3 md:row-start-3 col-start-2 row-start-3 self-center"
       >
-        +7 (999) 999-99-99
+        +7 (967) 217-78-13
       </Link>
-      <p className="opacity-[80%] sm:text-[22px] sm:leading-[22px] md:text-[16px] md:leading-[14px] md:col-start-2 md:row-start-4 col-start-1 row-start-4 self-center">
+      <Link
+        href={{ pathname: '/catalog', query: { category: 'Обувь' } }}
+        className="opacity-[80%] sm:text-[22px] sm:leading-[22px] md:text-[16px] md:leading-[14px] md:col-start-2 md:row-start-4 col-start-1 row-start-4 self-center"
+      >
         Обувь
-      </p>
+      </Link>
       <Link
         href={'/privacy'}
         className="sm:text-[25px] sm:leading-[35px] md:text-[14px] md:leading-[12px] opacity-[30%] md:col-start-4 md:row-start-4 col-start-1 row-start-6 self-center"
@@ -42,18 +45,27 @@ const Footer: FC = () => {
         Политика конфиденциальности
       </Link>
 
-      <p className="opacity-[80%] sm:text-[22px] sm:leading-[22px] md:text-[16px] md:leading-[14px] md:col-start-2 md:row-start-5 col-start-1 row-start-5 self-center">
+      <Link
+        href={{ pathname: '/catalog', query: { category: 'Аксессуары' } }}
+        className="opacity-[80%] sm:text-[22px] sm:leading-[22px] md:text-[16px] md:leading-[14px] md:col-start-2 md:row-start-5 col-start-1 row-start-5 self-center"
+      >
         Аксессуары
-      </p>
+      </Link>
 
       <div className="flex gap-[10px] md:col-start-3 md:row-start-5 col-start-2 row-start-5">
-        <div className="w-[60px] h-[60px] md:w-[34px] md:h-[34px] flex justify-center items-center bg-white">
+        <Link
+          href={'https://t.me/dandy_lab'}
+          className="w-[60px] h-[60px] md:w-[34px] md:h-[34px] flex justify-center items-center bg-white"
+        >
           <Image src="/img/footer/tg.svg" alt="tg" width={20} height={20} />
-        </div>
+        </Link>
 
-        <div className="w-[60px] h-[60px] md:w-[34px] md:h-[34px] flex justify-center items-center bg-white">
+        <Link
+          href={'https://api.whatsapp.com/send?phone=79672177813'}
+          className="w-[60px] h-[60px] md:w-[34px] md:h-[34px] flex justify-center items-center bg-white"
+        >
           <Image src="/img/footer/wa.svg" alt="wa" width={20} height={20} />
-        </div>
+        </Link>
       </div>
 
       <p className="sm:text-[25px] sm:leading-[35px] md:text-[14px] md:leading-[12px] opacity-[30%] md:col-start-4 md:row-start-5 col-start-2 row-start-6 self-center">

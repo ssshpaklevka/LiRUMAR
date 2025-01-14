@@ -77,7 +77,7 @@ const ProductList: FC<ProductListProps> = ({ filters }) => {
   }
 
   return (
-    <div className="min-h-screen mt-[45px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[21px] gap-y-[40px]">
+    <div className="mt-[45px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[21px] gap-y-[40px]">
       {products.length > 0 ? (
         products.map((product) => (
           <ProductCard

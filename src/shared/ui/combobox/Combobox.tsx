@@ -74,7 +74,7 @@ const Combobox: FC<Props> = ({ title, filterType, onChange }) => {
         ? prev.filter((item) => item.value !== option.value)
         : [...prev, option];
 
-      onChange(newSelectedValues.map((item) => item.value));
+      onChange(newSelectedValues.map((item) => item.value)); // Передаем value в родительский компонент
       return newSelectedValues;
     });
   };
@@ -86,7 +86,7 @@ const Combobox: FC<Props> = ({ title, filterType, onChange }) => {
           variant="destructive"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between text-[14px] sm:text-[25px] md:text-[14px] px-0 sm:px-0 md:px-0 lg:px-4"
+          className="w-[200px] gap-[10px]  text-[14px] sm:text-[25px] md:text-[14px] px-0 sm:px-0 md:px-0 lg:px-4"
         >
           {selectedValues.length > 0
             ? selectedValues.map((item) => item.label).join(', ')
