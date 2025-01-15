@@ -59,7 +59,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
             Наши изделия создаются исключительно из натуральных премиум
             материалов, таких как
           </p>
-          <h1 className="subfont font-normal text-[59px] leading-[52px] sm:text-[105px] sm:leading-[92px] md:text-[59px] md:leading-[52px] 2xl:text-[105px] 2xl:leading-[92px] ">
+          <h1 className="subfont font-normal text-[45px] leading-[52px] sm:text-[95px] sm:leading-[92px] md:text-[59px] md:leading-[52px] 2xl:text-[105px] 2xl:leading-[92px] ">
             {renderHeadingWithBreak(mainImage?.heading)}
           </h1>
         </div>

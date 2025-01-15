@@ -6,7 +6,7 @@ import { Button } from '@/src/shared/ui/button';
 const MassProduction: FC = () => {
   return (
     <div className="px-0 w-full">
-      <div className="hidden lg:block">
+      <div className="hidden lg:block lg:px-0">
         <div
           className="h-[642px] w-full bg-cover flex flex-col items-center justify-center gap-[62px]"
           style={{ backgroundImage: 'url("/img/mass-production/frame.webp")' }}
@@ -29,7 +29,7 @@ const MassProduction: FC = () => {
         </div>
       </div>
 
-      <div className="block px-4 lg:hidden lg:px-0">
+      <div className="block lg:hidden lg:px-0">
         <div
           className="h-[642px] sm:h-[1176px] w-full bg-cover flex flex-col items-center justify-center gap-[62px]"
           style={{
@@ -40,7 +40,7 @@ const MassProduction: FC = () => {
             <p className="text-[33px] leading-[40px] w-[330] sm:text-[59px] sm:leading-[70px] sm:w-[620px] text-center">
               Нашим изделиям нет места в массовом производстве
             </p>
-            <p className="text-[14px] leading-[16px] w-[320px] sm:text-[25px] sm:leading-[30px] sm:w-[590px] text-center">
+            <p className="text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] sm:max-w-[590px] text-center">
               Каждая единица изготавливается в ручную, индивидуально под каждого
               клиента
             </p>

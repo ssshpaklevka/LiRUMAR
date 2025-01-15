@@ -1,6 +1,7 @@
+'use client';
 import Image from 'next/image';
 import type { FC } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 import CardPlaceholder from '../assets/card-placeholder/CardPlaceholder';
@@ -12,15 +13,22 @@ interface Props {
   price: number;
 }
 
-const ProductCard: FC<Props> = ({ id, url, name, price }) => {
+const ProductCard: FC<Props> = ({ id, name, price }) => {
+  const [imageError, setImageError] = useState(false);
   const formatPrice = (value: number) => {
     return new Intl.NumberFormat('ru-RU').format(value);
   };
   return (
     <Link className="flex flex-col gap-[20px] " href={`/catalog/${id}`}>
       <div className="relative w-full h-[277px] 2xl:size-[440px] bg-[#2C2C2C] flex justify-center items-center">
-        {url ? (
-          <Image src={url} layout="fill" objectFit="cover" alt={name} />
+        {id && !imageError ? (
+          <Image
+            src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${id}.png`}
+            layout="fill"
+            objectFit="cover"
+            alt={name}
+            onError={() => setImageError(true)} // Обработчик ошибки
+          />
         ) : (
           <CardPlaceholder />
         )}

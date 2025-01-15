@@ -1,5 +1,6 @@
+'use client';
 import type { FC } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 import Container from '@/src/shared/ui/containers/Container';
@@ -13,6 +14,8 @@ interface Props {
 }
 
 const Product: FC<Props> = ({ product }) => {
+  const [mainImageError, setMainImageError] = useState(false); // Для главного изображения
+  const [thumbnailErrors, setThumbnailErrors] = useState([false, false]);
   if (!product) {
     return <div>Товар не найден</div>;
   }
@@ -26,48 +29,44 @@ const Product: FC<Props> = ({ product }) => {
     <Container className="mt-[95px] grid grid-cols-1 xl:grid-cols-[760px_2fr] 2xl:grid-cols-[1100px_2fr] gap-5 p-5">
       <div className="flex gap-[20px] flex-col sm:flex-row">
         <div className="relative w-full h-auto min-h-[359px] bg-[#2C2C2C] flex justify-center items-center">
-          {product && product.url ? (
+          {product && !mainImageError ? (
             <Image
-              src={product.url}
+              src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${product.id}.png`}
               layout="fill"
               objectFit="cover"
               alt={product.name}
+              onError={() => setMainImageError(true)} // Обработчик ошибки
             />
           ) : (
             <CardPlaceholder />
           )}
         </div>
         <div className="flex flex-row sm:flex-col justify-between gap-5 2xl:gap-[34px]">
-          {product.thumbnailUrls && product.thumbnailUrls.length > 0 ? (
-            product.thumbnailUrls.map((url, index) => (
-              <div
-                key={index}
-                className="relative size-[275px] 2xl:size-[446px] aspect-square bg-gray-200"
-              >
-                {url ? (
-                  <Image
-                    src={url}
-                    layout="fill"
-                    objectFit="cover"
-                    alt={`Thumbnail ${index + 1}`}
-                    className="rounded-md"
-                  />
-                ) : (
-                  <CardPlaceholder />
-                )}
-              </div>
-            ))
-          ) : (
-            // Если нет миниатюр, показываем пустые плейсхолдеры
-            <>
-              <div className="relative w-[275px] h-[275px] 2xl:w-[446px] 2xl:h-[446px] bg-[#2C2C2C] flex justify-center items-center">
+          {[1, 2].map((_, index) => (
+            <div
+              key={index}
+              className="relative size-[275px] 2xl:size-[446px] aspect-square bg-[#2C2C2C] flex items-center justify-center"
+            >
+              {product && !thumbnailErrors[index] ? (
+                <Image
+                  src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${product.id}-${index + 1}.png`}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={`Thumbnail ${index + 1}`}
+                  className="rounded-md"
+                  onError={() =>
+                    setThumbnailErrors((prev) => {
+                      const newErrors = [...prev];
+                      newErrors[index] = true; // Пометить миниатюру с ошибкой
+                      return newErrors;
+                    })
+                  }
+                />
+              ) : (
                 <CardPlaceholder />
-              </div>
-              <div className="relative w-[275px]  h-[275px] 2xl:w-[446px] 2xl:h-[446px] bg-[#2C2C2C] flex justify-center items-center">
-                <CardPlaceholder />
-              </div>
-            </>
-          )}
+              )}
+            </div>
+          ))}
         </div>
       </div>
       <div className="flex flex-col justify-between gap-5 sm:gap-10 xl:gap-28 2xl:gap-[170px]">
