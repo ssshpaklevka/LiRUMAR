@@ -2,6 +2,7 @@
 import type { FC } from 'react';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { LoaderCircle } from 'lucide-react';
 
 import Container from '@/src/shared/ui/containers/Container';
 import CardPlaceholder from '@/src/shared/ui/assets/card-placeholder/CardPlaceholder';
@@ -16,6 +17,8 @@ interface Props {
 const Product: FC<Props> = ({ product }) => {
   const [mainImageError, setMainImageError] = useState(false); // Для главного изображения
   const [thumbnailErrors, setThumbnailErrors] = useState([false, false]);
+  const [isMainImageLoading, setIsMainImageLoading] = useState(true); // Для главного изображения
+  const [isThumbnailsLoading, setIsThumbnailsLoading] = useState([true, true]); // Для миниатюр
   if (!product) {
     return <div>Товар не найден</div>;
   }
@@ -30,13 +33,21 @@ const Product: FC<Props> = ({ product }) => {
       <div className="flex gap-[20px] flex-col sm:flex-row">
         <div className="relative w-full h-auto min-h-[359px] bg-[#2C2C2C] flex justify-center items-center">
           {product && !mainImageError ? (
-            <Image
-              src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${product.id}.png`}
-              layout="fill"
-              objectFit="cover"
-              alt={product.name}
-              onError={() => setMainImageError(true)} // Обработчик ошибки
-            />
+            <>
+              {isMainImageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <LoaderCircle className="w-10 h-10 text-gray-500 animate-spin" />
+                </div>
+              )}
+              <Image
+                src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${product.id}.png`}
+                layout="fill"
+                objectFit="cover"
+                alt={product.name}
+                onError={() => setMainImageError(true)}
+                onLoad={() => setIsMainImageLoading(false)}
+              />
+            </>
           ) : (
             <CardPlaceholder />
           )}
@@ -45,23 +56,37 @@ const Product: FC<Props> = ({ product }) => {
           {[1, 2].map((_, index) => (
             <div
               key={index}
-              className="relative size-[275px] 2xl:size-[446px] aspect-square bg-[#2C2C2C] flex items-center justify-center"
+              className="relative w-full sm:size-[275px] 2xl:size-[446px] aspect-square bg-[#2C2C2C] flex items-center justify-center"
             >
               {product && !thumbnailErrors[index] ? (
-                <Image
-                  src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${product.id}-${index + 1}.png`}
-                  layout="fill"
-                  objectFit="cover"
-                  alt={`Thumbnail ${index + 1}`}
-                  className="rounded-md"
-                  onError={() =>
-                    setThumbnailErrors((prev) => {
-                      const newErrors = [...prev];
-                      newErrors[index] = true; // Пометить миниатюру с ошибкой
-                      return newErrors;
-                    })
-                  }
-                />
+                <>
+                  {isThumbnailsLoading[index] && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <LoaderCircle className="w-8 h-8 text-gray-500 animate-spin" />
+                    </div>
+                  )}
+                  <Image
+                    src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${product.id}-${index + 1}.png`}
+                    layout="fill"
+                    objectFit="cover"
+                    alt={`Thumbnail ${index + 1}`}
+                    className="rounded-md w-full"
+                    onError={() =>
+                      setThumbnailErrors((prev) => {
+                        const newErrors = [...prev];
+                        newErrors[index] = true;
+                        return newErrors;
+                      })
+                    }
+                    onLoad={() =>
+                      setIsThumbnailsLoading((prev) => {
+                        const newLoading = [...prev];
+                        newLoading[index] = false;
+                        return newLoading;
+                      })
+                    }
+                  />
+                </>
               ) : (
                 <CardPlaceholder />
               )}
@@ -79,7 +104,7 @@ const Product: FC<Props> = ({ product }) => {
             <p>{product.description}</p>
             <br />
             {descriptionLines.map((line, index) => (
-              <p key={index} className="mt-2">
+              <p key={index} className="mt-1">
                 一 {line}
               </p>
             ))}

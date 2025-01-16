@@ -1,31 +1,34 @@
 import type { FC } from 'react';
 import React from 'react';
+import Link from 'next/link';
 
 import { Button } from '@/src/shared/ui/button';
 
 const MassProduction: FC = () => {
   return (
-    <div className="px-0 w-full">
-      <div className="hidden lg:block lg:px-0">
+    <div className="px-0 w-full 3xl:flex 3xl:justify-center">
+      <div className="hidden lg:block">
         <div
-          className="h-[642px] w-full bg-cover flex flex-col items-center justify-center gap-[62px]"
+          className="h-[642px] w-full 3xl:w-screen bg-cover flex flex-col items-center justify-center gap-[62px]"
           style={{ backgroundImage: 'url("/img/mass-production/frame.webp")' }}
         >
           <div className="flex flex-col items-center gap-[35px]">
-            <p className="text-[44px] w-[600] text-center leading-[52px] 2xl:text-[79px] 2xl:leading-[95px]">
+            <p className="text-[44px] sm:w-[900px] xl:w-[1100px] 3xl:w-[1380px] text-center leading-[52px] 2xl:text-[79px] 2xl:leading-[95px]">
               Нашим изделиям нет места в массовом производстве
             </p>
-            <p className="w-[470px] text-center leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
+            <p className="w-[470px] 3xl:w-[700px] text-center leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
               Каждая единица изготавливается в ручную, индивидуально под каждого
               клиента
             </p>
           </div>
-          <Button
-            size={'lg'}
-            className="w-[360px] 2xl:w-[576px] 2xl:h-[104px] 2xl:text-[25px] 2xl:leading-[30px]"
-          >
-            Смотреть каталог
-          </Button>
+          <Link href={'/catalog'}>
+            <Button
+              size={'lg'}
+              className="w-[360px] 2xl:w-[576px] 2xl:h-[104px] 2xl:text-[25px] 2xl:leading-[30px]"
+            >
+              Смотреть каталог
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -45,12 +48,14 @@ const MassProduction: FC = () => {
               клиента
             </p>
           </div>
-          <Button
-            size={'lg'}
-            className="w-[236px] h-[65px] text-[14px] leading-[16px] sm:w-[432px] sm:h-[120px] sm:text-[25px] sm:leading-[30px]"
-          >
-            Смотреть каталог
-          </Button>
+          <Link href={'/catalog'}>
+            <Button
+              size={'lg'}
+              className="w-[236px] h-[65px] text-[14px] leading-[16px] sm:w-[432px] sm:h-[120px] sm:text-[25px] sm:leading-[30px]"
+            >
+              Смотреть каталог
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

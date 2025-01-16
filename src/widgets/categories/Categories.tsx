@@ -14,7 +14,7 @@ const Categories: FC = () => {
         link="/catalog"
         filterType="Обувь"
         title="Обувь"
-        className="transition-all duration-300 ease-in-out text-[44px] m-[25px] ml-[40px] md:m-[45px] md:ml-[60px] group-hover:text-[55px] 2xl:text-[59px] 2xl:leading-[52px] 2xl:group-hover:text-[79px]"
+        className="transition-all duration-300 ease-in-out text-[44px] leading-[29px] md:text-[59px] md:leading-[52px] xl:text-[45px] xl:leading-[40px] 3xl:text-[59px] 3xl:leading-[52px] m-[25px] ml-[40px] md:m-[45px] md:ml-[60px] group-hover:text-[55px] group-hover:xl:text-[55px] group-hover:xl:leading-[50px] group-hover:3xl:text-[70px] group-hover:3xl:leading-[62px]"
         classText="text-left md:text-left"
       />
       <CategoryItem
@@ -23,7 +23,7 @@ const Categories: FC = () => {
         link="/catalog"
         filterType="Аксессуары"
         title="Аксессуары"
-        className="transition-all duration-300 ease-in-out text-[44px] m-[25px] mr-[40px] md:m-[45px] md:mr-[60px] group-hover:text-[55px] 2xl:text-[59px] 2xl:leading-[52px] 2xl:group-hover:text-[79px]"
+        className="transition-all duration-300 ease-in-out text-[44px] leading-[29px] md:text-[59px] md:leading-[52px] xl:text-[45px] xl:leading-[40px] 3xl:text-[59px] 3xl:leading-[52px] m-[25px] mr-[40px] md:m-[45px] md:mr-[60px] group-hover:text-[55px] group-hover:xl:text-[55px] group-hover:xl:leading-[50px] group-hover:3xl:text-[70px] group-hover:3xl:leading-[62px]"
         classText="text-left md:text-right"
       />
     </Container>

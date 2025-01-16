@@ -6,9 +6,9 @@ const YourStatus: FC = () => {
   return (
     <div className="flex flex-col relative">
       <div className="h-[550px] flex items-center flex-row pt-[96px] gap-24">
-        <p className="text-[33px] leading-[36px] sm:text-[60px] sm:leading-[66px] md:text-[44px] md:leading-[48px] 2xl:text-[79px] 2xl:leading-[87px]  absolute z-10">
-          <span className="subfont text-[38px] leading-[42px] sm:text-[70px] sm:leading-[76px] md:text-[48px] md:leading-[52px] 2xl:text-[96px] 2xl:leading-[105px] ">
-            -уникальность, <br />
+        <p className="text-[33px] leading-[36px] w-[360px] md:text-[60px] md:leading-[66px] md:w-[660px] xl:text-[45px] xl:leading-[50px] xl:w-[600px] 3xl:text-[79px] 3xl:leading-[87px] 3xl:w-[1060px] absolute z-10">
+          <span className="subfont text-[38px] leading-[42px] md:text-[69px] md:leading-[76px] xl:text-[50px] xl:leading-[55px] 3xl:text-[96px] 3xl:leading-[105px] ">
+            -уникальность,{' '}
           </span>
           которая подчеркивает ваш статус
         </p>

@@ -58,12 +58,12 @@ const LeaveRequest: FC = () => {
       >
         <Input
           placeholder="Ваше имя"
-          className="py-[30px] placeholder:text-[14px] placeholder:leading-[16px] sm:py-[50px] sm:placeholder:text-[25px] sm:placeholder:leading-[30px] md:py-[32px] md:placeholder:text-[16x] md:placeholder:leading-[19px] 2xl:py-[52px] 2xl:placeholder:text-[25px] 2xl:placeholder:leading-[30px]"
+          className="py-[30px] text-[14px] leading-[16px] placeholder:text-[14px] placeholder:leading-[16px] sm:py-[50px] sm:text-[25px] sm:leading-[30px] sm:placeholder:text-[25px] sm:placeholder:leading-[30px] md:py-[32px] md:text-[16px] md:leading-[19px] md:placeholder:text-[16px] md:placeholder:leading-[19px] 2xl:py-[52px] 2xl:text-[25px] 2xl:leading-[30px] 2xl:placeholder:text-[25px] 2xl:placeholder:leading-[30px]"
           {...register('name', { required: 'Введите ваше имя' })}
         />
         <Input
           placeholder="+7 (999) 999-99-99"
-          className="py-[30px] placeholder:text-[14px] placeholder:leading-[16px] sm:py-[50px] sm:placeholder:text-[25px] sm:placeholder:leading-[30px] md:py-[32px] md:placeholder:text-[16x] md:placeholder:leading-[19px] 2xl:py-[52px] 2xl:placeholder:text-[25px] 2xl:placeholder:leading-[30px]"
+          className="py-[30px] text-[14px] leading-[16px] placeholder:text-[14px] placeholder:leading-[16px] sm:py-[50px] sm:text-[25px] sm:leading-[30px] sm:placeholder:text-[25px] sm:placeholder:leading-[30px] md:py-[32px] md:text-[16px] md:leading-[19px] md:placeholder:text-[16px] md:placeholder:leading-[19px] 2xl:py-[52px] 2xl:text-[25px] 2xl:leading-[30px] 2xl:placeholder:text-[25px] 2xl:placeholder:leading-[30px]"
           {...register('phone', {
             required: 'Введите номер телефона',
             pattern: {

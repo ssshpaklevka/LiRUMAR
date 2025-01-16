@@ -37,7 +37,7 @@ const Catalog: FC = () => {
   };
 
   return (
-    <Container className="mx-auto mt-[95px]">
+    <Container className="mx-auto mt-[95px] px-5">
       <div className="flex flex-col justify-between lg:flex-row">
         <h1 className="text-[44px] leading-[44px] sm:text-[59px] sm:leading-[59px] md:text-[74px] md:leading-[74px] 2xl:text-[105px] 2xl:leading-[105px] font-normal">
           Каталог

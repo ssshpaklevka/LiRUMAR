@@ -15,7 +15,7 @@ const HeaderText: FC<Props> = ({ text, className, href }) => {
     <Link
       href={href}
       className={cn(
-        'text-center bg-transparent text-foreground sm:text-[25px] md:text-[14px] 2xl:text-[19px] p-0 h-fit hover:opacity-90 hover:bg-transparent w-[115px]',
+        'text-center bg-transparent text-foreground text-[14px] leading-[12px] md:text-[25px] md:leading-[22px] xl:text-[19px] xl:leading-[16px] 3xl:text-[19px] 3xl:leading-[16px] p-0 h-fit hover:opacity-90 hover:bg-transparent w-[115px]',
         className,
       )}
     >

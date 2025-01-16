@@ -8,13 +8,14 @@ import { cn } from '@/src/shared/lib/utils';
 const Hero: FC = () => {
   return (
     <div
-      className="flex justify-center items-center bg-cover -mt-[60px] pb-[240px] z-[-10] border-b-4 relative"
+      className="flex justify-center items-center bg-cover -mt-[60px] pb-[240px] z-[-10] relative"
       style={{ backgroundImage: 'url("/img/hero/frame.png")' }}
     >
+      {/* Пк версия */}
       <div className="hidden lg:block">
         <div className=" px-5 w-full flex flex-col items-center h-full gap-[63px] relative mt-[240px]">
           <div className="flex justify-center flex-col lg:flex-row lg:gap-0 gap-[73px] items-center relative h-full 2xl:w-full">
-            <div className="z-20 2xl:max-w-[416px] md:max-w-[260px] w-full lg:relative flex h-full">
+            <div className="z-20  md:max-w-[260px] w-full lg:relative flex h-full">
               <p className="w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]  ">
                 Ручная работа из экзотической кожи для тех, кто ценит статус и
                 индивидуальность.
@@ -44,17 +45,19 @@ const Hero: FC = () => {
                 // layout="responsive"
                 width={2000}
                 height={3000}
-                className="h-full w-auto md:block hidden"
-                style={{ marginTop: '-160px' }} // Поднимаем изображение
+                className="h-full w-auto md:block hidden 2xl:h-[759px] 2xl:w-[640px] 3xl:h-[1214px] 3xl:w-[1024px]"
+                style={{ marginTop: '-160px' }}
               />
             </div>
             <CreateRequest
               variant="big"
-              className="flex-none h-[50px] w-[302px] sm:h-[92px] sm:w-[553px] md:h-[88px] md:w-[260px]  2xl:h-[140px] 2xl:w-[416px] 2xl:text-[19px] 2xl:leading-[16px]"
+              className="flex-none h-[50px] w-[302px] sm:h-[92px] sm:w-[553px] md:h-[88px] md:w-[260px]  2xl:h-[140px]  2xl:text-[19px] 2xl:leading-[16px]"
             />
           </div>
         </div>
       </div>
+
+      {/* Мобильная версия */}
       <div className="block lg:hidden">
         <div className="px-5 w-full flex flex-col items-center h-full gap-[63px] relative mt-[240px]">
           <div className="flex justify-center flex-col lg:flex-row items-center relative h-full 2xl:w-full">
@@ -62,7 +65,7 @@ const Hero: FC = () => {
             <div className="z-20 2xl:max-w-[416px] md:max-w-[260px] w-full lg:relative flex">
               <h1
                 className={cn(
-                  'top-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/2 z-[999] text-nowrap',
+                  'top-0 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
                   'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
@@ -88,7 +91,7 @@ const Hero: FC = () => {
                   alt="hero"
                   width={2000}
                   height={3000}
-                  className="h-full w-auto"
+                  className=" w-auto"
                   style={{ marginTop: '-160px' }}
                 />
                 {/* Текст под картинкой */}
@@ -101,7 +104,7 @@ const Hero: FC = () => {
               {/* Кнопка, растягивающаяся по ширине изображения */}
               <CreateRequest
                 variant="big"
-                className="flex-none h-[50px] sm:h-[92px] sm:w-full md:h-[88px] w-full"
+                className="flex-none h-[50px] sm:h-[92px] sm:w-full md:h-[88px] w-full z-50"
               />
             </div>
           </div>

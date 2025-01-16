@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -59,6 +62,15 @@ export default {
       gridTemplateRows: {
         'custom-footer': 'auto 91px repeat(3, 50px)',
         'custom-footer-md': 'auto 110px repeat(3, 70px)',
+      },
+      animation: {
+        spin: 'spin 1s linear infinite', // Кастомная анимация
+      },
+      keyframes: {
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
     },
   },

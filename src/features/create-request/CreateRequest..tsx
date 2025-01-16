@@ -120,7 +120,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
           ) : variant === 'text' ? (
             <Button
               onClick={handleOpenFirstDialog}
-              className="bg-transparent text-foreground text-[14px] 2xl:text-[19px] p-0 h-fit hover:opacity-90 hover:bg-transparent"
+              className="bg-transparent text-foreground text-[14px] leading-[12px] md:text-[25px] md:leading-[22px] xl:text-[19px] xl:leading-[16px] 3xl:text-[19px] 3xl:leading-[16px] p-0 h-fit hover:opacity-90 hover:bg-transparent"
             >
               Оставить заявку
             </Button>
@@ -144,10 +144,10 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
         </DialogTrigger>
         <DialogContent className="bg-foreground">
           <DialogHeader>
-            <DialogTitle className="text-[33px] leading-[33px] font-normal text-background text-center mb-[10px]">
+            <DialogTitle className="text-[25px] leading-[25px] sm:text-[44px] sm:leading-[44px] md:text-[33px] md:leading-[33px] xl:text-[44px] xl:leading-[44px] font-normal text-background text-center mb-[10px]">
               Оставьте заявку
             </DialogTitle>
-            <DialogDescription className="text-[16px] leading-[24px] text-background text-center">
+            <DialogDescription className="text-[14px] leading-[21px] sm:text-[25px] sm:leading-[37px] md:text-[16px] md:leading-[24px] xl:text-[25px] xl:leading-[37px] text-background text-center">
               Заполните поля, после чего с вами свяжется менеджер
             </DialogDescription>
           </DialogHeader>
@@ -211,7 +211,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
               </Button>
             </DialogFooter>
           </form>
-          <p className="text-center text-[12px] leading-[18px] text-background opacity-[60%]">
+          <p className="text-center text-[10px] leading-[15px] sm:text-[19px] sm:leading-[29px] md:text-[12px] md:leading-[18px] xl:text-[19px] xl:leading-[28px] text-background opacity-[60%]">
             Нажимая кнопку «Отправить» вы соглашаетесь с{' '}
             <Link href={'/privacy'} onClick={handleCloseFirstDialog}>
               пользовательским соглашением, политикой конфиденциальности
@@ -227,10 +227,10 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
         >
           <div className="border border-white p-20">
             <DialogHeader>
-              <DialogTitle className="text-white leading-[33px] font-normal text-[33px] text-center mb-[10px]">
+              <DialogTitle className="text-white text-[25px] leading-[25px] sm:text-[33px] sm:leading-[33px] md:text-[33px] md:leading-[33px] xl:text-[32px] xl:leading-[34px] font-normal text-center mb-[10px]">
                 Спасибо за заказ!
               </DialogTitle>
-              <DialogDescription className="text-white leading-[19.2px] text-[16px] text-center">
+              <DialogDescription className="text-white text-[14px] leading-[16px] sm:text-[20px] sm:leading-[25px] md:text-[16px] md:leading-[19px] xl:text-[22px] xl:leading-[28px] text-center">
                 В скором времени с вами свяжется менеджер
               </DialogDescription>
             </DialogHeader>

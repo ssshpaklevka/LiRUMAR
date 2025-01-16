@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { LoaderCircle } from 'lucide-react';
 
 import CardPlaceholder from '../assets/card-placeholder/CardPlaceholder';
 
@@ -15,20 +16,29 @@ interface Props {
 
 const ProductCard: FC<Props> = ({ id, name, price }) => {
   const [imageError, setImageError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const formatPrice = (value: number) => {
     return new Intl.NumberFormat('ru-RU').format(value);
   };
   return (
-    <Link className="flex flex-col gap-[20px] " href={`/catalog/${id}`}>
-      <div className="relative w-full h-[277px] 2xl:size-[440px] bg-[#2C2C2C] flex justify-center items-center">
+    <Link className="flex flex-col gap-[20px]" href={`/catalog/${id}`}>
+      <div className="relative w-full h-[277px] 2xl:h-[433px] bg-[#2C2C2C] flex justify-center items-center">
         {id && !imageError ? (
-          <Image
-            src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${id}.png`}
-            layout="fill"
-            objectFit="cover"
-            alt={name}
-            onError={() => setImageError(true)} // Обработчик ошибки
-          />
+          <>
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <LoaderCircle className="w-10 h-10 text-gray-500 animate-spin" />
+              </div>
+            )}
+            <Image
+              src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${id}.png`}
+              layout="fill"
+              objectFit="cover"
+              alt={name}
+              onError={() => setImageError(true)}
+              onLoad={() => setIsLoading(false)}
+            />
+          </>
         ) : (
           <CardPlaceholder />
         )}

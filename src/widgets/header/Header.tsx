@@ -6,7 +6,7 @@ import HeaderText from '@/src/shared/ui/header-text/HeaderText';
 
 const Header: FC = () => {
   return (
-    <header className="flex flex-row-reverse  md:flex-row mx-auto justify-between px-5 mt-6">
+    <header className="flex flex-row-reverse md:flex-row mx-auto z-40 justify-between px-5 mt-6 ">
       <HeaderText
         className="text-center md:text-left"
         href="/catalog"

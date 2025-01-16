@@ -71,7 +71,7 @@ const ProductList: FC<ProductListProps> = ({ filters }) => {
   if (loading) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <LoaderCircle />
+        <LoaderCircle className="w-10 h-10 text-gray-500 animate-spin" />
       </div>
     );
   }
