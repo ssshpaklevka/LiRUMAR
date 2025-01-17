@@ -8,7 +8,7 @@ import { cn } from '@/src/shared/lib/utils';
 const Hero: FC = () => {
   return (
     <div
-      className="flex justify-center items-center bg-cover -mt-[60px] pb-[240px] z-[-10] relative"
+      className="flex justify-center items-center bg-cover -mt-[60px] sm:pb-[140px] pb-[240px] z-[-10] relative"
       style={{ backgroundImage: 'url("/img/hero/frame.png")' }}
     >
       {/* Пк версия */}
@@ -16,19 +16,19 @@ const Hero: FC = () => {
         <div className=" px-5 w-full flex flex-col items-center h-full gap-[63px] relative mt-[240px]">
           <div className="flex justify-center flex-col lg:flex-row lg:gap-0 gap-[73px] items-center relative h-full 2xl:w-full">
             <div className="z-20  md:max-w-[260px] w-full lg:relative flex h-full">
-              <p className="w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]  ">
+              <p className="w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  ">
                 Ручная работа из экзотической кожи для тех, кто ценит статус и
                 индивидуальность.
               </p>
               <h1
                 className={cn(
-                  'left-0 top-0  lg:top-[calc(50%-170px)]  2xl:top-[calc(50%-200px)] -translate-y-1/2 z-[999] text-nowrap',
-                  'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
+                  'left-0 top-0 lg:top-[calc(50%-170px)]  2xl:top-[calc(50%-200px)] -translate-y-1/2 z-[999] text-nowrap',
+                  'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 3xl:text-[105px] 3xl:leading-[105px] 2xl:font-normal',
                 )}
               >
                 <span
                   className={cn(
-                    'subfont text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 2xl:text-[105px] 2xl:leading-[105px]',
+                    'subfont text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 3xl:text-[105px] 3xl:leading-[105px]',
                   )}
                 >
                   LiRUMAR{' '}
@@ -66,12 +66,12 @@ const Hero: FC = () => {
               <h1
                 className={cn(
                   'top-0 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
-                  'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
+                  'absolute font-normal tracking-[-1px] text-[33px] leading-[33px]  sm:text-[44px] sm:leading-[44px]  md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
                 <span
                   className={cn(
-                    'subfont text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 2xl:text-[105px] 2xl:leading-[105px]',
+                    'subfont text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px]  md:text-[61px] md:leading-[61px] tracking-[-0.5px] 2xl:text-[105px] 2xl:leading-[105px]',
                   )}
                 >
                   LiRUMAR{' '}
@@ -83,7 +83,7 @@ const Hero: FC = () => {
             </div>
 
             {/* Блок с картинкой */}
-            <div className="flex flex-col items-center w-auto  gap-[40px] sm:gap-[73px] ">
+            <div className="flex flex-col items-center w-auto gap-[40px] sm:gap-[73px] ">
               {/* Блок с картинкой */}
               <div className="max-h-[calc(100vh-11.111vh)] relative w-auto">
                 <Image
@@ -91,11 +91,11 @@ const Hero: FC = () => {
                   alt="hero"
                   width={2000}
                   height={3000}
-                  className=" w-auto"
+                  className=" w-auto md:w-[661px] md:h-[784px]"
                   style={{ marginTop: '-160px' }}
                 />
                 {/* Текст под картинкой */}
-                <p className="absolute bottom-5 right-5 text-right text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
+                <p className="absolute bottom-5 right-5 text-right w-[314px] sm:w-[390px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
                   Ручная работа из экзотической кожи для тех, кто ценит статус и
                   индивидуальность.
                 </p>
@@ -104,7 +104,7 @@ const Hero: FC = () => {
               {/* Кнопка, растягивающаяся по ширине изображения */}
               <CreateRequest
                 variant="big"
-                className="flex-none h-[50px] sm:h-[92px] sm:w-full md:h-[88px] w-full z-50"
+                className="flex-none h-[50px]  md:h-[88px] w-full z-50"
               />
             </div>
           </div>

@@ -13,7 +13,7 @@ const MassProduction: FC = () => {
           style={{ backgroundImage: 'url("/img/mass-production/frame.webp")' }}
         >
           <div className="flex flex-col items-center gap-[35px]">
-            <p className="text-[44px] sm:w-[900px] xl:w-[1100px] 3xl:w-[1380px] text-center leading-[52px] 2xl:text-[79px] 2xl:leading-[95px]">
+            <p className="text-[44px] sm:w-[850px] xl:w-[850px] 3xl:w-[1380px] text-center leading-[52px] 2xl:text-[79px] 2xl:leading-[95px]">
               Нашим изделиям нет места в массовом производстве
             </p>
             <p className="w-[470px] 3xl:w-[700px] text-center leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
@@ -34,12 +34,12 @@ const MassProduction: FC = () => {
 
       <div className="block lg:hidden lg:px-0">
         <div
-          className="h-[642px] sm:h-[1176px] w-full bg-cover flex flex-col items-center justify-center gap-[62px]"
+          className="h-[642px] sm:h-[1176px] w-full bg-cover bg-black flex flex-col items-center justify-center gap-[37px] md:gap-[60px] xl:gap-[60px] 3xl:gap-[80px]"
           style={{
             backgroundImage: 'url("/img/mass-production/frameph.webp")',
           }}
         >
-          <div className="flex flex-col items-center gap-[35px]">
+          <div className="flex flex-col items-center gap-[30px] md:gap-[60px] xl:gap-[36px] 3xl:gap-[60px]">
             <p className="text-[33px] leading-[40px] w-[330] sm:text-[59px] sm:leading-[70px] sm:w-[620px] text-center">
               Нашим изделиям нет места в массовом производстве
             </p>

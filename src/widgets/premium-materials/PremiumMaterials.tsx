@@ -53,13 +53,13 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
       style={{ justifyItems: 'center' }}
       className="grid grid-cols-1 md:grid-cols-2 gap-[23px] 2xl:gap-[37px]"
     >
-      <div className="w-full flex flex-col justify-end gap-[60px] sm:gap-[112px] md:gap-[84px]">
-        <div className="flex flex-col gap-[30px] sm:gap-[40px] md:gap-[45px]">
-          <p className="text-[14px] leading-[19px] sm:text-[25px] sm:leading-[35px] md:text-[16px] md:leading-[22px] 2xl:text-[25px] 2xl:leading-[35px] ">
+      <div className="w-full flex flex-col justify-end gap-[60px] md:gap-[112px]">
+        <div className="flex flex-col gap-[30px] sm:gap-[40px] md:gap-[45px] 3xl:gap-[65px]">
+          <p className="lg:w-[488px] 2xl:w-[755px] text-[14px] leading-[19px] sm:text-[25px] sm:leading-[35px] md:text-[16px] md:leading-[22px] 2xl:text-[25px] 2xl:leading-[35px] ">
             Наши изделия создаются исключительно из натуральных премиум
             материалов, таких как
           </p>
-          <h1 className="subfont font-normal text-[45px] leading-[52px] sm:text-[95px] sm:leading-[92px] md:text-[59px] md:leading-[52px] 2xl:text-[105px] 2xl:leading-[92px] ">
+          <h1 className="subfont font-normal text-[45px] leading-[38px] sm:text-[95px] sm:leading-[92px] md:text-[59px] md:leading-[52px] 2xl:text-[105px] 2xl:leading-[92px] ">
             {renderHeadingWithBreak(mainImage?.heading)}
           </h1>
         </div>
@@ -72,7 +72,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
             alt={mainImage?.heading}
           />
         </div>
-        <div className=" hidden md:block">
+        <div className="hidden md:block">
           <div className="flex justify-between w-full flex-row gap-[14px]">
             {currentImageData.slice(1).map((item, index) => (
               <div key={index}>
@@ -83,7 +83,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
                   height={178}
                   alt={item.heading}
                   onClick={() => handleSmallImageClick(index + 1)}
-                  className="aspect-square h-full w-full 2xl:size-[284px]"
+                  className="aspect-square h-full w-full sm:size-[120px] md:size-[124px] lg:size-[174px] xl:size-[224px] 2xl:size-[264px] 3xl:size-[300px]"
                   style={{ cursor: 'pointer' }}
                 />
               </div>

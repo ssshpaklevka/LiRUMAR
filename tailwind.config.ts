@@ -61,7 +61,7 @@ export default {
       },
       gridTemplateRows: {
         'custom-footer': 'auto 91px repeat(3, 50px)',
-        'custom-footer-md': 'auto 110px repeat(3, 70px)',
+        'custom-footer-md': 'auto 100px repeat(3, 50px)',
       },
       animation: {
         spin: 'spin 1s linear infinite', // Кастомная анимация

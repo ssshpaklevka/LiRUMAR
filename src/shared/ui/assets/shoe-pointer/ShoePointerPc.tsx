@@ -5,7 +5,7 @@ const ShoePointerPc: FC = () => {
   return (
     <svg
       width="641"
-      height="411"
+      height="611"
       viewBox="0 0 641 411"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

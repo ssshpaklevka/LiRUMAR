@@ -100,7 +100,7 @@ const Product: FC<Props> = ({ product }) => {
         </h2>
 
         <div className="text-[14px] leading-[21px] sm:text-[25px] sm:leading-[37px] md:text-[16px] md:leading-[24px] 2xl:text-[25px] 2xl:leading-[37px] opacity-[60%]">
-          <div>
+          <div className="pb-[6px]">
             <p>{product.description}</p>
             <br />
             {descriptionLines.map((line, index) => (
@@ -119,7 +119,7 @@ const Product: FC<Props> = ({ product }) => {
             variant="buy"
             className="text-[16px] leading-[19px] h-[51px] sm:text-[25px] sm:leading-[30px] sm:h-[94px] md:text-[16px] md:leading-[19px] md:h-[47px] 2xl:text-[25px] 2xl:leading-[30px] 2xl:h-[75px]"
           />
-          <div className="flex justify-between gap-10 md:gap-5">
+          <div className="flex justify-between gap-[22px] md:gap-10 xl:gap-5 3xl:gap-8">
             <Button
               variant="outline"
               className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px] 2xl:text-[19px] 2xl:leading-[23px] 2xl:h-[75px] border-[#D9D9D9] w-full justify-center gap-[35px]"

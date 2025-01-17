@@ -45,11 +45,12 @@ interface Option {
 
 interface Props {
   title: string;
+  className?: string;
   filterType: 'material' | 'color' | 'type'; // Указываем корректные значения
   onChange: (selectedValues: string[]) => void;
 }
 
-const Combobox: FC<Props> = ({ title, filterType, onChange }) => {
+const Combobox: FC<Props> = ({ title, className, filterType, onChange }) => {
   const [open, setOpen] = useState(false);
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
   const [options, setOptions] = useState<Option[]>([]);
@@ -81,7 +82,7 @@ const Combobox: FC<Props> = ({ title, filterType, onChange }) => {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
+      <PopoverTrigger className={className} asChild>
         <Button
           variant="destructive"
           role="combobox"

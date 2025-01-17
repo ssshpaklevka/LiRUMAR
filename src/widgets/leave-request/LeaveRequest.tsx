@@ -48,7 +48,7 @@ const LeaveRequest: FC = () => {
           </span>
           создайте свой уникальный стиль с LiRUMAR
         </p>
-        <p className="text-[14px] leading-[19px] sm:text-[25px] sm:leading-[35px] md:text-[16px] md:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
+        <p className="w-[240px] sm:w-[440px] md:w-full text-[14px] leading-[19px] sm:text-[25px] sm:leading-[35px] md:text-[16px] md:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
           Заполните форму, и мы свяжемся с вами в течение дня
         </p>
       </div>
