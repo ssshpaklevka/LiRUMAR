@@ -6,7 +6,7 @@ const YourStatus: FC = () => {
   return (
     <div className="flex flex-col relative">
       <div className="h-[450px] flex items-center flex-row md:pt-[96px] gap-24">
-        <p className="text-[33px] leading-[36px] w-[380px] md:text-[60px] md:leading-[66px] md:w-[660px] xl:text-[45px] xl:leading-[50px] xl:w-[600px] 3xl:text-[79px] 3xl:leading-[87px] 3xl:w-[1060px] absolute z-10">
+        <p className="text-[33px] leading-[36px] max-w-[380px] md:text-[60px] md:leading-[66px] md:w-[660px] xl:text-[45px] xl:leading-[50px] xl:w-[600px] 3xl:text-[79px] 3xl:leading-[87px] 3xl:w-[1060px] absolute z-10">
           <span className="subfont text-[38px] leading-[42px] md:text-[69px] md:leading-[76px] xl:text-[50px] xl:leading-[55px] 3xl:text-[96px] 3xl:leading-[105px] ">
             -уникальность,{' '}
           </span>

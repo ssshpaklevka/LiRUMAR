@@ -36,7 +36,7 @@ const MassProduction: FC = () => {
         <div
           className="h-[642px] sm:h-[1176px] w-full bg-cover bg-black flex flex-col items-center justify-center gap-[37px] md:gap-[60px] xl:gap-[60px] 3xl:gap-[80px]"
           style={{
-            backgroundImage: 'url("/img/mass-production/frameph.webp")',
+            backgroundImage: 'url("/img/mass-production/frameph.png")',
           }}
         >
           <div className="flex flex-col items-center gap-[30px] md:gap-[60px] xl:gap-[36px] 3xl:gap-[60px]">
