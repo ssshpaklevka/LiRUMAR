@@ -7,13 +7,15 @@ import { cn } from '@/src/shared/lib/utils';
 
 const Hero: FC = () => {
   return (
-    <div
-      className="flex justify-center items-center bg-cover -mt-[60px] pb-[120px] sm:pb-[140px] md:pb-[240px] z-[-10] relative"
-      style={{ backgroundImage: 'url("/img/hero/frame.webp")' }}
-    >
+    <div className="relative flex justify-center items-center -mt-[60px] pb-[120px] sm:pb-[140px] md:pb-[240px]">
+      {/* Фоновый слой */}
+      <div
+        className="absolute inset-0 -z-10 bg-cover pointer-events-none"
+        style={{ backgroundImage: 'url("/img/hero/frame.webp")' }}
+      />
       {/* Пк версия */}
       <div className="hidden lg:block">
-        <div className=" px-5 w-full flex flex-col items-center h-full gap-[63px] relative mt-[240px]">
+        <div className=" px-5 w-full flex flex-col items-center h-full gap-[63px] relative mt-[300px]">
           <div className="flex justify-center flex-col lg:flex-row lg:gap-0 gap-[73px] items-center relative h-full 2xl:w-full">
             <div className="z-20  md:max-w-[260px] w-full lg:relative flex h-full">
               <p className="w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  ">
@@ -48,17 +50,19 @@ const Hero: FC = () => {
                 style={{ marginTop: '-160px' }}
               />
             </div>
-            <CreateRequest
-              variant="big"
-              className="flex-none h-[50px] w-[302px] sm:h-[92px] sm:w-[553px] md:h-[88px] md:w-[260px]  2xl:h-[140px]  2xl:text-[19px] 2xl:leading-[16px]"
-            />
+            <div className="z-50">
+              <CreateRequest
+                variant="big"
+                className="flex-none h-[50px] w-[302px] sm:h-[92px] sm:w-[553px] md:h-[88px] md:w-[260px] 2xl:h-[140px] 2xl:text-[19px] 2xl:leading-[16px] cursor-pointer"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Мобильная версия */}
       <div className="block lg:hidden">
-        <div className="px-5 w-full flex flex-col items-center h-full gap-[63px] relative mt-[240px]">
+        <div className="px-5 w-full flex flex-col items-center h-full gap-[63px] relative mt-[270px]">
           <div className="flex justify-center flex-col lg:flex-row items-center relative h-full 2xl:w-full">
             {/* Левый блок с текстами */}
             <div className="z-20 2xl:max-w-[416px] md:max-w-[260px] w-full lg:relative flex">
@@ -100,18 +104,20 @@ const Hero: FC = () => {
               </div>
 
               {/* Кнопка, растягивающаяся по ширине изображения */}
-              <CreateRequest
-                variant="big"
-                className="flex-none h-[50px]  md:h-[88px] w-full z-50"
-              />
+              <div className="z-50 w-full">
+                <CreateRequest
+                  variant="big"
+                  className="flex-none h-[50px] md:h-[88px] w-full cursor-pointer"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="max-w-screen overflow-x-hidden h-[450px] flex justify-center items-center absolute -bottom-[0px] z-[0] transform translate-y-1/2">
         <div
-          className="w-[100vw] h-[300px] bg-background blur-[50px]  "
-          style={{ transform: '', borderRadius: '0%' }}
+          className="w-[100vw]  bg-background blur-[50px]"
+          style={{ borderRadius: '0%' }}
         ></div>
       </div>
     </div>
