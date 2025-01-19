@@ -77,13 +77,12 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
             {currentImageData.slice(1).map((item, index) => (
               <div key={index}>
                 <Image
-                  key={index}
                   src={item.imageUrl}
                   width={177}
                   height={178}
                   alt={item.heading}
                   onClick={() => handleSmallImageClick(index + 1)}
-                  className="aspect-square h-full w-full sm:size-[120px] md:size-[124px] lg:size-[174px] xl:size-[224px] 2xl:size-[264px] 3xl:size-[300px]"
+                  className={`aspect-square h-full w-full sm:size-[120px] md:size-[124px] lg:size-[174px] xl:size-[224px] 2xl:size-[264px] 3xl:size-[300px] ${mainImage?.imageUrl === item.imageUrl ? '' : 'filter brightness-50'}`}
                   style={{ cursor: 'pointer' }}
                 />
               </div>
@@ -104,7 +103,6 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
         {currentImageData.slice(1).map((item, index) => (
           <div key={index}>
             <Image
-              key={index}
               src={item.imageUrl}
               width={177}
               height={178}

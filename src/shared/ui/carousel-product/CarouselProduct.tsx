@@ -10,12 +10,8 @@ import { Carousel, CarouselContent, CarouselItem } from '../carousel';
 import ProductCard from '../product-card/ProductCard';
 import supabase from '../../api/SupaBase';
 
-// Функция для получения случайных товаров
 const getRandomProducts = async (): Promise<Product[]> => {
-  const { data, error } = await supabase
-    .from('products')
-    .select('*') // Получаем товары в случайном порядке
-    .limit(10); // Ограничим количество до 10 для удобства
+  const { data, error } = await supabase.from('products').select('*').limit(10);
 
   if (error || !data) {
     return [];
@@ -26,7 +22,7 @@ const getRandomProducts = async (): Promise<Product[]> => {
 
 const CarouselProduct: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true); // Чтобы показать лоадер, пока данные загружаются
+  const [loading, setLoading] = useState(true);
   const [api, setApi] = useState<CarouselApi>();
 
   const scrollPrev = React.useCallback(() => {
@@ -44,16 +40,16 @@ const CarouselProduct: FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
-      const randomProducts = await getRandomProducts(); // Запрашиваем случайные товары
-      setProducts(randomProducts); // Сохраняем их в состояние
+      const randomProducts = await getRandomProducts();
+      setProducts(randomProducts);
       setLoading(false);
     };
 
     fetchProducts();
-  }, []); // Запрос выполняется один раз при монтировании компонента
+  }, []);
 
   if (loading) {
-    return <div>Загрузка...</div>; // Лоадер, пока данные загружаются
+    return <div>Загрузка...</div>;
   }
 
   return (

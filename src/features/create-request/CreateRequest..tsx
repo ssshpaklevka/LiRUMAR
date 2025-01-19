@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable indent */
 'use client';
-/* eslint-disable no-console */
+
 /* eslint-disable no-undef */
 import process from 'process';
 
@@ -40,7 +41,6 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
   const [isFirstDialogOpen, setIsFirstDialogOpen] = useState(false);
   const [isSecondDialogOpen, setIsSecondDialogOpen] = useState(false);
 
-  // Используем react-hook-form
   const {
     register,
     handleSubmit,
@@ -54,7 +54,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
 
   const handleCloseFirstDialog = () => {
     setIsFirstDialogOpen(false);
-    reset(); // Сбросить данные формы при закрытии
+    reset();
   };
 
   const handleOpenSecondDialog = () => {
@@ -66,7 +66,6 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
     setIsSecondDialogOpen(false);
   };
 
-  // Обработчик отправки формы
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
     const payload = product
       ? {
@@ -80,8 +79,6 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
       : {
           ...data,
         };
-
-    console.log(payload);
 
     try {
       const response = await fetch('/api/order', {
@@ -98,11 +95,10 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
         alert('Ошибка отправки заказа.');
       }
     } catch (error) {
-      console.error('Ошибка при отправке формы:', error);
       alert('Ошибка при отправке заказа.');
     }
 
-    reset(); // Очистить форму после отправки
+    reset();
   };
 
   return (

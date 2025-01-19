@@ -12,7 +12,7 @@ const Main: FC = () => {
   return (
     <main className="flex flex-col">
       <Hero />
-      <div className="px-5 flex items-center flex-col gap-[200px]">
+      <div className="px-5 flex items-center flex-col gap-[120px] md:gap-[200px]">
         <Categories />
         <Uniqueness />
         <PremiumMaterials imageData={ImagePremium} />

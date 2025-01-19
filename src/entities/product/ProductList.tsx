@@ -12,7 +12,6 @@ interface Filters {
   color: string[];
 }
 
-// Интерфейс для продукта
 interface Product {
   id: string;
   name: string;
@@ -21,11 +20,10 @@ interface Product {
   price: number;
   color: string;
   material: string;
-  type: string; // Ассортимент
-  url: string; // Ссылка на изображение продукта
+  type: string;
+  url: string;
 }
 
-// Пропсы для компонента ProductList
 interface ProductListProps {
   filters: Filters;
 }
@@ -33,7 +31,6 @@ interface ProductListProps {
 const getProductList = async (filters: Filters): Promise<Product[]> => {
   let query = supabase.from('products').select('*');
 
-  // Применяем фильтрацию на основе выбранных значений
   if (filters.color.length > 0) {
     query = query.in('color', filters.color);
   }
@@ -41,7 +38,7 @@ const getProductList = async (filters: Filters): Promise<Product[]> => {
     query = query.in('material', filters.material);
   }
   if (filters.type.length > 0) {
-    query = query.in('type', filters.type); // Предположим, что "type" соответствует ассортименту
+    query = query.in('type', filters.type);
   }
 
   const { data, error } = await query;
@@ -50,7 +47,7 @@ const getProductList = async (filters: Filters): Promise<Product[]> => {
     return [];
   }
 
-  return data as Product[]; // Явно указываем, что возвращаемые данные соответствуют массиву Product
+  return data as Product[];
 };
 
 const ProductList: FC<ProductListProps> = ({ filters }) => {
@@ -66,7 +63,7 @@ const ProductList: FC<ProductListProps> = ({ filters }) => {
     };
 
     fetchProducts();
-  }, [filters]); // Перезапуск запроса при изменении фильтров
+  }, [filters]);
 
   if (loading) {
     return (

@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
-/* eslint-disable no-console */
+
 /* eslint-disable no-undef */
 import type { FC } from 'react';
 import React from 'react';
@@ -32,11 +33,10 @@ const LeaveRequest: FC = () => {
         alert('Ошибка отправки заказа.');
       }
     } catch (error) {
-      console.error('Ошибка при отправке формы:', error);
       alert('Ошибка при отправке заказа.');
     }
 
-    reset(); // Очистить форму после отправки
+    reset();
   };
 
   return (

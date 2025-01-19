@@ -15,29 +15,6 @@ import {
 import { cn } from '../../lib/utils';
 import { getFilterOptions } from '../../api/get-filters/GetFilters';
 
-// const options = {
-//   assortment: [
-//     { value: 'assortment1', label: 'Ассортимент1' },
-//     { value: 'assortment2', label: 'Ассортимент2' },
-//     { value: 'assortment3', label: 'Ассортимент3' },
-//   ],
-//   material: [
-//     { value: 'cotton', label: 'Крокодил' },
-//     { value: 'polyester', label: 'Змея' },
-//   ],
-//   color: [
-//     { value: 'red', label: 'Красный' },
-//     { value: 'green', label: 'Белый' },
-//     { value: 'blue', label: 'Черный' },
-//   ],
-// };
-
-// const titleMap = {
-//   Ассортимент: 'assortment',
-//   Материал: 'material',
-//   Цвет: 'color',
-// };
-
 interface Option {
   value: string;
   label: string;
@@ -46,7 +23,7 @@ interface Option {
 interface Props {
   title: string;
   className?: string;
-  filterType: 'material' | 'color' | 'type'; // Указываем корректные значения
+  filterType: 'material' | 'color' | 'type';
   onChange: (selectedValues: string[]) => void;
 }
 
@@ -56,7 +33,6 @@ const Combobox: FC<Props> = ({ title, className, filterType, onChange }) => {
   const [options, setOptions] = useState<Option[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Загружаем данные из Supabase
   useEffect(() => {
     const fetchOptions = async () => {
       setLoading(true);
@@ -75,7 +51,7 @@ const Combobox: FC<Props> = ({ title, className, filterType, onChange }) => {
         ? prev.filter((item) => item.value !== option.value)
         : [...prev, option];
 
-      onChange(newSelectedValues.map((item) => item.value)); // Передаем value в родительский компонент
+      onChange(newSelectedValues.map((item) => item.value));
       return newSelectedValues;
     });
   };

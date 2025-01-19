@@ -15,10 +15,10 @@ interface Props {
 }
 
 const Product: FC<Props> = ({ product }) => {
-  const [mainImageError, setMainImageError] = useState(false); // Для главного изображения
+  const [mainImageError, setMainImageError] = useState(false);
   const [thumbnailErrors, setThumbnailErrors] = useState([false, false]);
-  const [isMainImageLoading, setIsMainImageLoading] = useState(true); // Для главного изображения
-  const [isThumbnailsLoading, setIsThumbnailsLoading] = useState([true, true]); // Для миниатюр
+  const [isMainImageLoading, setIsMainImageLoading] = useState(true);
+  const [isThumbnailsLoading, setIsThumbnailsLoading] = useState([true, true]);
   if (!product) {
     return <div>Товар не найден</div>;
   }

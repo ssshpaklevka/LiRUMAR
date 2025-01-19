@@ -11,9 +11,8 @@ const Catalog: FC = () => {
   const searchParams = useSearchParams();
   const category = searchParams?.get('category');
 
-  // Используем состояние для хранения выбранных фильтров
   const [filters, setFilters] = useState({
-    type: [] as string[], // Ожидаем массив строк
+    type: [] as string[],
     material: [] as string[],
     color: [] as string[],
   });
@@ -21,7 +20,7 @@ const Catalog: FC = () => {
     if (typeof category === 'string') {
       setFilters((prevFilters) => ({
         ...prevFilters,
-        type: [category], // Устанавливаем категорию как фильтр по типу (массив строк)
+        type: [category],
       }));
     }
   }, [category]);

@@ -4,10 +4,10 @@ export interface ImageDataItem {
 }
 
 const ImagePremium: ImageDataItem[] = [
-  { imageUrl: '/img/prem-materials/shoes.png', heading: 'КОЖА КРОКОДИЛА' },
-  { imageUrl: '/img/prem-materials/shoes3.png', heading: 'КОЖА КОГО-ТО' },
-  { imageUrl: '/img/uniqueness/sneakers.png', heading: 'КОЖА КОГО-ТО' },
-  { imageUrl: '/img/uniqueness/shoes.png', heading: 'КОЖА КОГО-ТО' },
+  { imageUrl: '/img/prem-materials/shoes1.webp', heading: 'КОЖА КРОКОДИЛА' },
+  { imageUrl: '/img/prem-materials/shoes2.webp', heading: 'КОЖА ПИТОНА' },
+  { imageUrl: '/img/prem-materials/shoes3.webp', heading: 'КОЖА ПИТОНА' },
+  { imageUrl: '/img/prem-materials/shoes4.webp', heading: 'КОЖА КРОКОДИЛА' },
 ];
 
 export default ImagePremium;

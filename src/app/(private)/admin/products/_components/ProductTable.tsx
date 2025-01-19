@@ -41,26 +41,7 @@ interface ProductTableProps {
 
 const ProductTable: FC<ProductTableProps> = ({ products }) => {
   const [productos, setProductos] = useState<Product[]>(products);
-  // const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [isAddDialogOpen, setIsAddDialogOpen] = useState<boolean>(false);
-  // const [isEditDialogOpen, setIsEditDialogOpen] = useState<boolean>(false);
-
-  //   const handleAddProduct = (newProduct: Omit<Product, 'id'>) => {
-  //     const productWithId: Product = { ...newProduct, id: Date.now().toString() };
-  //     setProducts((prevProducts) => [...prevProducts, productWithId]);
-  //     setIsAddDialogOpen(false);
-  //   };
-
-  //   const handleImportExcel = async (event: ChangeEvent<HTMLInputElement>) => {
-  //     const file = event.target.files?.[0];
-  //     if (file) {
-  //       const importedProducts = await readExcelFile(file);
-  //       setProducts((prevProducts) => [
-  //         ...prevProducts,
-  //         ...(importedProducts as Product[]),
-  //       ]);
-  //     }
-  //   };
 
   return (
     <Container className=" mx-auto">
@@ -73,10 +54,8 @@ const ProductTable: FC<ProductTableProps> = ({ products }) => {
             <DialogHeader>
               <DialogTitle>Добавить новый продукт</DialogTitle>
             </DialogHeader>
-            {/* <AddProductForm /> */}
           </DialogContent>
         </Dialog>
-        {/* <Input type="file" accept=".xlsx, .xls" onChange={handleImportExcel} /> */}
       </div>
       <Table>
         <TableHeader>

@@ -12,12 +12,9 @@ type Product = {
 };
 
 export const getFilterOptions = async (
-  filterType: 'color' | 'material' | 'type', // фильтры: цвет, материал, ассортимент
+  filterType: 'color' | 'material' | 'type',
 ): Promise<FilterOption[]> => {
-  // Получаем все данные из таблицы товаров
-  const { data, error } = await supabase
-    .from('products') // Замените 'products' на имя вашей таблицы
-    .select(filterType); // Извлекаем только нужный столбец
+  const { data, error } = await supabase.from('products').select(filterType);
 
   if (error) {
     return [];
@@ -25,14 +22,13 @@ export const getFilterOptions = async (
 
   if (!data) return [];
 
-  // Убираем дублирующиеся значения и форматируем данные
   const uniqueData = Array.from(
-    new Set(data.map((item) => (item as Product)[filterType])), // Указываем тип для item
+    new Set(data.map((item) => (item as Product)[filterType])),
   )
-    .filter((value): value is string => !!value) // Убираем undefined и null
+    .filter((value): value is string => !!value)
     .map((value) => ({
       value,
-      label: value, // В данном случае value и label совпадают
+      label: value,
     }));
 
   return uniqueData;

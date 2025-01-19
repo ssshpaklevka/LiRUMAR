@@ -8,9 +8,12 @@ import LinkWa from '@/src/shared/ui/link-wa/LinkWa';
 const Footer: FC = () => {
   return (
     <footer className="px-5 pb-[40px] md:pb-[80px] xl:pb-[70px] 3xl:pb-[66px] pt-[74px] sm:pt-[120px] md:pt-[100px] 2xl:pt-[200px] grid md:grid-rows-custom-footer grid-rows-custom-footer-md md:grid-cols-4 md:gap-x-8 grid-cols-2 gap-x-12 mt-[150px] mx-auto">
-      <p className="text-[44px] leading-[38px] md:text-[24px] md:leading-[21px] md:col-start-1 md:row-start-1 col-start-1 row-start-1 self-center 2xl:text-[38px] 2xl:leading-[34px]">
+      <Link
+        href={'/'}
+        className="text-[44px] leading-[38px] md:text-[24px] md:leading-[21px] md:col-start-1 md:row-start-1 col-start-1 row-start-1 self-center 2xl:text-[38px] 2xl:leading-[34px]"
+      >
         LiRUMAR
-      </p>
+      </Link>
       <p className="sm:text-[22px] sm:leading-[22px]  md:text-[14px] md:leading-[12px] opacity-[80%] md:col-start-2 md:row-start-1 col-start-1 row-start-2 self-center 2xl:text-[25px] 2xl:leading-[22px]">
         Страницы
       </p>

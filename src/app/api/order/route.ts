@@ -6,7 +6,6 @@ import { NextResponse } from 'next/server';
 
 import escapeMessage from '@/src/shared/lib/escape-message';
 
-// Токен бота
 const token = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
 
 if (!token) {
@@ -14,7 +13,7 @@ if (!token) {
 }
 
 const bot = new Bot(token);
-const adminChatId = process.env.NEXT_PUBLIC_TELEGRAM_CHATID; // ID для отправки сообщений
+const adminChatId = process.env.NEXT_PUBLIC_TELEGRAM_CHATID;
 
 if (!adminChatId) {
   throw new Error('TELEGRAM_CHATID environment variable not found.');
@@ -40,7 +39,7 @@ export const POST = async (req: NextRequest): Promise<NextResponse> => {
     } = data;
 
     const formattedMessage = `
-🌟🌟🌟 *Новая заявка на заказ* 🌟🌟🌟
+🌟*Новая заявка на заказ*🌟
 
 👤 *Имя клиента:*  ${name || 'Не указано'}
 📞 *Телефон:* ${phone || 'Не указан'}

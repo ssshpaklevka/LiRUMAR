@@ -8,8 +8,8 @@ import { cn } from '@/src/shared/lib/utils';
 const Hero: FC = () => {
   return (
     <div
-      className="flex justify-center items-center bg-cover -mt-[60px] sm:pb-[140px] pb-[240px] z-[-10] relative"
-      style={{ backgroundImage: 'url("/img/hero/frame.png")' }}
+      className="flex justify-center items-center bg-cover -mt-[60px] pb-[120px] sm:pb-[140px] md:pb-[240px] z-[-10] relative"
+      style={{ backgroundImage: 'url("/img/hero/frame.webp")' }}
     >
       {/* Пк версия */}
       <div className="hidden lg:block">
@@ -40,9 +40,8 @@ const Hero: FC = () => {
             </div>
             <div className="max-h-[calc(100vh-11.111vh)] relative">
               <Image
-                src="/img/hero/hero.png"
+                src="/img/hero/hero.webp"
                 alt="hero"
-                // layout="responsive"
                 width={2000}
                 height={3000}
                 className="h-full w-auto md:block hidden 2xl:h-[759px] 2xl:w-[640px] 3xl:h-[1214px] 3xl:w-[1024px]"
@@ -82,12 +81,11 @@ const Hero: FC = () => {
               </h1>
             </div>
 
-            {/* Блок с картинкой */}
             <div className="flex flex-col items-center w-auto gap-[40px] sm:gap-[73px] ">
               {/* Блок с картинкой */}
               <div className="max-h-[calc(100vh-11.111vh)] relative w-auto">
                 <Image
-                  src="/img/hero/hero.png"
+                  src="/img/hero/hero.webp"
                   alt="hero"
                   width={2000}
                   height={3000}
@@ -110,12 +108,12 @@ const Hero: FC = () => {
           </div>
         </div>
       </div>
-      {/* <div className="max-w-screen overflow-x-hidden h-[450px] flex justify-center items-center absolute -bottom-[0px] z-[0] transform translate-y-1/2">
+      <div className="max-w-screen overflow-x-hidden h-[450px] flex justify-center items-center absolute -bottom-[0px] z-[0] transform translate-y-1/2">
         <div
           className="w-[100vw] h-[300px] bg-background blur-[50px]  "
           style={{ transform: '', borderRadius: '0%' }}
         ></div>
-      </div> */}
+      </div>
     </div>
   );
 };

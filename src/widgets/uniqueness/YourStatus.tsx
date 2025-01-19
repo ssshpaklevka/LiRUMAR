@@ -14,10 +14,10 @@ const YourStatus: FC = () => {
         </p>
 
         <Image
-          src={'/img/uniqueness/shoes.png'}
+          src={'/img/uniqueness/shoes.webp'}
           width={365}
           height={417}
-          className="absolute right-0 3xl:mr-[250px] top-0 3xl:top-6 z-0 w-[267px] h-[305px] sm:w-[390px] sm:h-[420px] xl:w-[490px] xl:h-[559px] 3xl:w-[584px] 3xl:h-[667px]"
+          className="grayscale absolute right-0 3xl:mr-[250px] top-0 3xl:top-6 z-0 w-[267px] h-[305px] sm:w-[390px] sm:h-[420px] xl:w-[490px] xl:h-[559px] 3xl:w-[584px] 3xl:h-[667px]"
           alt="shoes"
         />
       </div>
@@ -27,7 +27,7 @@ const YourStatus: FC = () => {
           width={311}
           height={357}
           alt="sneakers"
-          className="w-[171px] h-[197px] sm:w-[290px] sm:h-[320px] xl:w-[313px] xl:h-[360px] 3xl:w-[497px] 3xl:h-[571px]"
+          className="grayscale w-[171px] h-[197px] sm:w-[290px] sm:h-[320px] xl:w-[313px] xl:h-[360px] 3xl:w-[497px] 3xl:h-[571px]"
         />
       </div>
     </div>

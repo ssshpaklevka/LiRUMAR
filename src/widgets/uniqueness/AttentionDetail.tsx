@@ -4,12 +4,11 @@ import React from 'react';
 
 const AttentionDetail: FC = () => {
   return (
-    // pc:
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       <div className="w-full">
         <Image
           className="w-full"
-          src={'/img/uniqueness/man1.png'}
+          src={'/img/uniqueness/man.webp'}
           alt="man"
           width={987}
           height={1009}
@@ -18,7 +17,7 @@ const AttentionDetail: FC = () => {
       <div className="bg-foreground flex justify-center p-3">
         <div className="aspect-square w-full border border-background flex items-center justify-center flex-col gap-10">
           <Image
-            src={'/img/uniqueness/snake.png'}
+            src={'/img/uniqueness/snake.webp'}
             alt="man"
             width={82}
             height={96}

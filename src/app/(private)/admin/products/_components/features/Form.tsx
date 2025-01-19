@@ -8,7 +8,6 @@ import { Label } from '@/src/shared/ui/label';
 import { Input } from '@/src/shared/ui/input';
 import { Textarea } from '@/src/shared/ui/textarea';
 import supabase from '@/src/shared/api/SupaBase';
-// import AdminCardPlaceholder from '@/src/shared/ui/assets/card-placeholder/AdminCardPlaceholder';
 
 interface EditingProduct {
   id: string;
@@ -39,7 +38,6 @@ const Form: FC<{
       alert(`Ошибка обновления: ${error.message}`);
     } else {
       alert('Данные успешно обновлены');
-      // Обновляем состояние продуктов
       setProductos((prevProducts) =>
         prevProducts.map((p) => (p.id === product.id ? { ...p, ...data } : p)),
       );
@@ -48,19 +46,6 @@ const Form: FC<{
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      {/* <div className="flex gap-2 flex-row">
-        <div className="size-[308px]">
-          <AdminCardPlaceholder />
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="size-[150px]">
-            <AdminCardPlaceholder />
-          </div>
-          <div className="size-[150px]">
-            <AdminCardPlaceholder />
-          </div>
-        </div>
-      </div> */}
       <div>
         <Label htmlFor="name">Название</Label>
         <Input type="text" id="name" required {...register('name')} />
