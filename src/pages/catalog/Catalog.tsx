@@ -12,7 +12,7 @@ const Catalog: FC = () => {
   const category = searchParams?.get('category');
 
   const [filters, setFilters] = useState({
-    type: [] as string[],
+    type: category ? [category] : [],
     material: [] as string[],
     color: [] as string[],
   });
@@ -46,6 +46,7 @@ const Catalog: FC = () => {
             title="Ассортимент"
             filterType="type"
             onChange={(values) => handleFilterChange('type', values)}
+            selectedFilters={filters.type}
           />
           <Combobox
             title="Материал"

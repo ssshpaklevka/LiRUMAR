@@ -24,7 +24,7 @@ const MassProduction: FC = () => {
           <Link href={'/catalog'}>
             <Button
               size={'lg'}
-              className="w-[360px] 2xl:w-[576px] 2xl:h-[104px] 2xl:text-[25px] 2xl:leading-[30px]"
+              className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border-[#D9D9D9] w-[360px] 2xl:w-[576px] 2xl:h-[104px] 2xl:text-[25px] 2xl:leading-[30px]"
             >
               Смотреть каталог
             </Button>
@@ -51,7 +51,7 @@ const MassProduction: FC = () => {
           <Link href={'/catalog'}>
             <Button
               size={'lg'}
-              className="w-[236px] h-[65px] text-[14px] leading-[16px] sm:w-[432px] sm:h-[120px] sm:text-[25px] sm:leading-[30px]"
+              className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border-[#D9D9D9] w-[236px] h-[65px] text-[14px] leading-[16px] sm:w-[432px] sm:h-[120px] sm:text-[25px] sm:leading-[30px]"
             >
               Смотреть каталог
             </Button>

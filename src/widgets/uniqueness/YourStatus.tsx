@@ -15,8 +15,8 @@ const YourStatus: FC = () => {
 
         <Image
           src={'/img/uniqueness/shoes.webp'}
-          width={365}
-          height={417}
+          width={2000}
+          height={2000}
           className="filter brightness-50 grayscale absolute right-0 3xl:mr-[250px] top-0 3xl:top-6 z-0 w-[267px] h-[305px] sm:w-[390px] sm:h-[420px] xl:w-[490px] xl:h-[580px] 3xl:w-[584px] 3xl:h-[667px]"
           alt="shoes"
         />
@@ -24,8 +24,8 @@ const YourStatus: FC = () => {
       <div className="xl:pl-[170px] 3xl:pt-[80px]">
         <Image
           src={'/img/uniqueness/sneakers.webp'}
-          width={311}
-          height={357}
+          width={2000}
+          height={2000}
           alt="sneakers"
           className="filter brightness-50 grayscale w-[171px] h-[197px] sm:w-[290px] sm:h-[320px] xl:w-[313px] xl:h-[360px] 3xl:w-[497px] 3xl:h-[571px]"
         />

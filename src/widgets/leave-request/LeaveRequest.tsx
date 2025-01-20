@@ -74,7 +74,7 @@ const LeaveRequest: FC = () => {
           style={{ borderTopWidth: 0, borderLeftWidth: 0, borderRightWidth: 0 }}
         />
         <Button
-          className="h-[65px] text-[14px] leading-[16px] sm:h-[120px] sm:text-[25px] sm:leading-[30px] md:h-[65px] md:text-[16px] md:leading-[20px] 2xl:h-[104px] 2xl:text-[25px] 2xl:leading-[30px]"
+          className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border-[#D9D9D9] h-[65px] text-[14px] leading-[16px] sm:h-[120px] sm:text-[25px] sm:leading-[30px] md:h-[65px] md:text-[16px] md:leading-[20px] 2xl:h-[104px] 2xl:text-[25px] 2xl:leading-[30px]"
           size={'lg'}
           type="submit"
         >

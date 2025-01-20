@@ -64,7 +64,7 @@ export default {
         'custom-footer-md': 'auto 100px repeat(3, 50px)',
       },
       animation: {
-        spin: 'spin 1s linear infinite', // Кастомная анимация
+        spin: 'spin 1s linear infinite',
       },
       keyframes: {
         spin: {

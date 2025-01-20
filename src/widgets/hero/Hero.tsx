@@ -44,8 +44,8 @@ const Hero: FC = () => {
               <Image
                 src="/img/hero/hero.webp"
                 alt="hero"
-                width={2000}
-                height={3000}
+                width={4000}
+                height={4000}
                 className="h-full w-auto md:block hidden 2xl:h-[759px] 2xl:w-[640px] 3xl:h-[1214px] 3xl:w-[1024px]"
                 style={{ marginTop: '-160px' }}
               />
@@ -91,8 +91,8 @@ const Hero: FC = () => {
                 <Image
                   src="/img/hero/hero.webp"
                   alt="hero"
-                  width={2000}
-                  height={3000}
+                  width={4000}
+                  height={4000}
                   className=" w-auto md:w-[661px] md:h-[784px]"
                   style={{ marginTop: '-160px' }}
                 />

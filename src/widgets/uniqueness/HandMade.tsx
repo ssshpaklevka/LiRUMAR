@@ -8,10 +8,11 @@ const HandMade: FC = () => {
     <div className="flex flex-col">
       <div className="relative w-full h-[371px] md:h-[680px] xl:h-[540px] 2xl:h-[550px] 3xl:h-[835px]">
         <Image
-          className="object-cover"
-          src={'/img/uniqueness/uniqueness.webp'}
+          className="object-cover w-full h-[371px] md:h-[680px] xl:h-[540px] 2xl:h-[550px] 3xl:h-[835px]"
+          src={'/img/uniqueness/uniqueness2.webp'}
           alt="uniqueness"
-          fill
+          width={2000}
+          height={2000}
         />
       </div>
       <div className="w-full relative">

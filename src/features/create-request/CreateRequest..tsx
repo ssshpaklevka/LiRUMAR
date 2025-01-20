@@ -202,7 +202,11 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
               </div>
             </div>
             <DialogFooter className="flex items-center justify-center">
-              <Button variant={'destructive'} type="submit">
+              <Button
+                variant={'destructive'}
+                type="submit"
+                className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-black hover:border-black border"
+              >
                 Отправить
               </Button>
             </DialogFooter>
