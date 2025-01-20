@@ -74,21 +74,25 @@ const ProductList: FC<ProductListProps> = ({ filters }) => {
   }
 
   return (
-    <div className="mt-[45px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[21px] gap-y-[40px]">
+    <>
       {products.length > 0 ? (
-        products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            url={product.url}
-            name={product.name}
-            price={product.price}
-          />
-        ))
+        <div className="mt-[45px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[21px] gap-y-[40px]">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              url={product.url}
+              name={product.name}
+              price={product.price}
+            />
+          ))}
+        </div>
       ) : (
-        <div className="absolute top-1/2 left-1/2">Нет доступных товаров.</div>
+        <div className="flex h-screen items-center justify-center col-span-full">
+          Нет доступных товаров.
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

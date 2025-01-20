@@ -236,7 +236,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
             </DialogHeader>
             <DialogFooter className="flex items-center justify-center pt-10">
               <Button
-                className="w-full"
+                className="transition-all duration-300 ease-in-out w-full hover:bg-transparent hover:text-foreground hover:border-[#D9D9D9] border"
                 type="button"
                 onClick={handleCloseSecondDialog}
               >
