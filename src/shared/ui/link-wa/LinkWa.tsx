@@ -6,7 +6,9 @@ import React from 'react';
 const LinkWa: FC = () => {
   return (
     <Link
-      href={'https://api.whatsapp.com/send?phone=79672177813'}
+      href={'https://wa.me/79672177813'}
+      target="_blank"
+      rel="noopener noreferrer"
       className="w-[34px] h-[34px] 3xl:w-[54px] 3xl:h-[54px] flex justify-center items-center bg-white"
     >
       <Image
