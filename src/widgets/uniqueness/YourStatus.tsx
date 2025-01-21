@@ -5,8 +5,8 @@ import React from 'react';
 const YourStatus: FC = () => {
   return (
     <div className="flex flex-col relative">
-      <div className="h-[450px] flex items-center flex-row md:pt-[96px] gap-24">
-        <p className="text-[33px] leading-[36px] max-w-[380px] md:text-[60px] md:leading-[66px] md:max-w-[660px] xl:text-[45px] xl:leading-[50px] xl:max-w-[600px] 3xl:text-[79px] 3xl:leading-[87px] 3xl:max-w-[1060px] absolute z-10">
+      <div className="h-[350px] sm:h-[450px] flex items-end xl:items-center flex-row xl:pt-[96px] gap-24">
+        <p className="mt-[160px] md:mt-0 text-[33px] leading-[36px]  md:text-[60px] md:leading-[66px] xl:text-[45px] xl:leading-[50px] xl:max-w-[600px] 3xl:text-[79px] 3xl:leading-[87px] 3xl:max-w-[1060px] absolute z-10">
           <span className="subfont text-[38px] leading-[42px] md:text-[69px] md:leading-[76px] xl:text-[50px] xl:leading-[55px] 3xl:text-[96px] 3xl:leading-[105px]">
             — уникальность,{' '}
           </span>
@@ -21,13 +21,13 @@ const YourStatus: FC = () => {
           alt="shoes"
         />
       </div>
-      <div className="xl:pl-[170px] 3xl:pt-[80px]">
+      <div className="pt-16 xl:pt-0 xl:pl-[170px] 3xl:pt-[80px]">
         <Image
           src={'/img/uniqueness/sneakers.webp'}
           width={2000}
           height={2000}
           alt="sneakers"
-          className="filter brightness-50 grayscale w-[171px] h-[197px] sm:w-[290px] sm:h-[320px] xl:w-[313px] xl:h-[360px] 3xl:w-[497px] 3xl:h-[571px]"
+          className="filter brightness-50 grayscale w-[240px] h-[287px] sm:w-[290px] sm:h-[320px] xl:w-[313px] xl:h-[360px] 3xl:w-[497px] 3xl:h-[571px]"
         />
       </div>
     </div>

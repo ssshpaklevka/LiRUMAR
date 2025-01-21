@@ -45,7 +45,7 @@ const Footer: FC = () => {
       </Link>
       <Link
         href={'/privacy'}
-        className="transition-all duration-300 ease-in-out text-wrap sm:text-[25px] sm:leading-[35px] md:text-[14px] md:leading-[12px] opacity-[30%] md:col-start-4 md:row-start-4 col-start-1 row-start-6 self-center 2xl:text-[19px] 2xl:leading-[16px] hover:text-white hover:opacity-100"
+        className="transition-all duration-300 ease-in-out text-wrap max-w-[160px] sm:max-w-[1000px] text-[14px] sm:text-[25px] sm:leading-[35px] md:text-[14px] md:leading-[12px] opacity-[30%] md:col-start-4 md:row-start-4 col-start-1 row-start-6 mt-[60px] md:mt-0 self-center 2xl:text-[19px] 2xl:leading-[16px] hover:text-white hover:opacity-100"
       >
         Политика конфиденциальности
       </Link>
@@ -65,7 +65,7 @@ const Footer: FC = () => {
 
       <Link
         href={'https://t.me/ml_agency_com'}
-        className="transition-all duration-300 ease-in-out sm:text-[25px] sm:leading-[35px] md:text-[14px] md:leading-[12px] opacity-[30%] md:col-start-4 md:row-start-5 col-start-2 row-start-6 self-center 2xl:text-[19px] 2xl:leading-[16px] hover:text-white hover:opacity-100"
+        className="transition-all duration-300 ease-in-out max-w-[100px] text-[14px] md:max-w-[1000px] sm:text-[25px] sm:leading-[35px] md:text-[14px] md:leading-[12px] opacity-[30%] md:col-start-4 md:row-start-5 col-start-2 row-start-6 mt-[60px] md:mt-0 self-center 2xl:text-[19px] 2xl:leading-[16px] hover:text-white hover:opacity-100"
       >
         Сайт разработан
       </Link>
