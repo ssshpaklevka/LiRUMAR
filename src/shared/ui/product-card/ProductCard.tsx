@@ -21,7 +21,10 @@ const ProductCard: FC<Props> = ({ id, name, price }) => {
     return new Intl.NumberFormat('ru-RU').format(value);
   };
   return (
-    <Link className="flex flex-col gap-[20px]" href={`/catalog/${id}`}>
+    <Link
+      className="hover:scale-95 transition-all duration-300 flex flex-col gap-[20px]"
+      href={`/catalog/${id}`}
+    >
       <div className="relative w-full h-[277px] 2xl:h-[433px] bg-[#2C2C2C] flex justify-center items-center">
         {id && !imageError ? (
           <>

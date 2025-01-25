@@ -52,7 +52,7 @@ const Catalog: FC = () => {
             title="Материал"
             filterType="material"
             onChange={(values) => handleFilterChange('material', values)}
-            className="ml-8 md:ml-0"
+            className="ml-8"
           />
           <Combobox
             title="Цвет"

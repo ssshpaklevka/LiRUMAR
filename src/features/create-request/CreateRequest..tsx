@@ -5,6 +5,7 @@
 /* eslint-disable no-undef */
 import process from 'process';
 
+import InputMask from 'react-input-mask';
 import Link from 'next/link';
 import type { FC } from 'react';
 import React, { useState } from 'react';
@@ -44,6 +45,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
   const {
     register,
     handleSubmit,
+    formState,
     reset,
     formState: { errors },
   } = useForm<FormData>();
@@ -166,13 +168,32 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
               </div>
               <div>
                 <Input
-                  placeholder="Номер телефона"
+                  type="tel"
+                  placeholder="+7 (999) 999-99-99"
                   className="border py-6 text-black focus-visible:border-2 focus-visible:border-background"
                   {...register('phone', {
                     required: 'Введите номер телефона',
                     pattern: {
-                      value: /^[0-9+\-()\s]+$/,
+                      value: /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
                       message: 'Введите корректный номер телефона',
+                    },
+                    onChange: (e) => {
+                      let value = e.target.value.replace(/\D/g, '');
+                      if (value.length > 0) {
+                        value =
+                          '+7 (' +
+                          value.substring(1, 4) +
+                          (value.length > 4
+                            ? ') ' + value.substring(4, 7)
+                            : '') +
+                          (value.length > 7
+                            ? '-' + value.substring(7, 9)
+                            : '') +
+                          (value.length > 9
+                            ? '-' + value.substring(9, 11)
+                            : '');
+                      }
+                      e.target.value = value;
                     },
                   })}
                 />
@@ -189,7 +210,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
                   {...register('email', {
                     required: 'Введите ваш email',
                     pattern: {
-                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                       message: 'Введите корректный email',
                     },
                   })}
