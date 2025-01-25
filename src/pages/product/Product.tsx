@@ -108,6 +108,7 @@ const Product: FC<Props> = ({ product }) => {
                 一 {line}
               </p>
             ))}
+            一 Цвет: {product.color.toLowerCase()}
           </div>
         </div>
         <div className="flex flex-col gap-[20px]">
