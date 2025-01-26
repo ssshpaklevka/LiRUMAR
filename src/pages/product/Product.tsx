@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { LoaderCircle } from 'lucide-react';
+import Link from 'next/link';
 
 import Container from '@/src/shared/ui/containers/Container';
 import CardPlaceholder from '@/src/shared/ui/assets/card-placeholder/CardPlaceholder';
@@ -29,9 +30,9 @@ const Product: FC<Props> = ({ product }) => {
     ? product.full_description.split('\n')
     : [];
   return (
-    <Container className="mt-[95px] grid grid-cols-1 xl:grid-cols-[760px_2fr] 2xl:grid-cols-[1100px_2fr] gap-5 p-5">
-      <div className="flex gap-[20px] flex-col sm:flex-row">
-        <div className="relative w-full h-auto min-h-[359px] bg-[#2C2C2C] flex justify-center items-center">
+    <Container className="mt-[44px] grid grid-cols-1 xl:grid-cols-[760px_2fr] 2xl:grid-cols-[1100px_2fr] gap-5 p-5">
+      <div className="flex gap-[20px] flex-col md:flex-row">
+        <div className="relative w-full aspect-square md:aspect-auto md:h-auto md:min-h-[359px] bg-[#2C2C2C] flex justify-center items-center">
           {product && !mainImageError ? (
             <>
               {isMainImageLoading && (
@@ -52,11 +53,11 @@ const Product: FC<Props> = ({ product }) => {
             <CardPlaceholder />
           )}
         </div>
-        <div className="flex flex-row sm:flex-col justify-between gap-5 2xl:gap-[34px]">
+        <div className="flex flex-row md:flex-col justify-between gap-5 2xl:gap-[34px]">
           {[1, 2].map((_, index) => (
             <div
               key={index}
-              className="relative w-full sm:size-[275px] 2xl:size-[446px] aspect-square bg-[#2C2C2C] flex items-center justify-center"
+              className="relative w-full md:size-[275px] 2xl:size-[446px] aspect-square bg-[#2C2C2C] flex items-center justify-center"
             >
               {product && !thumbnailErrors[index] ? (
                 <>
@@ -120,30 +121,42 @@ const Product: FC<Props> = ({ product }) => {
             className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border text-[16px] leading-[19px] h-[51px] sm:text-[25px] sm:leading-[30px] sm:h-[94px] md:text-[16px] md:leading-[19px] md:h-[47px] 2xl:text-[25px] 2xl:leading-[30px] 2xl:h-[75px]"
           />
           <div className="flex justify-between gap-[22px] md:gap-10 xl:gap-5 3xl:gap-8">
-            <Button
-              variant="outline"
+            <Link
+              href={'https://wa.me/79672177813'}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px] 2xl:text-[19px] 2xl:leading-[23px] 2xl:h-[75px] border-[#D9D9D9] w-full justify-center gap-[35px]"
             >
-              WhatsApp
-              <Image
-                src="/img/footer/wa-black.svg"
-                alt="wa"
-                width={25}
-                height={25}
-              />
-            </Button>
-            <Button
-              variant="outline"
+              <Button
+                variant="outline"
+                className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px] 2xl:text-[19px] 2xl:leading-[23px] 2xl:h-[75px] border-[#D9D9D9] w-full justify-center gap-[35px]"
+              >
+                WhatsApp
+                <Image
+                  src="/img/footer/wa-black.svg"
+                  alt="wa"
+                  width={25}
+                  height={25}
+                />
+              </Button>
+            </Link>
+            <Link
+              href={'https://t.me/dandy_lab'}
               className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px] 2xl:text-[19px] 2xl:leading-[23px] 2xl:h-[75px] border-[#D9D9D9] w-full justify-center gap-[35px]"
             >
-              Telegram
-              <Image
-                src="/img/footer/tg-black.svg"
-                alt="tg"
-                width={25}
-                height={25}
-              />
-            </Button>
+              <Button
+                variant="outline"
+                className="text-[11px] leading-[13px] h-[52px] sm:text-[19px] sm:leading-[22px] sm:h-[94px] md:text-[11px] md:leading-[13px] md:h-[47px] 2xl:text-[19px] 2xl:leading-[23px] 2xl:h-[75px] border-[#D9D9D9] w-full justify-center gap-[35px]"
+              >
+                Telegram
+                <Image
+                  src="/img/footer/tg-black.svg"
+                  alt="tg"
+                  width={25}
+                  height={25}
+                />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
