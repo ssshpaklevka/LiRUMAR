@@ -20,7 +20,7 @@ const ProductCard: FC<Props> = ({ id, name, price }) => {
 
   return (
     <Link
-      className="hover:scale-95 transition-all duration-300 flex flex-col gap-[10px] md:gap-[15px] xl:gap-[20px] h-full"
+      className="md:hover:scale-95 active:scale-95 transition-all duration-300 flex flex-col gap-[10px] md:gap-[15px] xl:gap-[20px] h-full"
       href={`/catalog/${id}`}
     >
       <div className="overflow-hidden relative w-full aspect-square bg-[#2C2C2C] flex justify-center items-center">
