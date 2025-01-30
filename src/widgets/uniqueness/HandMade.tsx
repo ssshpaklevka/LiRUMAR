@@ -16,11 +16,11 @@ const HandMade: FC = () => {
         />
       </div>
       <div className="w-full relative">
-        <p className=" mt-[41px] text-[33px] leading-[29px] md:mt-[60px] md:text-[59px] md:leading-[53px] xl:mt-[56px] xl:text-[44px] xl:leading-[39px] 3xl:mt-[80px] 3xl:text-[70px] 3xl:leading-[63px] tracking-[0.5px]">
+        <p className=" mt-[41px] text-[26px] leading-[29px] md:mt-[60px] md:text-[59px] md:leading-[53px] xl:mt-[56px] xl:text-[44px] xl:leading-[39px] 3xl:mt-[80px] 3xl:text-[70px] 3xl:leading-[63px] tracking-[0.5px]">
           Ручная работа, экзотическая <br />
           <span
             className={cn(
-              'subfont text-[33px] leading-[29px] md:text-[59px] md:leading-[53px] xl:text-[44px] xl:leading-[39px] 3xl:text-[80px] 3xl:leading-[72px] tracking-[0.5px]',
+              'subfont text-[26px] leading-[29px] md:text-[59px] md:leading-[53px] xl:text-[44px] xl:leading-[39px] 3xl:text-[80px] 3xl:leading-[72px] tracking-[0.5px]',
             )}
           >
             премиальная кожа

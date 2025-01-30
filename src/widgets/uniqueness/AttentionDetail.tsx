@@ -21,6 +21,7 @@ const AttentionDetail: FC = () => {
             alt="man"
             width={82}
             height={96}
+            className="w-[56px] h-[66px] md:w-[102px] md:h-[120px] xl:w-[84px] xl:h-[99px] 3xl:w-[133px] 3xl:h-[156px]"
           />
           <p className="text-black text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[44px] md:leading-[44px] 2xl:text-[79px] 2xl:leading-[55px] max-w-[333px] 2xl:max-w-[532px] text-center">
             безупречное внимание к деталям

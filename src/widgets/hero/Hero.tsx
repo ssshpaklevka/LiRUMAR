@@ -68,7 +68,7 @@ const Hero: FC = () => {
             <div className="z-20 2xl:max-w-[416px] md:max-w-[260px] w-full lg:relative flex">
               <h1
                 className={cn(
-                  'top-0 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
+                  '-top-24 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
                   'absolute font-normal tracking-[-1px] text-[33px] leading-[33px]  sm:text-[44px] sm:leading-[44px]  md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
@@ -93,7 +93,7 @@ const Hero: FC = () => {
                   alt="hero"
                   width={4000}
                   height={4000}
-                  className=" w-auto md:w-[661px] md:h-[784px]"
+                  className=" w-auto md:w-[661px] md:h-[824px]"
                   style={{ marginTop: '-160px' }}
                 />
                 {/* Текст под картинкой */}
