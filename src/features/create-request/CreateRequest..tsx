@@ -113,7 +113,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
               size={'xl'}
               className={cn('w-full', className)}
             >
-              Заказать
+              Запросить консультацию
             </Button>
           ) : variant === 'text' ? (
             <Button

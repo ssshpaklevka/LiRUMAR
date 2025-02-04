@@ -14,7 +14,16 @@ const AttentionDetail: FC = () => {
           height={1009}
         />
       </div>
-      <div className="bg-foreground flex justify-center p-3">
+      <div className="w-full">
+        <Image
+          className="w-full h-full"
+          src={'/img/uniqueness/women.webp'}
+          alt="man"
+          width={987}
+          height={1009}
+        />
+      </div>
+      {/* <div className="bg-foreground flex justify-center p-3">
         <div className="aspect-square w-full border border-background flex items-center justify-center flex-col gap-10">
           <Image
             src={'/img/uniqueness/snake.webp'}
@@ -27,7 +36,7 @@ const AttentionDetail: FC = () => {
             безупречное внимание к деталям
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

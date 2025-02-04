@@ -15,7 +15,7 @@ const YourStatus: FC = () => {
         <div
           className="filter brightness-50 grayscale absolute right-0 3xl:mr-[250px] top-0 3xl:top-6 z-0 w-[267px] h-[305px] sm:w-[390px] sm:h-[420px] xl:w-[490px] xl:h-[580px] 3xl:w-[584px] 3xl:h-[667px]"
           style={{
-            backgroundImage: 'url("/img/uniqueness/shoes1.png")',
+            backgroundImage: 'url("/img/uniqueness/shoes.webp")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -26,7 +26,7 @@ const YourStatus: FC = () => {
         <div
           className="filter brightness-50 grayscale w-[240px] h-[287px] sm:w-[290px] sm:h-[320px] xl:w-[313px] xl:h-[360px] 3xl:w-[497px] 3xl:h-[571px]"
           style={{
-            backgroundImage: 'url("/img/uniqueness/sneakers1.png")',
+            backgroundImage: 'url("/img/uniqueness/sneakers.webp")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
