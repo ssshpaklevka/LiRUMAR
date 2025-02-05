@@ -18,20 +18,19 @@ const Hero: FC = () => {
         <div className=" px-5 w-full flex flex-col items-center h-full gap-[63px] relative mt-[300px]">
           <div className="flex justify-center flex-col lg:flex-row lg:gap-0 gap-[73px] items-center relative h-full 2xl:w-full">
             <div className="z-20  md:max-w-[260px] w-full lg:relative flex h-full">
-              <p className="shadow-text w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  ">
+              <p className=" w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  ">
                 Ручная работа из экзотической кожи для тех, кто ценит статус и
                 индивидуальность.
               </p>
               <h1
                 className={cn(
-                  'shadow-text',
                   'left-0 top-0 lg:top-[calc(50%-170px)]  2xl:top-[calc(50%-200px)] -translate-y-1/2 z-[999] text-nowrap',
                   'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 3xl:text-[105px] 3xl:leading-[105px] 2xl:font-normal',
                 )}
               >
                 <span
                   className={cn(
-                    'shadow-text subfont text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 3xl:text-[105px] 3xl:leading-[105px]',
+                    'subfont text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 3xl:text-[105px] 3xl:leading-[105px]',
                   )}
                 >
                   LiRUMAR{' '}
@@ -67,9 +66,10 @@ const Hero: FC = () => {
           <div className="flex justify-center flex-col lg:flex-row items-center relative h-full 2xl:w-full">
             {/* Левый блок с текстами */}
             <div className="z-20 2xl:max-w-[416px] md:max-w-[260px] w-full lg:relative flex">
+              <div className="absolute w-full h-full left-0 -top-56 inset-10 bg-black/20 blur-[80px] z-[-1]"></div>
               <h1
                 className={cn(
-                  'shadow-text -top-[130px] sm:-top-24 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
+                  '-top-24 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
                   'absolute font-normal tracking-[-1px] text-[33px] leading-[33px]  sm:text-[44px] sm:leading-[44px]  md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
@@ -90,14 +90,15 @@ const Hero: FC = () => {
               {/* Блок с картинкой */}
               <div className="max-h-[calc(100vh-11.111vh)] relative w-auto">
                 <Image
-                  src="/img/hero/ARS061131.webp"
+                  src="/img/hero/DSC09297-1.webp"
                   alt="hero"
                   width={4000}
                   height={4000}
-                  className=" w-auto md:w-[661px] md:h-[824px]"
+                  className="w-auto h-futo ssm:h-[870px]  sm:w-[661px] sm:h-[924px]"
                   style={{ marginTop: '-160px' }}
                 />
                 {/* Текст под картинкой */}
+
                 <p className="shadow-text absolute bottom-5 right-5 text-right w-[314px] sm:w-[390px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
                   Ручная работа из экзотической кожи для тех, кто ценит статус и
                   индивидуальность.

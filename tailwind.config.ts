@@ -11,6 +11,7 @@ export default {
     extend: {
       screens: {
         '3xl': '1920px',
+        ssm: '550px',
       },
       colors: {
         background: 'hsl(var(--background))',
