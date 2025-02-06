@@ -1,11 +1,35 @@
+'use client';
 import Image from 'next/image';
 import type { FC } from 'react';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const AttentionDetail: FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Задержка между анимациями дочерних элементов
+      },
+    },
+  };
+
+  // Анимация для каждого изображения
+  const imageVariants = {
+    hidden: { opacity: 0, y: 50 }, // Начальное состояние: элемент невидим и смещен вниз
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }, // Конечное состояние: элемент видим и на своем месте
+  };
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <div className="w-full">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 gap-5"
+      initial="hidden" // Начальное состояние анимации
+      whileInView="visible" // Анимация запускается, когда элемент появляется в области видимости
+      viewport={{ once: true, amount: 0.2 }} // Анимация срабатывает только один раз и при появлении 20% элемента
+      variants={containerVariants} // Применяем анимацию контейнера
+    >
+      {/* Первое изображение */}
+      <motion.div className="w-full" variants={imageVariants}>
         <Image
           className="w-full"
           src={'/img/uniqueness/man.webp'}
@@ -13,8 +37,10 @@ const AttentionDetail: FC = () => {
           width={987}
           height={1009}
         />
-      </div>
-      <div className="w-full">
+      </motion.div>
+
+      {/* Второе изображение */}
+      <motion.div className="w-full" variants={imageVariants}>
         <Image
           className="w-full h-full"
           src={'/img/uniqueness/women.webp'}
@@ -22,22 +48,8 @@ const AttentionDetail: FC = () => {
           width={987}
           height={1009}
         />
-      </div>
-      {/* <div className="bg-foreground flex justify-center p-3">
-        <div className="aspect-square w-full border border-background flex items-center justify-center flex-col gap-10">
-          <Image
-            src={'/img/uniqueness/snake.webp'}
-            alt="man"
-            width={82}
-            height={96}
-            className="w-[56px] h-[66px] md:w-[102px] md:h-[120px] xl:w-[84px] xl:h-[99px] 3xl:w-[133px] 3xl:h-[156px]"
-          />
-          <p className="text-black text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[44px] md:leading-[44px] 2xl:text-[79px] 2xl:leading-[55px] max-w-[333px] 2xl:max-w-[532px] text-center">
-            безупречное внимание к деталям
-          </p>
-        </div>
-      </div> */}
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

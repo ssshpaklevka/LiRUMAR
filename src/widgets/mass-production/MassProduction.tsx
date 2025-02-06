@@ -1,62 +1,182 @@
+'use client';
 import type { FC } from 'react';
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
 
 import { Button } from '@/src/shared/ui/button';
 
 const MassProduction: FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+    margin: '0px 0px -100px 0px',
+  });
+
+  const backgroundVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 1.1,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.4,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    tap: {
+      scale: 0.95,
+    },
+  };
+
   return (
-    <div className="px-0 w-full 3xl:flex 3xl:justify-center">
+    <div className="px-0 w-full 3xl:flex 3xl:justify-center" ref={ref}>
+      {/* Десктоп версия */}
       <div className="hidden lg:block">
-        <div
+        <motion.div
+          variants={backgroundVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
           className="h-[642px] w-full 3xl:w-screen bg-cover flex flex-col items-center justify-center gap-[62px]"
           style={{ backgroundImage: 'url("/img/mass-production/frame.webp")' }}
         >
-          <div className="flex flex-col items-center gap-[35px]">
-            <p className="text-[44px] sm:w-[850px] xl:w-[850px] 3xl:w-[1380px] text-center leading-[52px] 2xl:text-[79px] 2xl:leading-[95px]">
+          <motion.div
+            variants={contentVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            className="flex flex-col items-center gap-[35px]"
+          >
+            <motion.p
+              variants={itemVariants}
+              className="text-[44px] sm:w-[850px] xl:w-[850px] 3xl:w-[1380px] text-center leading-[52px] 2xl:text-[79px] 2xl:leading-[95px]"
+            >
               Нашим изделиям нет места в массовом производстве
-            </p>
-            <p className="w-[470px] 3xl:w-[700px] text-center leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]">
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="w-[470px] 3xl:w-[700px] text-center leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]"
+            >
               Каждая единица изготавливается в ручную, индивидуально под каждого
               клиента
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
+
           <Link href={'/catalog'}>
-            <Button
-              size={'lg'}
-              className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border-[#D9D9D9] w-[360px] 2xl:w-[576px] 2xl:h-[104px] 2xl:text-[25px] 2xl:leading-[30px]"
+            <motion.div
+              variants={buttonVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              whileHover="hover"
+              whileTap="tap"
             >
-              Смотреть каталог
-            </Button>
+              <Button
+                size={'lg'}
+                className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border-[#D9D9D9] w-[360px] 2xl:w-[576px] 2xl:h-[104px] 2xl:text-[25px] 2xl:leading-[30px]"
+              >
+                Смотреть каталог
+              </Button>
+            </motion.div>
           </Link>
-        </div>
+        </motion.div>
       </div>
 
+      {/* Мобильная версия */}
       <div className="block lg:hidden lg:px-0">
-        <div
+        <motion.div
+          variants={backgroundVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
           className="aspect-square bg-center h-[642px] sm:h-[1176px] w-full bg-cover bg-black flex flex-col items-center justify-center gap-[37px] md:gap-[60px] xl:gap-[60px] 3xl:gap-[80px]"
-          style={{
-            backgroundImage: 'url("/img/mass-production/frameph.png")',
-          }}
+          style={{ backgroundImage: 'url("/img/mass-production/frameph.png")' }}
         >
-          <div className="flex flex-col items-center gap-[30px] md:gap-[60px] xl:gap-[36px] 3xl:gap-[60px]">
-            <p className="text-[33px] leading-[40px] w-[330] sm:text-[59px] sm:leading-[70px] sm:w-[620px] text-center">
+          <motion.div
+            variants={contentVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            className="flex flex-col items-center gap-[30px] md:gap-[60px] xl:gap-[36px] 3xl:gap-[60px]"
+          >
+            <motion.p
+              variants={itemVariants}
+              className="text-[33px] leading-[40px] w-[330] sm:text-[59px] sm:leading-[70px] sm:w-[620px] text-center"
+            >
               Нашим изделиям нет места в массовом производстве
-            </p>
-            <p className="text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] sm:max-w-[590px] text-center">
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] sm:max-w-[590px] text-center"
+            >
               Каждая единица изготавливается в ручную, индивидуально под каждого
               клиента
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
+
           <Link href={'/catalog'}>
-            <Button
-              size={'lg'}
-              className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border-[#D9D9D9] w-[236px] h-[65px] text-[14px] leading-[16px] sm:w-[432px] sm:h-[120px] sm:text-[25px] sm:leading-[30px]"
+            <motion.div
+              variants={buttonVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              whileHover="hover"
+              whileTap="tap"
             >
-              Смотреть каталог
-            </Button>
+              <Button
+                size={'lg'}
+                className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border-[#D9D9D9] w-[236px] h-[65px] text-[14px] leading-[16px] sm:w-[432px] sm:h-[120px] sm:text-[25px] sm:leading-[30px]"
+              >
+                Смотреть каталог
+              </Button>
+            </motion.div>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
