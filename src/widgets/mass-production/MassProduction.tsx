@@ -10,21 +10,21 @@ const MassProduction: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.3,
+    amount: 0.2,
     margin: '0px 0px -100px 0px',
   });
 
   const backgroundVariants = {
     hidden: {
       opacity: 0,
-      scale: 1.1,
+      scale: 1.05, // уменьшил начальный масштаб
     },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.8,
-        ease: 'easeOut',
+        duration: 1.2, // увеличил длительность
+        ease: [0.25, 0.1, 0.25, 1], // более плавная кривая
       },
     },
   };
@@ -34,8 +34,10 @@ const MassProduction: FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.4,
-        staggerChildren: 0.2,
+        delayChildren: 0.6, // увеличил задержку
+        staggerChildren: 0.3, // увеличил промежуток
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   };
@@ -43,14 +45,14 @@ const MassProduction: FC = () => {
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 30,
+      y: 20, // уменьшил смещение
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
-        ease: 'easeOut',
+        duration: 0.8, // увеличил длительность
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   };
@@ -58,24 +60,29 @@ const MassProduction: FC = () => {
   const buttonVariants = {
     hidden: {
       opacity: 0,
-      y: 20,
+      y: 15, // уменьшил смещение
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
-        ease: 'easeOut',
+        duration: 0.8,
+        delay: 0.2, // добавил небольшую задержку
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
     hover: {
-      scale: 1.05,
+      scale: 1.03, // уменьшил эффект наведения
       transition: {
-        duration: 0.3,
+        duration: 0.4,
+        ease: 'easeOut',
       },
     },
     tap: {
-      scale: 0.95,
+      scale: 0.97, // сделал tap эффект менее заметным
+      transition: {
+        duration: 0.1,
+      },
     },
   };
 

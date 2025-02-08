@@ -37,7 +37,7 @@ const LeaveRequest: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true, // анимация произойдет только один раз
-    amount: 0.5, // триггер когда 30% элемента видно
+    amount: 0.2, // триггер когда 30% элемента видно
     margin: '0px 0px -100px 0px', // отступ для триггера
   });
   const containerVariants = {

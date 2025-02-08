@@ -51,16 +51,17 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.5,
-    margin: '0px 0px -100px 0px', // отступ для триггера
+    amount: 0.2,
   });
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.3,
+        delayChildren: 0.3, // увеличил задержку
+        staggerChildren: 0.4, // увеличил промежуток между анимациями
+        duration: 0.8, // увеличил длительность
+        ease: 'easeOut',
       },
     },
   };
@@ -68,35 +69,60 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
-      scale: 0.95,
+      y: 30,
+      scale: 0.98,
     },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   };
 
   const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: {
+      opacity: 0,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.4, 0.0, 0.2, 1],
+      },
+    },
+  };
+
+  const smallImageVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.95,
+    },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
-    exit: {
-      opacity: 0,
-      scale: 0.9,
+    hover: {
+      scale: 1.05,
       transition: {
         duration: 0.3,
+        ease: 'easeOut',
+      },
+    },
+    tap: {
+      scale: 0.98,
+      transition: {
+        duration: 0.1,
+        ease: 'easeOut',
       },
     },
   };
@@ -154,7 +180,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
 
           <div className="hidden md:block">
             <motion.div
-              variants={itemVariants}
+              variants={smallImageVariants}
               className="flex justify-between w-full flex-row gap-[14px]"
             >
               {currentImageData.slice(1).map((item, index) => (
@@ -202,7 +228,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
           {currentImageData.slice(1).map((item, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              variants={smallImageVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

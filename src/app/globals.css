@@ -23,6 +23,11 @@ body {
   font-style: italic;
 }
 
+.lir {
+  font-family: var(--font-tnrNorm);
+  font-style: normal;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);

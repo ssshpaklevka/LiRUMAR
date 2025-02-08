@@ -32,6 +32,17 @@ export const tnr = localFont({
   variable: '--font-tnr',
 });
 
+export const tnrNorm = localFont({
+  src: [
+    {
+      path: '../../public/fonts/TimesNewRomanNormal.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-tnrNorm',
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://lirumar.ru/'),
   title:
@@ -78,7 +89,14 @@ const RootLayout: FC<{
 }> = ({ children }) => {
   return (
     <html lang="ru">
-      <body className={cn('antialiased', involve.variable, tnr.variable)}>
+      <body
+        className={cn(
+          'antialiased',
+          involve.variable,
+          tnr.variable,
+          tnrNorm.variable,
+        )}
+      >
         <Header />
         {children}
         <Footer />

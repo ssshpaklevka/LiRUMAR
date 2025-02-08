@@ -7,8 +7,7 @@ const YourStatus: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true, // анимация произойдет только один раз
-    amount: 0.5, // триггер когда 30% элемента видно
-    margin: '0px 0px -100px 0px', // отступ для триггера
+    amount: 0.2, // триггер когда 30% элемента видно
   });
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -33,7 +32,7 @@ const YourStatus: FC = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   };

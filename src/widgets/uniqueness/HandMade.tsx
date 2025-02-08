@@ -9,7 +9,7 @@ const HandMade: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.5,
+    amount: 0.2,
   });
 
   const imageVariants = {

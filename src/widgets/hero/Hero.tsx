@@ -49,23 +49,25 @@ const Hero: FC = () => {
               {...fadeInUp}
               className="z-20 md:max-w-[260px] w-full lg:relative flex h-full"
             >
-              <motion.p
+              <motion.h1
                 {...fadeIn}
-                className="w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]"
+                className="relative w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]"
               >
+                <div className="absolute -inset-4 bg-black/30 blur-xl -z-10 rounded-full" />
                 Ручная работа из экзотической кожи для тех, кто ценит статус и
                 индивидуальность.
-              </motion.p>
+              </motion.h1>
               <motion.h1
                 {...fadeInUp}
                 className={cn(
-                  'left-0 top-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2 z-[999] text-nowrap',
+                  'relative left-0 top-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2 z-[999] text-nowrap',
                   'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 3xl:text-[105px] 3xl:leading-[105px] 2xl:font-normal',
                 )}
               >
+                <div className="absolute -inset-4 bg-black/30 blur-xl -z-10 rounded-full" />
                 <span
                   className={cn(
-                    'subfont text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 3xl:text-[105px] 3xl:leading-[105px]',
+                    'lir text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 3xl:text-[105px] 3xl:leading-[105px]',
                   )}
                 >
                   LiRUMAR{' '}
@@ -108,17 +110,17 @@ const Hero: FC = () => {
               {...fadeInUp}
               className="z-20 2xl:max-w-[416px] md:max-w-[260px] w-full lg:relative flex"
             >
-              <div className="absolute w-full h-full left-0 -top-56 inset-10 bg-black/20 blur-[80px] z-[-1]"></div>
               <motion.h1
                 {...fadeInUp}
                 className={cn(
-                  '-top-24 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
+                  'relative -top-24 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
                   'absolute font-normal tracking-[-1px] text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
+                <div className="absolute -inset-4 bg-black/40 blur-2xl -z-10 rounded-full" />
                 <span
                   className={cn(
-                    'subfont text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] tracking-[-0.5px] 2xl:text-[105px] 2xl:leading-[105px]',
+                    'lir text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] tracking-[-0.5px] 2xl:text-[105px] 2xl:leading-[105px]',
                   )}
                 >
                   LiRUMAR{' '}
@@ -142,13 +144,17 @@ const Hero: FC = () => {
                   className="w-auto h-futo ssm:h-[870px] sm:w-[661px] sm:h-[924px]"
                   style={{ marginTop: '-160px' }}
                 />
-                <motion.p
-                  {...fadeIn}
-                  className="shadow-text absolute bottom-5 right-5 text-right w-[314px] sm:w-[390px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px]"
-                >
-                  Ручная работа из экзотической кожи для тех, кто ценит статус и
-                  индивидуальность.
-                </motion.p>
+                <div className="absolute bottom-5 right-5">
+                  <div className="absolute -inset-4 bg-black/40 blur-2xl z-0 rounded-full" />{' '}
+                  {/* тень */}
+                  <motion.h1
+                    {...fadeIn}
+                    className="relative text-right w-[314px] sm:w-[390px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px] z-10"
+                  >
+                    Ручная работа из экзотической кожи для тех, кто ценит статус
+                    и индивидуальность.
+                  </motion.h1>
+                </div>
               </motion.div>
 
               <motion.div {...fadeInUp} className="z-50 w-full">
