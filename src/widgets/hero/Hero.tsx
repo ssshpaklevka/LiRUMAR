@@ -117,7 +117,7 @@ const Hero: FC = () => {
                   'absolute font-normal tracking-[-1px] text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
-                <div className="absolute -inset-4 bg-black/40 blur-2xl -z-10 rounded-full" />
+                <div className="absolute -inset-4 bg-black/70 blur-3xl -z-10 rounded-full" />
                 <span
                   className={cn(
                     'lir text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] tracking-[-0.5px] 2xl:text-[105px] 2xl:leading-[105px]',
@@ -145,7 +145,7 @@ const Hero: FC = () => {
                   style={{ marginTop: '-160px' }}
                 />
                 <div className="absolute bottom-5 right-5">
-                  <div className="absolute -inset-4 bg-black/40 blur-2xl z-0 rounded-full" />{' '}
+                  <div className="absolute -inset-10 bg-black/50 blur-2xl z-0 rounded-full" />{' '}
                   {/* тень */}
                   <motion.h1
                     {...fadeIn}
