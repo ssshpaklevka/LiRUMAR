@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        '3xl': '1920px',
+        '3xl': '10000px',
         ssm: '550px',
       },
       colors: {

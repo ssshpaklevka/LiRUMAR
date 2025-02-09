@@ -64,7 +64,6 @@ const Hero: FC = () => {
                   'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 3xl:text-[105px] 3xl:leading-[105px] 2xl:font-normal',
                 )}
               >
-                <div className="absolute -inset-4 bg-black/30 blur-xl -z-10 rounded-full" />
                 <span
                   className={cn(
                     'lir text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 3xl:text-[105px] 3xl:leading-[105px]',
@@ -117,7 +116,19 @@ const Hero: FC = () => {
                   'absolute font-normal tracking-[-1px] text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
-                <div className="absolute -top-[40px] -inset-4 bg-black/40 blur-2xl -z-10  w-[390px] h-[120px] rounded-[100px/50px]" />
+                <svg
+                  className="absolute -top-12 -left-20 md:-top-[110px] md:-left-32 -z-10 w-[449px] h-[144px] md:w-[822px] md:h-[263px] blur-[100px]"
+                  viewBox="0 0 822 263"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="411"
+                    cy="131.5"
+                    rx="411"
+                    ry="131.5"
+                    fill="hsla(0, 0%, 4%, 0.5)"
+                  />
+                </svg>
                 <span
                   className={cn(
                     'lir text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] tracking-[-0.5px] 2xl:text-[105px] 2xl:leading-[105px]',
@@ -145,7 +156,20 @@ const Hero: FC = () => {
                   style={{ marginTop: '-160px' }}
                 />
                 <div className="absolute bottom-5 right-5">
-                  <div className="absolute -top-[40px] -inset-4 bg-black/40 blur-2xl z-0  w-[390px] h-[120px] rounded-[100px/50px]" />
+                  <svg
+                    className="absolute -right-32 -top-16 md:-right-72 md:-top-32 w-[548px] h-[186px] md:w-[904px] md:h-[300px] blur-[150px]"
+                    viewBox="0 0 1004 340"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <ellipse
+                      cx="502"
+                      cy="170"
+                      rx="502"
+                      ry="170"
+                      fill="hsla(0, 0%, 4%, 0.5)"
+                    />
+                  </svg>
+                  {/* fill="hsla(0, 0%, 4%, 0.5)" */}
                   {/* тень */}
                   <motion.h1
                     {...fadeIn}
