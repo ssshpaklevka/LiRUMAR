@@ -29,7 +29,7 @@ const CategoryItem: FC<Props> = ({
         query: { category: filterType },
       }}
       className={cn(
-        'grayscale hover:filter-none transition-all duration-300 ease-in-out group aspect-square md:h-[716px] md:aspect-auto flex items-end text-left bg-cover bg-bottom md:bg-cover',
+        'grayscale hover:filter-none transition-all duration-300 ease-in-out group aspect-square md:h-[716px] 3xl:h-[1145px] md:aspect-auto flex items-end text-left bg-cover bg-bottom md:bg-cover',
       )}
       style={{ backgroundImage: `url('${src}')` }}
     >

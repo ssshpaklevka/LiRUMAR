@@ -22,7 +22,7 @@ const AttentionDetail: FC = () => {
   };
   return (
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 gap-5"
+      className="grid grid-cols-1 xl:grid-cols-2 gap-5"
       initial="hidden" // Начальное состояние анимации
       whileInView="visible" // Анимация запускается, когда элемент появляется в области видимости
       viewport={{ once: true, amount: 0.2 }} // Анимация срабатывает только один раз и при появлении 20% элемента

@@ -89,13 +89,16 @@ const MassProduction: FC = () => {
   return (
     <div className="px-0 w-full 3xl:flex 3xl:justify-center" ref={ref}>
       {/* Десктоп версия */}
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <motion.div
           variants={backgroundVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="h-[642px] w-full 3xl:w-screen bg-cover flex flex-col items-center justify-center gap-[62px]"
-          style={{ backgroundImage: 'url("/img/mass-production/frame.webp")' }}
+          className="xl:h-[664px] 3xl:h-[1025px] opacity-[50%] w-full 3xl:w-screen bg-cover flex flex-col items-center justify-center gap-[62px]"
+          style={{
+            backgroundImage: 'url("/img/mass-production/Group 149.webp")',
+            // backgroundPosition: 'center',
+          }}
         >
           <motion.div
             variants={contentVariants}
@@ -138,13 +141,15 @@ const MassProduction: FC = () => {
       </div>
 
       {/* Мобильная версия */}
-      <div className="block lg:hidden lg:px-0">
+      <div className="block xl:hidden lg:px-0">
         <motion.div
           variants={backgroundVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="aspect-square bg-center h-[642px] sm:h-[1176px] w-full bg-cover bg-black flex flex-col items-center justify-center gap-[37px] md:gap-[60px] xl:gap-[60px] 3xl:gap-[80px]"
-          style={{ backgroundImage: 'url("/img/mass-production/frameph.png")' }}
+          className="aspect-square bg-center h-[642px] md:h-[663px] w-full bg-cover bg-black flex flex-col items-center justify-center gap-[37px] md:gap-[60px] xl:gap-[60px] 3xl:gap-[80px]"
+          style={{
+            backgroundImage: 'url("/img/mass-production/frameph 1.webp")',
+          }}
         >
           <motion.div
             variants={contentVariants}

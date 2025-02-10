@@ -47,16 +47,15 @@ const Hero: FC = () => {
           <div className="flex justify-center flex-col lg:flex-row lg:gap-0 gap-[73px] items-center relative h-full 2xl:w-full">
             <motion.div
               {...fadeInUp}
-              className="z-20 md:max-w-[260px] w-full lg:relative flex h-full"
+              className="z-20 md:max-w-[260px] w-full lg:relative flex gap-10"
             >
-              <motion.h1
+              <motion.p
                 {...fadeIn}
-                className="relative w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]"
+                className="w-[220px] mt-60 text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]"
               >
-                <div className="absolute -inset-4 bg-black/30 blur-xl -z-10 rounded-full" />
                 Ручная работа из экзотической кожи для тех, кто ценит статус и
                 индивидуальность.
-              </motion.h1>
+              </motion.p>
               <motion.h1
                 {...fadeInUp}
                 className={cn(
@@ -77,10 +76,7 @@ const Hero: FC = () => {
               </motion.h1>
             </motion.div>
 
-            <motion.div
-              {...scaleIn}
-              className="max-h-[calc(100vh-11.111vh)] relative"
-            >
+            <motion.div {...scaleIn} className="relative">
               <Image
                 src="/img/hero/ARS061131.webp"
                 alt="hero"
