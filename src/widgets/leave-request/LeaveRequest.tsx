@@ -106,7 +106,7 @@ const LeaveRequest: FC = () => {
     >
       <Container>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px] sm:gap-[120px] md:gap-[160px]"
+          className="grid grid-cols-1 xl:grid-cols-2 gap-[60px] sm:gap-[120px] md:gap-[160px]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

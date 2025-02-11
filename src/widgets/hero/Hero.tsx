@@ -108,12 +108,12 @@ const Hero: FC = () => {
               <motion.h1
                 {...fadeInUp}
                 className={cn(
-                  'relative -top-24 left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
+                  'relative -top-[140px]  left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
                   'absolute font-normal tracking-[-1px] text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
                 <svg
-                  className="absolute -top-12 -left-20 md:-top-[110px] md:-left-32 -z-10 w-[449px] h-[144px] md:w-[822px] md:h-[263px] blur-[100px]"
+                  className="absolute -top-12 -left-2 md:-top-[110px] md:-left-32 -z-10 w-[449px] h-[144px] md:w-[822px] md:h-[263px] blur-[150px]"
                   viewBox="0 0 822 263"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -122,7 +122,7 @@ const Hero: FC = () => {
                     cy="131.5"
                     rx="411"
                     ry="131.5"
-                    fill="hsla(0, 0%, 4%, 0.5)"
+                    fill="hsla(0, 0%, 4%, 1)"
                   />
                 </svg>
                 <span
@@ -141,19 +141,19 @@ const Hero: FC = () => {
             <div className="flex flex-col items-center w-auto gap-[40px] sm:gap-[73px]">
               <motion.div
                 {...scaleIn}
-                className="max-h-[calc(100vh-11.111vh)] relative w-auto"
+                className="max-h-[calc(100vh-11.111vh)] relative w-auto px-[40px]"
               >
                 <Image
                   src="/img/hero/DSC09297-1.webp"
                   alt="hero"
                   width={4000}
                   height={4000}
-                  className="w-auto h-futo ssm:h-[870px] sm:w-[661px] sm:h-[924px]"
+                  className="w-auto h-futo ssm:h-[870px] md:w-[661px]  md:h-[1000px]"
                   style={{ marginTop: '-160px' }}
                 />
                 <div className="absolute bottom-5 right-5">
                   <svg
-                    className="absolute -right-32 -top-16 md:-right-72 md:-top-32 w-[548px] h-[186px] md:w-[904px] md:h-[300px] blur-[150px]"
+                    className="absolute -right-36 -top-16 md:-right-72 md:-top-32 w-[548px] h-[186px] md:w-[904px] md:h-[300px] blur-[150px]"
                     viewBox="0 0 1004 340"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -162,14 +162,14 @@ const Hero: FC = () => {
                       cy="170"
                       rx="502"
                       ry="170"
-                      fill="hsla(0, 0%, 4%, 0.5)"
+                      fill="hsla(0, 0%, 4%, 1)"
                     />
                   </svg>
                   {/* fill="hsla(0, 0%, 4%, 0.5)" */}
                   {/* тень */}
                   <motion.h1
                     {...fadeIn}
-                    className="relative text-right w-[314px] sm:w-[390px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] 2xl:text-[25px] 2xl:leading-[30px] z-10"
+                    className="relative text-right w-[314px] sm:w-[390px] md:w-[576px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] md:text-[25px] md:leading-[25px] 2xl:text-[25px] 2xl:leading-[30px] z-10"
                   >
                     Ручная работа из экзотической кожи для тех, кто ценит статус
                     и индивидуальность.
@@ -177,7 +177,7 @@ const Hero: FC = () => {
                 </div>
               </motion.div>
 
-              <motion.div {...fadeInUp} className="z-50 w-full">
+              <motion.div {...fadeInUp} className="z-50 w-full px-[40px]">
                 <CreateRequest
                   variant="big"
                   className="flex-none h-[50px] md:h-[88px] w-full cursor-pointer"

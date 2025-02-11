@@ -8,11 +8,15 @@ const Header: FC = () => {
   return (
     <header className="relative flex flex-row-reverse md:flex-row mx-auto z-50 justify-between px-5 mt-6">
       <HeaderText
-        className="text-center md:text-left"
+        className="sssm:text-right text-center md:text-left"
         href="/catalog"
         text="Каталог"
       />
-      <HeaderText href="/" text="LiRUMAR" />
+      <HeaderText
+        href="/"
+        text="LiRUMAR"
+        className="sssm:text-left md:text-center"
+      />
       {/* <HeaderText text="Оставить заявку" /> */}
       <CreateRequest className="hidden md:block" variant="text" />
     </header>

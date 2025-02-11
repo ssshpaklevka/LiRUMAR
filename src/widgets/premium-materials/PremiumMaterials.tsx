@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
+import { useInView, motion } from 'framer-motion';
 
 import type { ImageDataItem } from '@/src/entities/image-premium/ImagePremium';
 import Container from '@/src/shared/ui/containers/Container';
@@ -47,21 +48,70 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
       </>
     );
   };
+  const ref = useRef(null);
+  const inView = useInView(ref, {
+    once: true, // анимация произойдет только один раз
+    amount: 0.2, // элемент считается видимым, когда 30% его находится в viewport
+  });
+
+  const textVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  const headingVariants = {
+    hidden: {
+      opacity: 0,
+      x: -50,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: 'easeOut',
+        delay: 0.3, // небольшая задержка после появления первого текста
+      },
+    },
+  };
 
   return (
     <Container
       style={{ justifyItems: 'center' }}
       className="grid grid-cols-1 md:grid-cols-2 gap-[23px] 2xl:gap-[37px]"
     >
-      <div className="w-full flex flex-col justify-end gap-[60px] md:gap-[112px]">
+      <div
+        ref={ref}
+        className="w-full flex flex-col justify-end gap-[60px] md:gap-[82px] xl:gap-[87px]"
+      >
         <div className="flex flex-col gap-[30px] sm:gap-[40px] md:gap-[45px] 3xl:gap-[65px]">
-          <p className="lg:w-[488px] 2xl:w-[755px] text-[14px] leading-[19px] sm:text-[25px] sm:leading-[35px] md:text-[16px] md:leading-[22px] 2xl:text-[25px] 2xl:leading-[35px] ">
+          <motion.p
+            variants={textVariants}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            className="lg:w-[488px] 2xl:w-[755px] text-[14px] leading-[19px] sm:text-[25px] sm:leading-[35px] md:text-[16px] md:leading-[22px] 2xl:text-[25px] 2xl:leading-[35px]"
+          >
             Наши изделия создаются исключительно из натуральных премиум
             материалов, таких как
-          </p>
-          <h1 className="subfont font-normal text-[45px] leading-[38px] sm:text-[95px] sm:leading-[92px] md:text-[59px] md:leading-[52px] 2xl:text-[105px] 2xl:leading-[92px] ">
+          </motion.p>
+          <motion.h1
+            variants={headingVariants}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            className="subfont font-normal text-[45px] leading-[38px] sm:text-[95px] sm:leading-[92px] md:text-[59px] md:leading-[52px] 2xl:text-[105px] 2xl:leading-[92px]"
+          >
             {renderHeadingWithBreak(mainImage?.heading)}
-          </h1>
+          </motion.h1>
         </div>
         <div className="w-full md:hidden">
           <Image
