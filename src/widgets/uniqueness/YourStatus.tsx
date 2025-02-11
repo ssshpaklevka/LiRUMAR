@@ -39,13 +39,12 @@ const YourStatus: FC = () => {
 
   return (
     <motion.div
-      ref={ref}
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       className="flex flex-col relative"
     >
-      <div className="hidden xl:block">
+      <div className="hidden xl:block" ref={ref}>
         <div className="h-[350px] sm:h-[450px] flex items-end xl:items-center flex-row xl:pt-[96px] gap-24">
           <motion.p
             variants={itemVariants}
@@ -85,7 +84,7 @@ const YourStatus: FC = () => {
         </div>
       </div>
       {/* мобилка планшет */}
-      <div className="block xl:hidden">
+      <div className="block xl:hidden" ref={ref}>
         <div className="flex flex-col gap-[40px] md:gap-[100]">
           <div className="flex justify-end">
             <motion.div

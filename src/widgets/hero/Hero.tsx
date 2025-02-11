@@ -37,8 +37,13 @@ const Hero: FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ duration: 1 }}
-        className="absolute inset-0 -z-10 bg-cover pointer-events-none"
-        style={{ backgroundImage: 'url("/img/hero/frame.webp")' }}
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat w-full h-full pointer-events-none"
+        style={{
+          backgroundImage: 'url("/img/hero/frame.webp")',
+          WebkitBackgroundSize: 'cover',
+          MozBackgroundSize: 'cover',
+          OBackgroundSize: 'cover',
+        }}
       />
 
       {/* Пк версия */}
@@ -82,8 +87,13 @@ const Hero: FC = () => {
                 alt="hero"
                 width={4000}
                 height={4000}
-                className="h-full w-auto md:block hidden 2xl:h-[820px] 2xl:w-[700px] 3xl:h-[1214px] 3xl:w-[1024px]"
-                style={{ marginTop: '-160px' }}
+                className="h-full w-auto md:block hidden 2xl:h-[820px] 2xl:w-[700px] 3xl:h-[1214px] 3xl:w-[1024px] object-contain"
+                style={{
+                  marginTop: '-160px',
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+                priority
               />
             </motion.div>
 
@@ -148,7 +158,7 @@ const Hero: FC = () => {
                   alt="hero"
                   width={4000}
                   height={4000}
-                  className="w-auto h-futo ssm:h-[870px] md:w-[661px]  md:h-[1000px]"
+                  className="w-auto h-auto aspect-auto ssm:h-[870px] md:w-[661px]  md:h-[1000px]"
                   style={{ marginTop: '-160px' }}
                 />
                 <div className="absolute bottom-5 right-5">

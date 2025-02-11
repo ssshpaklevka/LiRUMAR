@@ -11,7 +11,6 @@ const MassProduction: FC = () => {
   const isInView = useInView(ref, {
     once: true,
     amount: 0.2,
-    margin: '0px 0px -100px 0px',
   });
 
   const backgroundVariants = {
@@ -86,6 +85,35 @@ const MassProduction: FC = () => {
     },
   };
 
+  const mobileTextVariants = {
+    hidden: {
+      opacity: 0,
+      y: 10,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  const mobileButtonVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    hover: {
+      scale: 1.02,
+    },
+  };
   return (
     <div className="px-0 w-full 3xl:flex 3xl:justify-center" ref={ref}>
       {/* Десктоп версия */}
@@ -142,43 +170,38 @@ const MassProduction: FC = () => {
 
       {/* Мобильная версия */}
       <div className="block xl:hidden lg:px-0">
-        <motion.div
-          variants={backgroundVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+        <div
           className="aspect-square bg-center h-[642px] md:h-[663px] w-full bg-cover bg-black flex flex-col items-center justify-center gap-[37px] md:gap-[60px] xl:gap-[60px] 3xl:gap-[80px]"
           style={{
             backgroundImage: 'url("/img/mass-production/frameph 1.webp")',
           }}
         >
-          <motion.div
-            variants={contentVariants}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            className="flex flex-col items-center gap-[30px] md:gap-[60px] xl:gap-[36px] 3xl:gap-[60px]"
-          >
+          <div className="flex flex-col items-center gap-[30px] md:gap-[60px] xl:gap-[36px] 3xl:gap-[60px]">
             <motion.p
-              variants={itemVariants}
+              variants={mobileTextVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
               className="text-[33px] leading-[40px] w-[330] sm:text-[59px] sm:leading-[70px] sm:w-[620px] text-center"
             >
               Нашим изделиям нет места в массовом производстве
             </motion.p>
             <motion.p
-              variants={itemVariants}
+              variants={mobileTextVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
               className="text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] sm:max-w-[590px] text-center"
             >
               Каждая единица изготавливается в ручную, индивидуально под каждого
               клиента
             </motion.p>
-          </motion.div>
+          </div>
 
           <Link href={'/catalog'}>
             <motion.div
-              variants={buttonVariants}
+              variants={mobileButtonVariants}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
               whileHover="hover"
-              whileTap="tap"
             >
               <Button
                 size={'lg'}
@@ -188,7 +211,7 @@ const MassProduction: FC = () => {
               </Button>
             </motion.div>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
