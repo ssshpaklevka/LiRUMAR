@@ -12,6 +12,7 @@ export default {
       screens: {
         '3xl': '1920px',
         ssm: '550px',
+        sssm: '120px',
       },
       colors: {
         background: 'hsl(var(--background))',
