@@ -209,7 +209,7 @@ const MassProduction: FC = () => {
           >
             <motion.p
               variants={mobileHeadingVariants}
-              className="text-[33px] leading-[40px] w-[330] sm:text-[59px] sm:leading-[70px] sm:w-[620px] text-center"
+              className="text-[30px] leading-[33px] w-[330] sm:text-[59px] sm:leading-[70px] sm:w-[620px] text-center"
             >
               Нашим изделиям нет места в массовом производстве
             </motion.p>
