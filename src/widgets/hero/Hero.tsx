@@ -56,7 +56,7 @@ const Hero: FC = () => {
             >
               <motion.p
                 {...fadeIn}
-                className=" w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  "
+                className="3xl:mt-96 w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  "
               >
                 Ручная работа из экзотической кожи для тех, кто ценит статус и
                 индивидуальность.

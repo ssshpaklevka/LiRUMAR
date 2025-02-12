@@ -85,33 +85,58 @@ const MassProduction: FC = () => {
     },
   };
 
-  const mobileTextVariants = {
+  // Отдельные варианты для заголовка и подзаголовка
+  const mobileHeadingVariants = {
     hidden: {
       opacity: 0,
-      y: 10,
+      y: 30,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
-        ease: 'easeOut',
+        duration: 0.8,
+        delay: 0.2, // Небольшая задержка для заголовка
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   };
 
-  const mobileButtonVariants = {
+  const mobileSubtitleVariants = {
     hidden: {
       opacity: 0,
+      y: 20,
     },
     visible: {
       opacity: 1,
+      y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.8,
+        delay: 0.4, // Больше задержка для подзаголовка
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+  const mobileButtonVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.6, // Появляется последней
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
     hover: {
-      scale: 1.02,
+      scale: 1.05,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut',
+      },
     },
   };
   return (
@@ -176,41 +201,42 @@ const MassProduction: FC = () => {
             backgroundImage: 'url("/img/mass-production/frameph 1.webp")',
           }}
         >
-          <div className="flex flex-col items-center gap-[30px] md:gap-[60px] xl:gap-[36px] 3xl:gap-[60px]">
+          <motion.div
+            className="flex flex-col items-center gap-[30px] md:gap-[60px] xl:gap-[36px] 3xl:gap-[60px]"
+            variants={contentVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+          >
             <motion.p
-              variants={mobileTextVariants}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
+              variants={mobileHeadingVariants}
               className="text-[33px] leading-[40px] w-[330] sm:text-[59px] sm:leading-[70px] sm:w-[620px] text-center"
             >
               Нашим изделиям нет места в массовом производстве
             </motion.p>
             <motion.p
-              variants={mobileTextVariants}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
+              variants={mobileSubtitleVariants}
               className="text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] sm:max-w-[590px] text-center"
             >
               Каждая единица изготавливается в ручную, индивидуально под каждого
               клиента
             </motion.p>
-          </div>
+          </motion.div>
 
-          <Link href={'/catalog'}>
-            <motion.div
-              variants={mobileButtonVariants}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              whileHover="hover"
-            >
+          <motion.div
+            variants={mobileButtonVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            whileHover="hover"
+          >
+            <Link href={'/catalog'}>
               <Button
                 size={'lg'}
                 className="transition-all duration-300 ease-in-out hover:bg-transparent hover:text-foreground hover:border hover:border-[#D9D9D9] border-[#D9D9D9] w-[236px] h-[65px] text-[14px] leading-[16px] sm:w-[432px] sm:h-[120px] sm:text-[25px] sm:leading-[30px]"
               >
                 Смотреть каталог
               </Button>
-            </motion.div>
-          </Link>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </div>
