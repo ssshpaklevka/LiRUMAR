@@ -52,11 +52,11 @@ const Hero: FC = () => {
           <div className="flex justify-center flex-col lg:flex-row lg:gap-0 gap-[73px] items-center relative h-full 2xl:w-full">
             <motion.div
               {...fadeInUp}
-              className="z-20 md:max-w-[260px] w-full lg:relative flex gap-10"
+              className="z-20  md:max-w-[260px] w-full lg:relative flex h-full"
             >
               <motion.p
                 {...fadeIn}
-                className="w-[220px] mt-60 text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]"
+                className=" w-[220px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  "
               >
                 Ручная работа из экзотической кожи для тех, кто ценит статус и
                 индивидуальность.
@@ -64,7 +64,7 @@ const Hero: FC = () => {
               <motion.h1
                 {...fadeInUp}
                 className={cn(
-                  'relative left-0 top-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2 z-[999] text-nowrap',
+                  'left-0 top-0 lg:top-[calc(50%-170px)]  2xl:top-[calc(50%-200px)] -translate-y-1/2 z-[999] text-nowrap',
                   'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 3xl:text-[105px] 3xl:leading-[105px] 2xl:font-normal',
                 )}
               >
@@ -158,7 +158,7 @@ const Hero: FC = () => {
                   alt="hero"
                   width={4000}
                   height={4000}
-                  className="w-auto h-auto aspect-auto ssm:h-[870px] md:w-[661px]  md:h-[1000px]"
+                  className="w-auto h-futo ssm:h-[870px] md:w-[661px]  md:h-[1000px]"
                   style={{ marginTop: '-160px' }}
                 />
                 <div className="absolute bottom-5 right-5">
