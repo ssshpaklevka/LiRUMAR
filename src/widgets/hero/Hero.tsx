@@ -68,6 +68,19 @@ const Hero: FC = () => {
                   'absolute font-normal tracking-[-3.5px] text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] 3xl:text-[105px] 3xl:leading-[105px] 2xl:font-normal',
                 )}
               >
+                <svg
+                  className="absolute -top-12 -left-2 md:-top-[40px] md:-left-64 -z-10 w-[449px] h-[144px] md:w-[860px] md:h-[200px] blur-[150px]"
+                  viewBox="0 0 822 263"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="411"
+                    cy="131.5"
+                    rx="411"
+                    ry="131.5"
+                    fill="hsla(0, 0%, 4%, 1)"
+                  />
+                </svg>
                 <span
                   className={cn(
                     'lir text-[33px] leading-[33px] sm:text-[59px] sm:leading-[59px] md:text-[61px] md:leading-[61px] tracking-[-3px] 3xl:text-[105px] 3xl:leading-[105px]',

@@ -14,7 +14,7 @@ const LinkTg: FC = () => {
         alt="tg"
         width={20}
         height={20}
-        className="w-[20px] h-[20px] transition-all duration-300 ease-in-out hover:w-[30px] hover:h-[30px] 3xl:w-[30px] 3xl:h-[30px] hover:3xl:w-[40px] hover:3xl:h-[40px]"
+        className="w-[20px] h-[20px] transition-all duration-300 ease-in-out  3xl:w-[30px] 3xl:h-[30px]"
       />
     </Link>
   );

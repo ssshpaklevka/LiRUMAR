@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useCallback, useRef, useState } from 'react';
-import { useInView, motion } from 'framer-motion';
+import { useInView, motion, AnimatePresence } from 'framer-motion';
 
 import type { ImageDataItem } from '@/src/entities/image-premium/ImagePremium';
 import Container from '@/src/shared/ui/containers/Container';
@@ -85,6 +85,17 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
     },
   };
 
+  const imageVariants = {
+    enter: { opacity: 0 },
+    center: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+  const thumbnailVariants = {
+    enter: { opacity: 0.5, scale: 0.95 },
+    center: { opacity: 1, scale: 1 },
+    exit: { opacity: 0.5, scale: 0.95 },
+  };
+
   return (
     <Container
       style={{ justifyItems: 'center' }}
@@ -114,54 +125,99 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
           </motion.h1>
         </div>
         <div className="w-full md:hidden">
-          <Image
-            className="aspect-square w-full h-full"
-            src={mainImage?.imageUrl || ''}
-            width={560}
-            height={560}
-            alt={mainImage?.heading}
-          />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={mainImage?.imageUrl}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              variants={imageVariants}
+              transition={{ duration: 0.3 }}
+            >
+              <Image
+                className="aspect-square w-full h-full"
+                src={mainImage?.imageUrl || ''}
+                width={560}
+                height={560}
+                alt={mainImage?.heading}
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
         <div className="hidden md:block">
           <div className="flex justify-between w-full flex-row gap-[14px]">
             {currentImageData.slice(1).map((item, index) => (
-              <div key={index}>
-                <Image
-                  src={item.imageUrl}
-                  width={177}
-                  height={178}
-                  alt={item.heading}
-                  onClick={() => handleSmallImageClick(index + 1)}
-                  className={`aspect-square h-full w-full sm:size-[120px] md:size-[124px] lg:size-[174px] xl:size-[224px] 2xl:size-[264px] 3xl:size-[300px] ${mainImage?.imageUrl === item.imageUrl ? '' : 'filter brightness-50'}`}
-                  style={{ cursor: 'pointer' }}
-                />
-              </div>
+              <AnimatePresence mode="wait" key={item.imageUrl}>
+                <motion.div
+                  key={item.imageUrl}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  variants={thumbnailVariants}
+                  transition={{ duration: 0.3 }} // Быстрая анимация
+                >
+                  <Image
+                    src={item.imageUrl}
+                    width={177}
+                    height={178}
+                    alt={item.heading}
+                    onClick={() => handleSmallImageClick(index + 1)}
+                    className={`aspect-square h-full w-full sm:size-[120px] md:size-[124px] lg:size-[174px] xl:size-[224px] 2xl:size-[264px] 3xl:size-[300px] ${
+                      mainImage?.imageUrl === item.imageUrl
+                        ? ''
+                        : 'filter brightness-50'
+                    }`}
+                    style={{ cursor: 'pointer' }}
+                  />
+                </motion.div>
+              </AnimatePresence>
             ))}
           </div>
         </div>
       </div>
       <div className="w-full hidden md:block">
-        <Image
-          className="aspect-square w-full h-full"
-          src={mainImage?.imageUrl || ''}
-          width={560}
-          height={560}
-          alt={mainImage?.heading}
-        />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={mainImage?.imageUrl}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            variants={imageVariants}
+            transition={{ duration: 0.3 }}
+            className="w-full h-full"
+          >
+            <Image
+              className="aspect-square w-full h-full"
+              src={mainImage?.imageUrl || ''}
+              width={560}
+              height={560}
+              alt={mainImage?.heading}
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
       <div className="flex justify-between w-full flex-row gap-[14px] 2xl:gap-[37px] md:hidden">
         {currentImageData.slice(1).map((item, index) => (
-          <div key={index}>
-            <Image
-              src={item.imageUrl}
-              width={177}
-              height={178}
-              alt={item.heading}
-              onClick={() => handleSmallImageClick(index + 1)}
-              className="aspect-square h-full w-full"
-              style={{ cursor: 'pointer' }}
-            />
-          </div>
+          <AnimatePresence mode="wait" key={item.imageUrl}>
+            <motion.div
+              key={item.imageUrl}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              variants={thumbnailVariants}
+              transition={{ duration: 0.3 }} // Быстрая анимация
+            >
+              <Image
+                src={item.imageUrl}
+                width={177}
+                height={178}
+                alt={item.heading}
+                onClick={() => handleSmallImageClick(index + 1)}
+                className="aspect-square h-full w-full"
+                style={{ cursor: 'pointer' }}
+              />
+            </motion.div>
+          </AnimatePresence>
         ))}
       </div>
     </Container>
