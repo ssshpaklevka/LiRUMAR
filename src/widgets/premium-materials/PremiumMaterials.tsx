@@ -38,16 +38,16 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
 
   const mainImage = currentImageData[0];
 
-  const renderHeadingWithBreak = (heading: string) => {
-    const [firstWord, ...restWords] = heading.split(' ');
-    return (
-      <>
-        {firstWord}
-        <br />
-        {restWords.join(' ')}
-      </>
-    );
-  };
+  // const renderHeadingWithBreak = (heading: string) => {
+  //   const [firstWord, ...restWords] = heading.split(' ');
+  //   return (
+  //     <>
+  //       {firstWord}
+  //       <br />
+  //       {restWords.join(' ')}
+  //     </>
+  //   );
+  // };
   const ref = useRef(null);
   const inView = useInView(ref, {
     once: true, // анимация произойдет только один раз
@@ -103,26 +103,58 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
     >
       <div
         ref={ref}
-        className="w-full flex flex-col justify-end gap-[60px] md:gap-[82px] xl:gap-[87px]"
+        className="w-full flex flex-col justify-end gap-[40px] md:gap-[52px] xl:gap-[87px]"
       >
-        <div className="flex flex-col gap-[30px] sm:gap-[40px] md:gap-[45px] 3xl:gap-[65px]">
+        <div className="flex flex-col gap-[30px] sm:gap-[40px] md:gap-[30px] 3xl:gap-[65px]">
           <motion.p
             variants={textVariants}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
-            className="lg:w-[488px] 2xl:w-[755px] text-[14px] leading-[19px] sm:text-[25px] sm:leading-[35px] md:text-[16px] md:leading-[22px] 2xl:text-[25px] 2xl:leading-[35px]"
+            className="max-w-[305px] md:max-w-[409px] lg:w-[488px] 2xl:w-[755px] 3xl:max-w-[550px] text-[14px] leading-[19px] md:text-[18px] md:leading-[28px] xl:text-[19px] xl:leading-[26px]   3xl:text-[25px] 3xl:leading-[35px]"
           >
             Наши изделия создаются исключительно из натуральных премиум
-            материалов, таких как
+            материалов.
           </motion.p>
-          <motion.h1
-            variants={headingVariants}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            className="subfont font-normal text-[45px] leading-[38px] sm:text-[95px] sm:leading-[92px] md:text-[59px] md:leading-[52px] 2xl:text-[105px] 2xl:leading-[92px]"
-          >
-            {renderHeadingWithBreak(mainImage?.heading)}
-          </motion.h1>
+          <div className="relative block md:hidden">
+            <motion.h1
+              variants={headingVariants}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              className="font-normal text-[30px] leading-[33px] md:text-[42px] md:leading-[47px] lg:text-[50px] lg:leading-[55px] xl:text-[66px] xl:leading-[59px] 3xl:text-[80px] 3xl:leading-[72px] max-w-[311px] md:max-w-[586px]"
+            >
+              <p>Исключительная</p>
+              кожа, изделия на любой вкус
+            </motion.h1>
+
+            <motion.p
+              variants={textVariants}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              className="absolute right-0 bottom-0 md:bottom-[-30px] text-[14px] leading-[19px] md:text-[25px] md:leading-[35px] lg:text-[50px] lg:leading-[55px] xl:text-[66px] xl:leading-[59px] 3xl:text-[80px] 3xl:leading-[72px]"
+            >
+              В наличии и под заказ.
+            </motion.p>
+          </div>
+          <div className="hidden md:flex flex-col gap-[30px] sm:gap-[40px] md:gap-[30px] 3xl:gap-[65px]">
+            <motion.h1
+              variants={headingVariants}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              className="font-normal text-[30px] leading-[33px] md:text-[40px] md:leading-[45px] lg:text-[50px] lg:leading-[55px] xl:text-[66px] xl:leading-[59px] 3xl:text-[80px] 3xl:leading-[72px] max-w-[311px] md:max-w-[586px] 3xl:max-w-[700px]"
+            >
+              <p>Исключительная</p>
+              кожа, изделия на любой вкус
+            </motion.h1>
+
+            <motion.p
+              variants={textVariants}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              className="text-[14px] leading-[19px] md:text-[18px] md:leading-[28px]  xl:text-[19px] xl:leading-[26px]  3xl:text-[25px] 3xl:leading-[35px]"
+            >
+              В наличии и под заказ.
+            </motion.p>
+          </div>
         </div>
         <div className="w-full md:hidden">
           <AnimatePresence mode="wait">
