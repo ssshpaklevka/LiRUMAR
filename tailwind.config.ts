@@ -11,7 +11,8 @@ export default {
     extend: {
       screens: {
         '3xl': '1920px',
-        ssm: '550px',
+        ssm: '475px',
+        ms: '300px',
         sssm: '120px',
       },
       colors: {

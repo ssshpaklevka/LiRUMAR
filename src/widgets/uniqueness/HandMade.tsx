@@ -79,12 +79,12 @@ const HandMade: FC = () => {
           variants={textVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="mt-[41px] text-[33px] leading-[29px] sssm:text-[26px] ssm:text-[33px] md:mt-[60px] md:text-[59px] md:leading-[53px] xl:mt-[56px] xl:text-[44px] xl:leading-[39px] 3xl:mt-[80px] 3xl:text-[70px] 3xl:leading-[63px] tracking-[0.5px]"
+          className="mt-[41px] text-[33px] leading-[29px] ms:text-[21px] ssm:text-[33px] md:mt-[60px] md:text-[59px] md:leading-[53px] xl:mt-[56px] xl:text-[44px] xl:leading-[39px] 3xl:mt-[80px] 3xl:text-[70px] 3xl:leading-[63px] tracking-[0.5px]"
         >
           Ручная работа, экзотическая <br />
           <span
             className={cn(
-              'subfont text-[33px] leading-[29px] sssm:text-[26px] ssm:text-[33px] md:text-[59px] md:leading-[53px] xl:text-[44px] xl:leading-[39px] 3xl:text-[80px] 3xl:leading-[72px] tracking-[0.5px]',
+              'subfont text-[33px] leading-[29px] ms:text-[21px] ssm:text-[33px] md:text-[59px] md:leading-[53px] xl:text-[44px] xl:leading-[39px] 3xl:text-[80px] 3xl:leading-[72px] tracking-[0.5px]',
             )}
           >
             премиальная кожа
@@ -113,7 +113,7 @@ const HandMade: FC = () => {
               className="absolute 3xl:top-0 3xl:-left-3 2xl:-left-3 2xl:-top-1 xl:-left-[20px] xl:-top-3 lg:-left-[30px] lg:-top-1 md:-left-[30px] md:-top-1 sm:-left-[10px] sm:-top-0 md:size-[64px] top-[0px] -left-[10px] size-[32px]"
             />
           </div>
-          <p className="text-[14px] leading-[16px] sm:text-[18px] sm:leading-[25px] md:text-[16px] md:leading-[19px] xl:text-[19px] xl:leading-[29px] text-end underline underline-offset-8">
+          <p className="text-[14px] leading-[16px] ms:text-[12px] sm:text-[18px] sm:leading-[25px] md:text-[16px] md:leading-[19px] xl:text-[19px] xl:leading-[29px] text-end underline underline-offset-8">
             Кожа питона
           </p>
         </motion.div>
