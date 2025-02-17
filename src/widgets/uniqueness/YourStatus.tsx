@@ -6,16 +6,16 @@ import { motion, useInView } from 'framer-motion';
 const YourStatus: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    once: true, // анимация произойдет только один раз
-    amount: 0.2, // триггер когда 30% элемента видно
+    once: true,
+    amount: 0.1, // Уменьшено для более раннего срабатывания
   });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -23,8 +23,8 @@ const YourStatus: FC = () => {
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
-      scale: 0.95,
+      y: 20,
+      scale: 0.98,
     },
     visible: {
       opacity: 1,
@@ -39,13 +39,13 @@ const YourStatus: FC = () => {
 
   return (
     <motion.div
+      ref={ref}
       variants={containerVariants}
       initial="hidden"
-      ref={ref}
       animate={isInView ? 'visible' : 'hidden'}
       className="flex flex-col relative"
     >
-      <div className="hidden xl:block" ref={ref}>
+      <div className="hidden xl:block">
         <div className="h-[350px] sm:h-[450px] flex items-end xl:items-center flex-row xl:pt-[96px] gap-24">
           <motion.p
             variants={itemVariants}

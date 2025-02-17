@@ -38,20 +38,10 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
 
   const mainImage = currentImageData[0];
 
-  // const renderHeadingWithBreak = (heading: string) => {
-  //   const [firstWord, ...restWords] = heading.split(' ');
-  //   return (
-  //     <>
-  //       {firstWord}
-  //       <br />
-  //       {restWords.join(' ')}
-  //     </>
-  //   );
-  // };
   const ref = useRef(null);
   const inView = useInView(ref, {
-    once: true, // анимация произойдет только один раз
-    amount: 0.2, // элемент считается видимым, когда 30% его находится в viewport
+    once: true,
+    amount: 0.2,
   });
 
   const textVariants = {
@@ -80,7 +70,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
       transition: {
         duration: 1,
         ease: 'easeOut',
-        delay: 0.3, // небольшая задержка после появления первого текста
+        delay: 0.3,
       },
     },
   };
@@ -90,10 +80,11 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
     center: { opacity: 1 },
     exit: { opacity: 0 },
   };
+
   const thumbnailVariants = {
-    enter: { opacity: 0.5, scale: 0.95 },
-    center: { opacity: 1, scale: 1 },
-    exit: { opacity: 0.5, scale: 0.95 },
+    enter: { opacity: 0.5 },
+    center: { opacity: 1 },
+    exit: { opacity: 0.5 },
   };
 
   return (
@@ -110,7 +101,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
             variants={textVariants}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
-            className="max-w-[305px] md:max-w-[409px] lg:w-[488px] 2xl:w-[755px] 3xl:max-w-[550px] text-[14px] leading-[19px] md:text-[18px] md:leading-[28px] xl:text-[19px] xl:leading-[26px]   3xl:text-[25px] 3xl:leading-[35px]"
+            className="max-w-[305px] md:max-w-[409px] lg:w-[488px] 2xl:w-[755px] 3xl:max-w-[550px] text-[14px] leading-[19px] md:text-[18px] md:leading-[28px] xl:text-[19px] xl:leading-[26px] 3xl:text-[25px] 3xl:leading-[35px]"
           >
             Наши изделия создаются исключительно из натуральных премиум
             материалов.
@@ -150,7 +141,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
               variants={textVariants}
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
-              className="text-[14px] leading-[19px] md:text-[18px] md:leading-[28px]  xl:text-[19px] xl:leading-[26px]  3xl:text-[25px] 3xl:leading-[35px]"
+              className="text-[14px] leading-[19px] md:text-[18px] md:leading-[28px] xl:text-[19px] xl:leading-[26px] 3xl:text-[25px] 3xl:leading-[35px]"
             >
               В наличии и под заказ.
             </motion.p>
@@ -186,7 +177,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
                   animate="center"
                   exit="exit"
                   variants={thumbnailVariants}
-                  transition={{ duration: 0.3 }} // Быстрая анимация
+                  transition={{ duration: 0.3 }}
                 >
                   <Image
                     src={item.imageUrl}
@@ -228,7 +219,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="flex justify-between w-full flex-row gap-[14px] 2xl:gap-[37px] md:hidden">
+      <div className="grid grid-cols-3 w-full gap-[14px] 2xl:gap-[37px] md:hidden">
         {currentImageData.slice(1).map((item, index) => (
           <AnimatePresence mode="wait" key={item.imageUrl}>
             <motion.div
@@ -236,8 +227,12 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
               initial="enter"
               animate="center"
               exit="exit"
-              variants={thumbnailVariants}
-              transition={{ duration: 0.3 }} // Быстрая анимация
+              variants={{
+                enter: { transition: { staggerChildren: 0.1 } },
+                center: { transition: { staggerChildren: 0.1 } },
+                exit: { transition: { staggerChildren: 0.1 } },
+              }}
+              transition={{ duration: 0.3 }}
             >
               <Image
                 src={item.imageUrl}
