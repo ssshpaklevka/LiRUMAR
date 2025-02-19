@@ -111,7 +111,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
               variants={headingVariants}
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
-              className="font-normal text-[30px] leading-[33px] ms:text-[20px] ms:leading-[22px] ms:max-w-[220px] sm:max-w-[300px] md:text-[42px] md:leading-[47px] lg:text-[50px] lg:leading-[55px] xl:text-[66px] xl:leading-[59px] 3xl:text-[80px] 3xl:leading-[72px] max-w-[311px] md:max-w-[586px]"
+              className="font-normal text-[30px] leading-[33px] ms:text-[25px] ms:leading-[25px] ms:max-w-[220px] sm:max-w-[300px] md:text-[42px] md:leading-[47px] lg:text-[50px] lg:leading-[55px] xl:text-[66px] xl:leading-[59px] 3xl:text-[80px] 3xl:leading-[72px] max-w-[311px] md:max-w-[586px]"
             >
               <p>Исключительная</p>
               кожа, изделия на любой вкус
@@ -121,7 +121,7 @@ const PremiumMaterials: React.FC<PremiumMaterialsProps> = ({
               variants={textVariants}
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
-              className="absolute right-0 bottom-0 md:bottom-[-30px] text-[14px] leading-[19px] sssm:text-[12px] sssm:leading-[14px] md:text-[25px] md:leading-[35px] lg:text-[50px] lg:leading-[55px] xl:text-[66px] xl:leading-[59px] 3xl:text-[80px] 3xl:leading-[72px]"
+              className="absolute right-0 bottom-0 md:bottom-[-30px] text-[14px] leading-[19px] sssm:text-[15px] sssm:leading-[16px] md:text-[25px] md:leading-[35px] lg:text-[50px] lg:leading-[55px] xl:text-[66px] xl:leading-[59px] 3xl:text-[80px] 3xl:leading-[72px]"
             >
               В наличии и под заказ.
             </motion.p>

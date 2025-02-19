@@ -7,7 +7,7 @@ const YourStatus: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.1, // Уменьшено для более раннего срабатывания
+    amount: 0.01, // Уменьшено для более раннего срабатывания
   });
 
   const containerVariants = {
