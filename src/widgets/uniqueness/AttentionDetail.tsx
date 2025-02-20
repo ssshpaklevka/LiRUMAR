@@ -32,7 +32,7 @@ const AttentionDetail: FC = () => {
         <motion.div className="w-full" variants={imageVariants}>
           <Image
             className="w-full"
-            src={'/img/uniqueness/man.webp'}
+            src={'/img/uniqueness/ARS05998 1 (4)_11zon.webp'}
             alt="man"
             width={987}
             height={1009}

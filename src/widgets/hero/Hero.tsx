@@ -52,11 +52,11 @@ const Hero: FC = () => {
           <div className="flex justify-center flex-col lg:flex-row lg:gap-0 gap-[73px] items-center relative h-full 2xl:w-full">
             <motion.div
               {...fadeInUp}
-              className="z-20  md:max-w-[260px] w-full lg:relative flex h-full"
+              className="z-20  md:max-w-[270px] w-full lg:relative flex h-full"
             >
               <motion.p
                 {...fadeIn}
-                className="mt-20 3xl:mt-96 w-[260px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  "
+                className="mt-20 3xl:mt-96 w-[270px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  "
               >
                 Товары из экзотической кожи ручной работы для тех, кто ценит
                 статус и индивидуальность.
