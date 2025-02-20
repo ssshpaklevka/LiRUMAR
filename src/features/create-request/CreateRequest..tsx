@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable indent */
 'use client';
@@ -113,7 +114,7 @@ const CreateRequest: FC<Props> = ({ variant, className, product }) => {
               size={'xl'}
               className={cn('w-full', className)}
             >
-              Запросить консультацию
+              Связаться по What's App
             </Button>
           ) : variant === 'text' ? (
             <Button

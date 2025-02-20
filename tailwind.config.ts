@@ -12,6 +12,7 @@ export default {
       screens: {
         '3xl': '1920px',
         ssm: '475px',
+        sam: '375px',
         ms: '300px',
         sssm: '120px',
       },

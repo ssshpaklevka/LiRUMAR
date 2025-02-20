@@ -58,8 +58,8 @@ const Hero: FC = () => {
                 {...fadeIn}
                 className="mt-20 3xl:mt-96 w-[260px] text-left text-[14px] leading-[16px] sm:text-[25px] sm:leading-[30px] md:text-[16px] md:leading-[19px] 3xl:text-[25px] 3xl:leading-[30px]  "
               >
-                Ручная работа из экзотической кожи для тех, кто ценит статус и
-                индивидуальность.
+                Товары из экзотической кожи ручной работы для тех, кто ценит
+                статус и индивидуальность.
               </motion.p>
               <motion.h1
                 {...fadeInUp}
@@ -194,8 +194,8 @@ const Hero: FC = () => {
                     {...fadeIn}
                     className="relative text-right w-[314px] sm:w-[390px] md:w-[576px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] md:text-[25px] md:leading-[25px] 2xl:text-[25px] 2xl:leading-[30px] z-10"
                   >
-                    Ручная работа из экзотической кожи для тех, кто ценит статус
-                    и индивидуальность.
+                    Товары из экзотической кожи ручной работы для тех, кто ценит
+                    статус и индивидуальность.
                   </motion.h1>
                 </div>
               </motion.div>
