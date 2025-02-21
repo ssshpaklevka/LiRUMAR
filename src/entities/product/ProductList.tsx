@@ -1,10 +1,10 @@
 'use client';
 import type { FC } from 'react';
 import React, { useEffect, useState } from 'react';
-import { LoaderCircle } from 'lucide-react';
 
 import supabase from '@/src/shared/api/SupaBase';
 import ProductCard from '@/src/shared/ui/product-card/ProductCard';
+import SkeletonProduct from '@/src/shared/ui/product-card/SkeletonProduct';
 
 interface Filters {
   type: string[];
@@ -67,8 +67,10 @@ const ProductList: FC<ProductListProps> = ({ filters }) => {
 
   if (loading) {
     return (
-      <div className="flex h-screen items-center justify-center">
-        <LoaderCircle className="w-10 h-10 text-gray-500 animate-spin" />
+      <div className="mt-[45px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[19px] gap-y-[30px] md:gap-x-[20px] md:gap-y-[40px] 2xl:gap-x-[32px] 2xl:gap-y-[60px]">
+        {[...Array(8)].map((_, index) => (
+          <SkeletonProduct key={index} />
+        ))}
       </div>
     );
   }
