@@ -3,9 +3,10 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-import CreateRequest from '@/src/features/create-request/CreateRequest.';
 import { cn } from '@/src/shared/lib/utils';
+import { Button } from '@/src/shared/ui/button';
 
 const Hero: FC = () => {
   const fadeInUp = {
@@ -111,10 +112,15 @@ const Hero: FC = () => {
             </motion.div>
 
             <motion.div {...fadeInUp} className="z-50">
-              <CreateRequest
-                variant="big"
-                className="flex-none h-[50px] w-[302px] sm:h-[92px] sm:w-[553px] md:h-[88px] md:w-[260px] 2xl:h-[140px] 2xl:text-[19px] 2xl:leading-[16px] cursor-pointer"
-              />
+              <Link
+                href={'https://wa.me/79672177813'}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="flex-none h-[50px] w-[302px] sm:h-[92px] sm:w-[553px] md:h-[88px] md:w-[260px] 2xl:h-[140px] 2xl:text-[19px] 2xl:leading-[16px] cursor-pointer">
+                  Связаться по WhatsApp
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -192,7 +198,7 @@ const Hero: FC = () => {
                   {/* тень */}
                   <motion.h1
                     {...fadeIn}
-                    className="relative text-right w-[314px] sm:w-[390px] md:w-[576px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] md:text-[25px] md:leading-[25px] 2xl:text-[25px] 2xl:leading-[30px] z-10"
+                    className="relative text-right w-[324px] sm:w-[390px] md:w-[576px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] md:text-[25px] md:leading-[25px] 2xl:text-[25px] 2xl:leading-[30px] z-10"
                   >
                     Товары из экзотической кожи ручной работы для тех, кто ценит
                     статус и индивидуальность.
@@ -201,10 +207,15 @@ const Hero: FC = () => {
               </motion.div>
 
               <motion.div {...fadeInUp} className="z-50 w-full px-[40px]">
-                <CreateRequest
-                  variant="big"
-                  className="flex-none h-[50px] md:h-[88px] w-full cursor-pointer"
-                />
+                <Link
+                  href={'https://wa.me/79672177813'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="flex-none h-[50px] md:h-[88px] w-full cursor-pointer">
+                    Связаться по WhatsApp
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </div>
