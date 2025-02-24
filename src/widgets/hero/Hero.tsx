@@ -138,7 +138,7 @@ const Hero: FC = () => {
                 {...fadeInUp}
                 className={cn(
                   'relative -top-[140px]  left-0 lg:top-[calc(50%-170px)] 2xl:top-[calc(50%-200px)] -translate-y-1/2  -translate-x-1/1 z-[999] text-nowrap',
-                  'absolute font-normal tracking-[-1px] text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
+                  'absolute font-normal tracking-[-1px] text-[26px] leading-[26px] sam:text-[33px] sam:leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] 2xl:text-[105px] 2xl:leading-[105px] 2xl:font-normal',
                 )}
               >
                 <svg
@@ -156,7 +156,7 @@ const Hero: FC = () => {
                 </svg>
                 <span
                   className={cn(
-                    'lir text-[33px] leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] tracking-[-0.5px] 2xl:text-[105px] 2xl:leading-[105px]',
+                    'lir text-[26px] leading-[26px] sam:text-[33px] sam:leading-[33px] sm:text-[44px] sm:leading-[44px] md:text-[61px] md:leading-[61px] tracking-[-0.5px] 2xl:text-[105px] 2xl:leading-[105px]',
                   )}
                 >
                   LiRUMAR{' '}
@@ -198,7 +198,7 @@ const Hero: FC = () => {
                   {/* тень */}
                   <motion.h1
                     {...fadeIn}
-                    className="relative text-right w-[324px] sm:w-[390px] md:w-[576px] text-[14px] leading-[16px] sm:text-[16px] sm:leading-[19px] md:text-[25px] md:leading-[25px] 2xl:text-[25px] 2xl:leading-[30px] z-10"
+                    className="relative text-right w-[260px] sam:w-[324px] sm:w-[390px] md:w-[576px] text-[11px] leading-[11px] sam:text-[14px] sam:leading-[16px] sm:text-[16px] sm:leading-[19px] md:text-[25px] md:leading-[25px] 2xl:text-[25px] 2xl:leading-[30px] z-10"
                   >
                     Товары из экзотической кожи ручной работы для тех, кто ценит
                     статус и индивидуальность.
