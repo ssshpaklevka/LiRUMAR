@@ -3,20 +3,23 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 
 import Product from '@/src/pages/product/Product';
-import supabase from '@/src/shared/api/SupaBase';
 import type { Product as ProductInterface } from '@/src/entities/product/product.interface';
 import CarouselProduct from '@/src/shared/ui/carousel-product/CarouselProduct';
 
 const getProduct = async (id: string): Promise<ProductInterface | null> => {
-  const { data, error } = await supabase
-    .from('products')
-    .select('*')
-    .eq('id', id)
-    .single();
-  if (error || !data) {
+  try {
+    const response = await fetch(`http://localhost:3000/api/products/${id}`);
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const product: ProductInterface = await response.json();
+    return product;
+  } catch (error) {
+    console.error('Error fetching product:', error);
     return null;
   }
-  return data as ProductInterface;
 };
 
 const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {

@@ -8,16 +8,15 @@ import type { Product } from '@/src/entities/product/product.interface';
 import type { CarouselApi } from '../carousel';
 import { Carousel, CarouselContent, CarouselItem } from '../carousel';
 import ProductCard from '../product-card/ProductCard';
-import supabase from '../../api/SupaBase';
-
 const getRandomProducts = async (): Promise<Product[]> => {
-  const { data, error } = await supabase.from('products').select('*').limit(10);
-
-  if (error || !data) {
+  try {
+    const response = await fetch('/api/products');
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data.slice(0, 10);
+  } catch {
     return [];
   }
-
-  return data as Product[];
 };
 
 const CarouselProduct: FC = () => {

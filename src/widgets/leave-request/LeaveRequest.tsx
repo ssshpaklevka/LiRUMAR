@@ -1,7 +1,6 @@
 'use client';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-undef */
 
 import type { FC } from 'react';
 import React, { useRef, useState } from 'react';

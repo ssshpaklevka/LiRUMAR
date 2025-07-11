@@ -6,14 +6,22 @@ import Link from 'next/link';
 
 import CardPlaceholder from '../assets/card-placeholder/CardPlaceholder';
 
+interface ProductImage {
+  id: string;
+  filename: string;
+  path: string;
+  order: number;
+}
+
 interface Props {
   id: string;
   url?: string;
   name: string;
   price: number;
+  images?: ProductImage[];
 }
 
-const ProductCard: FC<Props> = ({ id, name, price }) => {
+const ProductCard: FC<Props> = ({ id, name, price, images }) => {
   const formatPrice = (value: number) => {
     return new Intl.NumberFormat('ru-RU').format(value);
   };
@@ -24,15 +32,12 @@ const ProductCard: FC<Props> = ({ id, name, price }) => {
       href={`/catalog/${id}`}
     >
       <div className="overflow-hidden relative w-full aspect-square bg-[#2C2C2C] flex justify-center items-center">
-        {id ? (
-          <>
-            <div
-              className="w-full h-full bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${id}.png)`,
-              }}
-            />
-          </>
+        {images && images.length > 0 ? (
+          <img
+            src={images[0].path}
+            alt={name}
+            className="w-full h-full object-cover"
+          />
         ) : (
           <CardPlaceholder />
         )}

@@ -1,3 +1,10 @@
+export interface ProductImage {
+  id: string;
+  filename: string;
+  path: string;
+  order: number;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -8,5 +15,7 @@ export interface Product {
   material: string;
   type: string;
   url: string;
-  thumbnailUrls?: string[];
+  images: ProductImage[];
+  createdAt: string;
+  updatedAt: string;
 }

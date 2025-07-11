@@ -17,9 +17,18 @@ interface Props {
 
 const Product: FC<Props> = ({ product }) => {
   const [mainImageError, setMainImageError] = useState(false);
-  const [thumbnailErrors, setThumbnailErrors] = useState([false, false]);
+  const [thumbnailErrors, setThumbnailErrors] = useState<boolean[]>([]);
   const [isMainImageLoading, setIsMainImageLoading] = useState(true);
-  const [isThumbnailsLoading, setIsThumbnailsLoading] = useState([true, true]);
+  const [isThumbnailsLoading, setIsThumbnailsLoading] = useState<boolean[]>([]);
+
+  // Инициализируем состояния для миниатюр
+  React.useEffect(() => {
+    if (!product || !product.images) return;
+
+    const thumbnailCount = Math.min(product.images.length - 1, 2);
+    setThumbnailErrors(new Array(thumbnailCount).fill(false));
+    setIsThumbnailsLoading(new Array(thumbnailCount).fill(true));
+  }, [product]);
   if (!product) {
     return <div>Товар не найден</div>;
   }
@@ -33,7 +42,7 @@ const Product: FC<Props> = ({ product }) => {
     <Container className="mt-[44px] grid grid-cols-1 xl:grid-cols-[760px_2fr] 2xl:grid-cols-[1100px_2fr] gap-5 p-5">
       <div className="flex gap-[20px] flex-col md:flex-row">
         <div className="relative w-full aspect-square md:aspect-auto md:h-auto md:min-h-[359px] bg-[#2C2C2C] flex justify-center items-center">
-          {product && !mainImageError ? (
+          {product.images && product.images.length > 0 && !mainImageError ? (
             <>
               {isMainImageLoading && (
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -41,7 +50,7 @@ const Product: FC<Props> = ({ product }) => {
                 </div>
               )}
               <Image
-                src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${product.id}.png`}
+                src={product.images[0].path}
                 layout="fill"
                 objectFit="cover"
                 alt={product.name}
@@ -54,45 +63,46 @@ const Product: FC<Props> = ({ product }) => {
           )}
         </div>
         <div className="flex flex-row md:flex-col justify-between gap-5 2xl:gap-[34px]">
-          {[1, 2].map((_, index) => (
-            <div
-              key={index}
-              className="relative w-full md:size-[275px] 2xl:size-[446px] aspect-square bg-[#2C2C2C] flex items-center justify-center"
-            >
-              {product && !thumbnailErrors[index] ? (
-                <>
-                  {isThumbnailsLoading[index] && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <LoaderCircle className="w-8 h-8 text-gray-500 animate-spin" />
-                    </div>
-                  )}
-                  <Image
-                    src={`https://zepyizkxoajxozosiskc.supabase.co/storage/v1/object/public/products/${product.id}-${index + 1}.png`}
-                    layout="fill"
-                    objectFit="cover"
-                    alt={`Thumbnail ${index + 1}`}
-                    className="rounded-md w-full"
-                    onError={() =>
-                      setThumbnailErrors((prev) => {
-                        const newErrors = [...prev];
-                        newErrors[index] = true;
-                        return newErrors;
-                      })
-                    }
-                    onLoad={() =>
-                      setIsThumbnailsLoading((prev) => {
-                        const newLoading = [...prev];
-                        newLoading[index] = false;
-                        return newLoading;
-                      })
-                    }
-                  />
-                </>
-              ) : (
-                <CardPlaceholder />
-              )}
-            </div>
-          ))}
+          {product?.images &&
+            product.images.slice(1, 3).map((image, index) => (
+              <div
+                key={image.id}
+                className="relative w-full md:size-[275px] 2xl:size-[446px] aspect-square bg-[#2C2C2C] flex items-center justify-center"
+              >
+                {!thumbnailErrors[index] ? (
+                  <>
+                    {isThumbnailsLoading[index] && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <LoaderCircle className="w-8 h-8 text-gray-500 animate-spin" />
+                      </div>
+                    )}
+                    <Image
+                      src={image.path}
+                      layout="fill"
+                      objectFit="cover"
+                      alt={`Thumbnail ${index + 1}`}
+                      className="rounded-md w-full"
+                      onError={() =>
+                        setThumbnailErrors((prev) => {
+                          const newErrors = [...prev];
+                          newErrors[index] = true;
+                          return newErrors;
+                        })
+                      }
+                      onLoad={() =>
+                        setIsThumbnailsLoading((prev) => {
+                          const newLoading = [...prev];
+                          newLoading[index] = false;
+                          return newLoading;
+                        })
+                      }
+                    />
+                  </>
+                ) : (
+                  <CardPlaceholder />
+                )}
+              </div>
+            ))}
         </div>
       </div>
       <div className="flex flex-col justify-between gap-5 sm:gap-10 xl:gap-28 2xl:gap-[170px]">

@@ -2,9 +2,9 @@
 import type { FC } from 'react';
 import React, { useEffect, useState } from 'react';
 
-import supabase from '@/src/shared/api/SupaBase';
 import ProductCard from '@/src/shared/ui/product-card/ProductCard';
 import SkeletonProduct from '@/src/shared/ui/product-card/SkeletonProduct';
+import type { Product } from '@/src/entities/product/product.interface';
 
 interface Filters {
   type: string[];
@@ -12,42 +12,36 @@ interface Filters {
   color: string[];
 }
 
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  full_description: string;
-  price: number;
-  color: string;
-  material: string;
-  type: string;
-  url: string;
-}
-
 interface ProductListProps {
   filters: Filters;
 }
 
 const getProductList = async (filters: Filters): Promise<Product[]> => {
-  let query = supabase.from('products').select('*');
+  try {
+    const response = await fetch('/api/products');
 
-  if (filters.color.length > 0) {
-    query = query.in('color', filters.color);
-  }
-  if (filters.material.length > 0) {
-    query = query.in('material', filters.material);
-  }
-  if (filters.type.length > 0) {
-    query = query.in('type', filters.type);
-  }
+    if (!response.ok) {
+      throw new Error('Failed to fetch products');
+    }
 
-  const { data, error } = await query;
+    const products: Product[] = await response.json();
 
-  if (error) {
+    // Фильтруем продукты на клиенте
+    return products.filter((product) => {
+      const matchesColor =
+        filters.color.length === 0 || filters.color.includes(product.color);
+      const matchesMaterial =
+        filters.material.length === 0 ||
+        filters.material.includes(product.material);
+      const matchesType =
+        filters.type.length === 0 || filters.type.includes(product.type);
+
+      return matchesColor && matchesMaterial && matchesType;
+    });
+  } catch (error) {
+    console.error('Error fetching products:', error);
     return [];
   }
-
-  return data as Product[];
 };
 
 const ProductList: FC<ProductListProps> = ({ filters }) => {
@@ -86,6 +80,7 @@ const ProductList: FC<ProductListProps> = ({ filters }) => {
               url={product.url}
               name={product.name}
               price={product.price}
+              images={product.images}
             />
           ))}
         </div>

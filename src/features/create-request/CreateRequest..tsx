@@ -3,7 +3,6 @@
 /* eslint-disable indent */
 'use client';
 
-/* eslint-disable no-undef */
 import process from 'process';
 
 import InputMask from 'react-input-mask';

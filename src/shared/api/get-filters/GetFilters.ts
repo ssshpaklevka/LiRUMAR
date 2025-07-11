@@ -1,5 +1,3 @@
-import supabase from '../SupaBase';
-
 interface FilterOption {
   value: string;
   label: string;
@@ -14,22 +12,27 @@ type Product = {
 export const getFilterOptions = async (
   filterType: 'color' | 'material' | 'type',
 ): Promise<FilterOption[]> => {
-  const { data, error } = await supabase.from('products').select(filterType);
+  try {
+    const response = await fetch('/api/products');
 
-  if (error) {
+    if (!response.ok) {
+      return [];
+    }
+
+    const products: Product[] = await response.json();
+
+    const uniqueData = Array.from(
+      new Set(products.map((item) => item[filterType])),
+    )
+      .filter((value): value is string => !!value)
+      .map((value) => ({
+        value,
+        label: value,
+      }));
+
+    return uniqueData;
+  } catch (error) {
+    console.error('Error fetching filter options:', error);
     return [];
   }
-
-  if (!data) return [];
-
-  const uniqueData = Array.from(
-    new Set(data.map((item) => (item as Product)[filterType])),
-  )
-    .filter((value): value is string => !!value)
-    .map((value) => ({
-      value,
-      label: value,
-    }));
-
-  return uniqueData;
 };
