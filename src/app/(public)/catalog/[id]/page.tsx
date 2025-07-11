@@ -6,6 +6,10 @@ import Product from '@/src/pages/product/Product';
 import type { Product as ProductInterface } from '@/src/entities/product/product.interface';
 import CarouselProduct from '@/src/shared/ui/carousel-product/CarouselProduct';
 
+// Отключаем статическую генерацию для этой страницы
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const getProduct = async (id: string): Promise<ProductInterface | null> => {
   try {
     // Используем относительный путь для работы на сервере
