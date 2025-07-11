@@ -23,7 +23,8 @@
     "db:seed-products": "node scripts/seed-products.js",
     "test-all": "bun run check-format && bun run check-lint && bun run check-types && bun run build",
     "setup-server": "chmod +x scripts/setup-server.sh && ./scripts/setup-server.sh",
-    "start-server": "chmod +x scripts/start-server.sh && ./scripts/start-server.sh"
+    "start-server": "chmod +x scripts/start-server.sh && ./scripts/start-server.sh",
+    "debug-server": "chmod +x scripts/debug-server.sh && ./scripts/debug-server.sh"
   },
   "dependencies": {
     "@prisma/client": "^6.11.1",
