@@ -52,6 +52,12 @@ export default function ProductForm({
   const [currentImages, setCurrentImages] = useState<ProductImage[]>(
     product?.images || [],
   );
+
+  // Обновляем currentImages при изменении product
+  React.useEffect(() => {
+    console.log('ProductForm: product images changed:', product?.images);
+    setCurrentImages(product?.images || []);
+  }, [product?.images]);
   const [loading, setLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -255,7 +261,9 @@ export default function ProductForm({
         {/* Текущие изображения */}
         {currentImages.length > 0 && (
           <div className="mb-4">
-            <p className="text-sm text-gray-600 mb-2">Текущие изображения:</p>
+            <p className="text-sm text-gray-600 mb-2">
+              Текущие изображения ({currentImages.length}):
+            </p>
             <div className="grid grid-cols-3 gap-2">
               {currentImages.map((image) => (
                 <div key={image.id} className="relative group">
@@ -263,6 +271,13 @@ export default function ProductForm({
                     src={image.path}
                     alt="Product"
                     className="w-full h-24 object-cover rounded border"
+                    onError={(e) => {
+                      console.error('Failed to load image:', image.path);
+                      e.currentTarget.style.display = 'none';
+                    }}
+                    onLoad={() =>
+                      console.log('Image loaded successfully:', image.path)
+                    }
                   />
                   <button
                     type="button"

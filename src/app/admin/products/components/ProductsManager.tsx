@@ -87,6 +87,12 @@ export default function ProductsManager({
   };
 
   const handleProductUpdated = (updatedProduct: Product): void => {
+    console.log(
+      'Updating product:',
+      updatedProduct.id,
+      'with images:',
+      updatedProduct.images,
+    );
     setProducts(
       products.map((p) => (p.id === updatedProduct.id ? updatedProduct : p)),
     );
