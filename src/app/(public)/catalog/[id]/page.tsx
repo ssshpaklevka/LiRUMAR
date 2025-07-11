@@ -8,7 +8,10 @@ import CarouselProduct from '@/src/shared/ui/carousel-product/CarouselProduct';
 
 const getProduct = async (id: string): Promise<ProductInterface | null> => {
   try {
-    const response = await fetch(`http://localhost:3000/api/products/${id}`);
+    // Используем относительный путь для работы на сервере
+    const response = await fetch(`/api/products/${id}`, {
+      cache: 'no-store',
+    });
 
     if (!response.ok) {
       return null;
