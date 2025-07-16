@@ -82,6 +82,7 @@ const CarouselProduct: FC = () => {
                 url={product.url}
                 name={product.name}
                 price={product.price}
+                images={product.images} // <-- pass images prop
               />
             </div>
           </CarouselItem>

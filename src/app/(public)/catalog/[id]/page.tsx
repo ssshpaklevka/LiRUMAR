@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import React from 'react';
 import { notFound } from 'next/navigation';
+import { PrismaClient } from '@prisma/client';
 
 import Product from '@/src/pages/product/Product';
 import type { Product as ProductInterface } from '@/src/entities/product/product.interface';
@@ -10,19 +11,26 @@ import CarouselProduct from '@/src/shared/ui/carousel-product/CarouselProduct';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+const prisma = new PrismaClient();
+
 const getProduct = async (id: string): Promise<ProductInterface | null> => {
   try {
-    // Используем относительный путь для работы на сервере
-    const response = await fetch(`/api/products/${id}`, {
-      cache: 'no-store',
+    // Напрямую обращаемся к базе данных
+    const product = await prisma.product.findUnique({
+      where: { id },
+      include: { images: true },
     });
 
-    if (!response.ok) {
+    if (!product) {
       return null;
     }
 
-    const product: ProductInterface = await response.json();
-    return product;
+    // Преобразуем Date в строки для совместимости с интерфейсом
+    return {
+      ...product,
+      createdAt: product.createdAt.toISOString(),
+      updatedAt: product.updatedAt.toISOString(),
+    };
   } catch (error) {
     console.error('Error fetching product:', error);
     return null;
